@@ -1,0 +1,17 @@
+es:
+  devise:
+    sessions:
+      new:
+        no_account_html: "Necesita una cuenta?"
+        titles:
+          site: 'Iniciar sesión'
+          header: 'Iniciar sesión'
+        links:
+          register: "Regístrate"
+          forgot_password: "Olvidé mi contraseña"
+        form:
+          labels:
+            remember_me: 'Recuérdame'
+          inputs:
+            submit: 'Iniciarme'
+            facebook: 'Iniciar sesión con Facebook'

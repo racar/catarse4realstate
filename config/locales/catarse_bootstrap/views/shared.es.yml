@@ -1,0 +1,34 @@
+es:
+  shared:
+    account_type_value: 'Acepte solamente de la cuenta corriente'
+    no_bank_label: 'Otros'
+    alerts:
+      pending_payment_text: "Has pendiente de reembolso %{value}."
+      pending_payment_link_text: "Obtener su dinero de vuelta!"
+    load_more: "Cargar más"
+    terms: condiciones de uso
+    accept_terms_html: He leído y estoy de acuerdo con el %{link}.
+    header_channel:
+      contact: Contacto
+      logout: Salir
+      my_credits: Mis créditos
+      partners: Socios
+      posts: noticia
+      profile: Mi perfil
+      signin: Login
+      signup: Cadastre-se
+      submit: Enviar proyecto
+      how_work: Cómo funciona?
+    footer_channel:
+      contact: Contacto
+      how_works: Cómo funciona?
+      privacy_policy: Política de privacidad
+      terms: Términos de uso
+      what_is_channel: Qué son los canales?
+      terms: "Términos de uso"
+      privacy_policy: "Política de privacidad"
+      how_it_works: "Como las obras %{name}"
+      how_channels_work: "Comprender los canales en Catarse"
+      contact: "Contacto"
+    header_big:
+      projects: "Mis proyectos"

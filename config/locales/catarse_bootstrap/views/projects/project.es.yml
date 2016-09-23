@@ -1,0 +1,49 @@
+es:
+  projects:
+    project:
+      contributed: levantados
+      reached: alcanzado
+      progress_html: "<span>%{percent}%</span> financiado"
+      time_remaining_small_html:
+        one: "<div class='fontsize-smallest lineheight-tightest'>%{count} %{unit}</div> <div class='fontsize-smallest lineheight-tightest'>restante</div>"
+        other: "<div class='fontsize-smallest lineheight-tightest'>%{count} %{unit}</div> <div class='fontsize-smallest lineheight-tightest'>restantes</div>"
+      time_remaining_html:
+        one: "<span>%{count} %{unit}</span> restante"
+        other: "<span>%{count} %{unit}</span> restantes"
+      pledged_html: "<span>%{value}</span> levantados"
+      display_status:
+        online: 'online'
+        expired: "finalizado"
+        rejected: "negado"
+        failed: "no financiado"
+        successful: financiado
+        approved: aprovado
+        reached_goal: financiado
+        waiting_confirmation: aguardando
+        waiting_funds: aguardando
+        not_reached_goal: aguardando
+        draft: "borrador"
+        in_analysis: "analizado"
+    card:
+      by: por
+      remaining:
+        one: "restante"
+        other: "restantes"
+      contributed: levantados
+      reached: alcanzado
+      progress_html: "<span>%{percent}%</span> financiado"
+      time_remaining_html:
+        one: "<span>%{count} %{unit}</span> restante"
+        other: "<span>%{count} %{unit}</span> restantes"
+      pledged_html: "<span>%{value}</span> levantados"
+      display_status:
+        expired: "finalizado"
+        rejected: "rechazado"
+        failed: "no financiado"
+        successful: "Exitosa"
+        approved: aprovado
+        reached_goal: financiado
+        waiting_funds: "terminó Plazo"
+        not_reached_goal: aguardando
+        draft: "borrador"
+        in_analysis: "analizado"

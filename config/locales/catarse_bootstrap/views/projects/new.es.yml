@@ -1,0 +1,31 @@
+es:
+  projects:
+    new:
+      page-title: "Comience su proyecto"
+
+      faq:
+        titles:
+          support: "Suporte"
+          know_more: "más información"
+
+        links:
+          criteria: "Criterios de selección"
+          suport_central: "Centro de Soporte"
+          support_contact: "Contáctenos"
+          how_it_works: "Como Catarsis trabajar?"
+          money: "¿Cómo voy a conseguir el dinero?"
+          selection: "¿Cómo se seleccionan los proyectos?"
+          all_or_nothing: "¿Por qué todo o nada?"
+
+      form:
+        blocks:
+          first:
+            title: "¡Bienvenido!"
+            description: "Complete la siguiente información para iniciar su proyecto inmobiliario."
+
+        info:
+          permalink: http://www.homeParte.co/
+          goal: R$
+          online_days: días
+
+        submit: "Guardar y continuar"

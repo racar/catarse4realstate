@@ -1,0 +1,322 @@
+es:
+  activerecord:
+    models:
+      channel: Canal
+      project: Proyecto
+      reward: Recompensa
+      contribution: Contribución
+      category: Categoria
+      bank_account: Datos bancários
+    attributes:
+      project_account:
+        address_city: Ciudad
+        address_complement: Complemento
+        address_neighbourhood: Barrio
+        address_number: Número
+        address_state: Estado
+        address_street: Dirección
+        address_zip_code: CEP
+        cpf: 'CPF / CNPJ '
+        state_inscription: 'Registro de Estado'
+        email: Email
+        full_name: "Nombre completo / Nombre de la empresa"
+        phone_number: "Teléfono"
+        bank: 'Banco'
+        bank_id: 'Banco'
+        owner_name: 'Nombre del Titular'
+        owner_document: 'CPF el titular de la cuenta bancaria'
+        agency: 'Organismo'
+        agency_digit: 'Agencia Dígito'
+        account: 'No. de cuenta'
+        account_digit: 'Dígitos de cuenta'
+        account_type: 'Tipo de cuenta'
+      bank_account:
+        account_type: 'Tipo de cuenta'
+        input_bank_number: "Número de Banco"
+        bank: 'Banco'
+        bank_id: 'Banco'
+        owner_name: 'Nombre del  Titular'
+        owner_document: 'CPF / CNPJ titular'
+        agency: 'Organismo'
+        agency_digit: 'Dígitos de agencia'
+        account: 'No. de cuenta'
+        account_digit: 'Dígitos de cuenta'
+      payment:
+        state: 'Estado'
+      contribution:
+        payer_name: "Nombre Completo"
+        payer_email: "Email"
+        payer_document: "CPF o CNPJ"
+        country: "País"
+        address_street: "Calle"
+        address_number: "Número"
+        address_complement: "Complemento"
+        address_neighbourhood: "Barrio"
+        address_state: "Estado"
+        address_city: "Ciudad"
+        address_zip_code: "CEP"
+        address_phone_number: "Teléfono"
+        value: Valor del soporte
+        payer_name: "Nombre Completo"
+        payer_email: "Email"
+        country: "País"
+        address_street: "Calle"
+        address_number: "Número"
+        address_complement: "Complemento"
+        address_neighbourhood: "Barrio"
+        address_state: "Estado"
+        address_city: "Ciudad"
+        address_zip_code: "CEP"
+        address_phone_number: "Teléfono"
+        reward: Recompensa
+        project: proyecto
+      reward:
+        deliver_at: Plazo de entrega
+      project:
+        channels: Canales
+        category: Categoría
+        expires_at: Plazo
+        online_days: "Plazo del proyecto"
+        headline: "Eslogan"
+        image_url: "URL de la imagen"
+        name: "Nombre del proyecto inmobiliario"
+        goal: "Valor del Proyecto"
+        about_html: "Descripción del Proyecto"
+        user_id: "Id de usuario"
+        video_url: "URL del vídeo"
+        permalink: 'Enlace su proyecto inmobiliario'
+        city: 'Ciudad'
+        more_links: 'Enlaces para que la gente sepa más sobre su proyecto y su historia.'
+        traffic_sources: '¿Dónde conociste a HomeParte?'
+        first_contributions: "Quiénes son las primeras personas a las que va a hacer para apoyar su proyecto?"
+        budget: 'Presupuesto del proyecto'
+        uploaded_image: 'Diseño del proyecto'
+      user:
+        address_city: Ciudad
+        address_complement: Complemento
+        address_neighbourhood: Barrio
+        address_number: Número
+        address_state: Estado
+        address_street: Dirección
+        address_zip_code: CEP
+        cpf: 'CPF / CNPJ '
+        cpf_hint: '(?)'
+        state_inscription: 'registro de Estado'
+        current_password: "contraseña actual"
+        email: Email
+        full_name: "Nombre completo / Nombre de la empresa"
+        bio: 'Mini Bio'
+        name: "Apellido"
+        newsletter: 'Quiero recibir noticias de Catarsis'
+        password: Contraseña
+        password_confirmation: "Confirmación de la contraseña"
+        phone_number: "Teléfono"
+        cpf_hint_title: Factura se emitirá para este documento
+        id: ID
+        moip_login: Login do MoIP
+        moip_login_hint: "(Cómo crear una cuenta)"
+        reset_password_token: "Enlace de recrear contraseña"
+      channel:
+        ga_code: Código de Google Analytics
+        description: Descripción
+        how_it_works: Cómo funciona?
+        image: Nueva imagen
+        name: Nombre
+        video_url: Vídeo
+      channel_partner:
+        name: 'Nombre'
+        url: 'Sitio web'
+        image: 'Imagem'
+      project_post:
+        title: 'Título'
+        comment: 'Texto'
+      channel_post:
+        title: 'Título'
+        body: 'Contenido'
+        visible: 'Publicar (Marque si desea publicar esta noticia)'
+    errors:
+      models:
+        payment:
+          duplicate: "Su pago ya se está procesando"
+        contribution: "Error apoyo ahorro"
+        bank_account:
+          attributes:
+            bank:
+              blank: 'Banco no puede estar en blanco'
+            owner_name:
+              blank: 'El nombre del titular no puede estar en blanco'
+              invalid: 'Introduzca un nombre con un mínimo de 5 y un máximo de 30 letras'
+            owner_document:
+              blank: 'CPF / CNPJ titular no puede estar en blanco'
+              invalid: 'CPF / CNPJ inválido'
+            agency:
+              blank: 'Agencia no puede estar en blanco'
+              invalid: 'la agencia no válido'
+            account:
+              blank: 'No. de cuenta no puede estar en blanco'
+            account_digit:
+              blank: 'Dígitos de cuenta no puede estar en blanco'
+              invalid: 'Cuenta no valida'
+            agency_digit:
+              blank: 'dígitos la agencia no puede estar en blanco'
+              invalid: 'Digitos de agencia no válida'
+        project_account:
+          attributes:
+            full_name:
+              blank: "Nombre de la empresa del usuario no puede estar en blanco"
+            email:
+              blank: "Correo electrónico del usuario no puede estar vacío"
+            cpf:
+              blank: "CPF del usuario no puede estar en blanco"
+            address_street:
+              blank: "Dirección del usuario no puede estar en blanco"
+            address_number:
+              blank: "Número en la dirección del usuario no puede estar en blanco"
+            address_city:
+              blank: "Ciudad usuario no puede estar en blanco"
+            address_state:
+              blank: "Estado del usuario no puede estar en blanco"
+            address_zip_code:
+              blank: "CEP El usuario no puede estar en blanco"
+            phone_number:
+              blank: "Usuario del teléfono no puede estar en blanco"
+            bank:
+              blank: "Banco de usuario no puede estar en blanco"
+            agency:
+              blank: "Agencia de usuario no puede estar en blanco"
+            agency_digit:
+              blank: "Agencia usuario dígitos no puede estar en blanco"
+            account:
+              blank: "No. de cuenta de usuario no puede estar en blanco"
+            account_digit:
+              blank: "Dígitos de la cuenta de usuario no puede estar en blanco"
+            owner_name:
+              blank: "El nombre del titular de usuario no puede estar en blanco"
+            owner_document:
+              blank: "CPF / CNPJ el titular de usuario no puede estar en blanco"
+              not_same: "CPF/CNPJ de registro y datos bancarios llenos no son iguales."
+            account_type:
+              blank: "Tipo de cuenta no puede estar en blanco"
+        project:
+          attributes:
+            city:
+              blank: La ciudad del proyecto no puede estar en blanco
+            video_url:
+              blank: 'El video del proyecto no puede estar en blanco'
+            budget:
+              blank: 'El presupuesto del proyecto no puede estar en blanco'
+            uploaded_image:
+              blank: 'La imagen del proyecto no puede estar en blanco'
+            name:
+              too_long: "Nombre del proyecto es demasiado largo (máximo 50 caracteres)"
+              blank: "El nombre del proyecto no puede estar en blanco"
+            permalink:
+              blank: "La URL del proyecto no puede estar en blanco"
+              invalid: "La URL del proyecto no es válido"
+              taken: "Esta URL proyecto ya existe"
+            category:
+              blank: "Usted debe elegir una categoría para su proyecto"
+            goal:
+              blank: "El valor de la meta no puede estar en blanco"
+              greater_than: "El objetivo debe ser mayor que 9"
+              not_a_number: "Objetivo de recogida sólo acepta números"
+            online_days:
+              blank: "El período de almacenamiento no puede estar en blanco"
+              greater_than: "La fecha límite para la recolección debe ser mayor que 60 días"
+              less_than_or_equal_to: "El plazo para la recolección debe ser menor o igual a 180 días"
+              not_a_number: "La fecha límite para la recolección debe ser un número de días"
+            about_html:
+              blank: "La descripción del proyecto no puede estar en blanco"
+            headline:
+              blank: "El eslogan del proyecto no puede estar en blanco"
+              too_long: "El eslogan es demasiado largo. Puede utilizar un máximo de 140 caracteres."
+        user:
+          attributes:
+            email:
+              not_found: "El correo electrónico no se ha registrado, compruebe la dirección o se registra a sí mismo"
+              taken: "El email ya está registrado, inicie sesión"
+              invalid: "Esta dirección de correo electrónico no es válido"
+              blank: "El correo electrónico no puede estar vacío"
+            password:
+              too_short: "La contraseña que usted eligió es demasiado corto"
+              confirmation: "La contraseña y la confirmación de contraseña cumplido no son iguales"
+              blank: "La contraseña no puede estar en blanco"
+            current_password:
+              invalid: "Contraseña actual no es válido"
+            reset_password_token:
+              invalid: 'Token expiró. Ir a <a href="/password/new" class="alt-link">restablecimiento de contraseña</a> y otra vez pedir un restablecimiento de contraseña.'
+            name:
+              blank: "Nombre de usuario no puede estar en blanco"
+            about_html:
+              blank: "Acerca de usted no puede estar en blanco"
+            uploaded_image:
+              blank: "Imagen del usuario no puede estar en blanco"
+  project:
+    update:
+      success: Esta información ha sido actualizada
+      failed: 'La información no se salvó, compruebe que todos los campos se rellenan correctamente'
+    delete:
+      posts: 'Eliminado correctamente'
+    video_regex_validation: se aceptan YouTube o Vimeo sólo las URLs
+  payment:
+    state:
+      pending: "En espera de la confirmación del pago"
+      paid: "Confirmado en %{date}"
+      refunded: "Reembolsado en %{date}"
+      pending_refund: "Reembolso solicitado en %{date}"
+      refused: "Pago rechazado en %{date}"
+      chargeback: "Contestado"
+  contribution:
+    payment_details:
+      desconhecido: ""
+      creditos: "Créditos"
+      boleto_bancario: "Boleto Bancario"
+      cartao_de_credito: "Tarjeta de crédito"
+      debito_bancario: "Los gastos bancarios"
+      cartao_debito: "Tarjeta de débito"
+      transferencia_bancaria: "Transferencia bancaria"
+      carteira_mo_ip: "Carteira MoIP"
+      financiamento_bancario: "Financiamiento bancario"
+    project_should_be_online: No se puede apoyar un proyecto que no está en el aire
+    reward_must_be_from_project: debe ser del mismo proyecto
+    should_not_contribute_if_maximum_contributions_been_reached: ha alcanzado su número
+      la mayoría de los partidarios
+    value_must_be_at_least_rewards_value: debe ser por lo menos %{minimum_value} para
+      la recompensa seleccionada
+  contribution_report_to_project_owner:
+    reward_description: Descripción Recompensa
+    deliver_at: Fecha de entrega de premios
+    confirmed_at: Pago fecha de confirmación
+    contribution_value: Valor Soporte
+    service_fee: tasa do Catarse
+    user_name: Partidario del nombre
+    user_email: Email perfil Catarse
+    cpf: Cpf aficionados
+    payer_email: Email medios de pago
+    gateway: Medios de pago
+    street: Calle
+    address_number: Número
+    complement: Complemento
+    neighbourhood: Barrio
+    city: Ciudad
+    address_state: Estado
+    zip_code: CEP
+    anonymous: Anonimo
+  user:
+    no_name: Sin nombre
+    contributions_text:
+      many: "Apoyado esto y la mayoría de otros %{total} proyectos"
+      one: "Sólo apoyado este proyecto hasta ahora"
+      two: "Apoyado esto y otros proyecto"
+  channels_subscribers:
+    created: 'Ahora sigues %{channel}'
+    deleted: 'Usted no pudo seguir el %{channel}'
+  channels:
+    edit: Atualizar canal
+    image_hint: Tamaño máximo (600x121px)
+    subscribed: "+ %{count} seguidores"
+    back_to_news: '← Volver a las noticias'
+    follow: "Sigue el canal"
+    following: "Seguindo"
+    unfollow: "Dejar de seguir"
+    subscribed: "%{count} seguindo o canal"

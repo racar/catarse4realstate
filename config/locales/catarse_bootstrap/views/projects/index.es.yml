@@ -1,0 +1,59 @@
+es:
+  projects:
+    index_header:
+      subtitle: Financiar proyectos en colaboración y se convierten en parte de algo
+        mayor. Promover una catarsis colectiva! Tú eres la pieza que falta en esta historia.
+      title: Haga que sucede en los proyectos que usted cree
+    index:
+      title: 'Catarse'
+      back_a_project: 'Apoyar un proyecto'
+      banner_before: 'Invertir  '
+      banner_words:
+        0: 'fácil y rápido'
+        1: 'con poco dinero'
+        2: 'con seguridad'
+        3: 'con alta rentabilidad'
+        4: 'sin intermediarios'
+        5: 'con alta liquidez'
+      banner_after: ' en Inmuebles'
+      see_all: 'Ver todos'
+      near_you: 'Cerca de usted'
+      recents: recientes
+      blog: Blog HomeParte
+      expiring: En la recta final
+      recommended: Recomendados
+      banner_subtitle: 'Música, cómics, cine, impacto social, tecnología y mucho más. Conoce, inspirar y apoyar proyectos.'
+      box:
+        by: por
+        when: en
+      banner: "Cumplir con la búsqueda"
+      explore: "Explora proyectos"
+      links:
+        channels: "Descubre las alas del Canal"
+        recommended: "Descubre los proyectos recomendados"
+        expiring: "Descubra los proyectos en la recta final"
+        recents: "Descubra proyectos recientes"
+        near: "Descubre los proyectos de su zona:"
+      sidebar:
+        titles:
+          blog: blog
+          facebook: "Ya le gusta nuestra cara?"
+          newsletter: "Suscríbete a nuestras noticias"
+          faq: "bien con la duda?"
+          schedule: agenda
+        placeholders:
+          email: "Escriba su email"
+        buttons:
+          newsletter: Enviar
+      sections:
+        near:
+          title: 'Cerca de mí'
+        recommended:
+          title: 'Recomendado'
+        expiring:
+          title: "En la recta final"
+        recents:
+          title: "recientes"
+        channels:
+          title: 'Alas del Canal'
+

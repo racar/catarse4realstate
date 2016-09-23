@@ -1,0 +1,95 @@
+es:
+  admin:
+    menu: "Moderación de canal"
+    followers_menu: "Seguidores"
+    statistics_menu: "Estatísticas"
+    profile_menu: "Editar canal"
+    partners_menu: "Editar amigos"
+    statistics:
+      title: 'Estatísticas del canal'
+      total_subscribers: 'El total de suscriptores'
+    confirmations:
+      destroy: Seguro que quieres eliminar?
+    filter:
+      between_created_at: Creado entre
+      by_id: Por id
+      order_table: Ordenar tabla
+      pg_search: Proyecto
+      submit: Filtrar
+      title: Filtrar
+      user_name_contains: Usuario
+      with_state: Con el estado
+      by_payment_method: 'Medios de pago'
+      by_gateway: 'Gateway'
+    followers:
+      index:
+        download: Descargar listado completo
+        title: Seguidores
+    management:
+      no_partners: Sin pareja registrada
+      no_posts: No posts
+      title: Gestión
+      total: Proyectos por un total
+    partners:
+      back_to_list: "← Volver a gestionar amigos"
+      new:
+        add_partner: Adicionar amigo
+      edit:
+        edit_title: Editar amigo
+      form:
+        hint_image: Tamaño de la imagen 370x320
+        save_submit: Guardar
+      index:
+        new_button: Adicionar amigo
+        table:
+          created_at: Creado
+          image: Imagen
+          name: Nombre
+          url: Sitio web
+          actions: Acciones
+        title: Gestión de amigos
+    posts:
+      back_to_list: "← Volver a gestionar noticias"
+      new:
+        create_news: Crear nuevo
+      edit:
+        edit_news: Editar nuevo
+      index:
+        new_post_button: Crear nuevo
+        table:
+          actions: Acciones
+          created_at: Creado
+          published_at: Publicado
+          title: Título novedad
+        title: Administrar noticias
+      form:
+        save_submit: Guardar y vista previa
+      update:
+        published_message: Su novedad fue publicado y enviado por correo a los seguidores del canal
+      warning_html: Recuerda que todas las noticias publicadas van directamente al correo electrónico de tus seguidores. Revisa el texto antes de enviarlo.
+    posts_menu: Administrar noticias
+    table:
+      approve: Aprobar
+      category: Categoría
+      confirmation: Seguro que quieres borrar este proyecto?
+      contributed_projects: Proyectos apoyados
+      created_projects: Proyectos creados
+      destroy_action: Eliminar
+      edit_action: Editar
+      expires_at: Terminar
+      goal: Meta
+      name: Título
+      online_date: Publicación
+      pledged: Alcanzado
+      publish_action: Publicar
+      recommended: Recomendar
+      reject: Rechazar
+      send_to_draft: Enviar a borrador
+      put_online: Colocar al aire
+      send_to_trash: ELIMINAR PROJECTO
+      show_action: visualizar
+      state: Estado
+      total_contributions: Apoyos
+      unpublish_action: Despublicar
+      user: Usuario
+      user_id: Usuario

@@ -1,0 +1,13 @@
+es:
+  bank_accounts:
+    show:
+      success: 'Su petición se ha realizado correctamente!'
+      success_detail: 'Enviaremos un correo electrónico con los detalles de las transacciones y las instrucciones sobre qué hacer si hay un problema en el proceso.'
+      review: 'Resumen de transacciones'
+      page-title: 'Reembolso solicitado con éxito'
+      value_label: 'Valor total del reembolso: %{value}'
+      agency_label: "Agencia: %{content}"
+      bank_label: "Banco: %{content}"
+      account_label: "Cuenta: %{content}"
+      owner_name_label: "Nombre: %{content}"
+      owner_document_label: "CPF: %{content}"

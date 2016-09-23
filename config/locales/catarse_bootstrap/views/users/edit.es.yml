@@ -1,0 +1,43 @@
+es:
+  users:
+    edit:
+      contributions: "Apoyado"
+      projects: "creado"
+      about_me: "Sobre usted"
+      settings: "Datos y dirección"
+      notification: "Notificaciones"
+      billing: "Tarjetas bancarias"
+      profil: "Ir para o perfil público"
+      feeds: "Actividades"
+      submit: "Salvar"
+      contributions_fields:
+        no-project: "Usted no ha guardado ningún proyecto en & nbsp; catarsis ..."
+        contribute: "Soporte ahora!"
+      about_fields:
+        add_link: "+ Añadir un enlace"
+        image_title: "Imagen de perfil"
+        image_description: "Esta imagen se utilizará como miniatura de su perfil (PNG, JPG tamaño 280 x 280)"
+        cover_title: "Imagen de la portada del perfil"
+        cover_description: "Esta imagen se utilizará como fondo de la cabecera de su perfil público (PNG ou JPG). Si usted no envía ninguna imagen aquí, va a utilizar su foto de perfil en su lugar."
+        profil_address_title: "Dirección de su perfil"
+        profil_address_description: "Su perfil público puede tener una URL personalizada. Elige un fácil de almacenar!"
+        name: "Nombre"
+        name_description: "Este es el nombre que los usuarios podrán ver en su perfil público"
+        faceebook: "Perfil de facebook"
+        facebook_description: "Pega el enlace a tu perfil"
+        twitter: "Perfil de twitter"
+        twitter_description: "Pega el enlace a tu perfil"
+        homepage: "Presencia en Internet"
+        homepage_description: "Incluye enlaces para ayudar a otros a conocerte mejor.&nbsp;"
+        about: "Sobre"
+        about_description: "Hable acerca de usted y tratar de proporcionar la información más relevante para que los visitantes pueden conocer mejor."
+      billing_fields:
+        credit_card: "Tarjetas de crédito"
+        card_message: "Si cualquier proyecto que usted ha apoyado <b>Tarjeta de crédito</b> no tiene éxito, nos haremos reembolso <b>automáticamente</b> la tarjeta utilizada para hacer el soporte."
+        card: "Tarjeta"
+        operator: "Operadora"
+        bank_account: "Datos bancarios"
+        bank_account_message: "Si cualquier proyecto que usted ha apoyado <b> con Boleto Bancario </ b> no tiene éxito, nos haremos un reembolso de su pago <b> automáticamente </ b> en la cuenta indicada a continuación."
+      notifications_fields:
+        newsletters: "Boletines"
+        newsletter_description: "Boletín Catarsis (semanal)"

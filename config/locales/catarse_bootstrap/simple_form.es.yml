@@ -1,0 +1,57 @@
+es:
+  simple_form:
+    collections:
+      project:
+        traffic_sources:
+          one: "He tenido otro proyecto en HomeParte"
+          two: "indicación de una persona que ha tenido un proyecto en HomeParte"
+          three: "amigo indicación / colega / contacto profesional"
+          four: "de un proyecto que se recogía en la plataforma"
+          five: "artículo en un blog"
+          six: "un artículo en la prensa (portal de noticias en Internet, televisión, periódicos, revistas)"
+          seven: "en una clase / curso / clase / evento"
+          eight: "Hice una búsqueda en Internet sobre crowdfunding / formas alternativas de financiación"
+          nine: "Otros"
+    validation_texts:
+      reward:
+        minimum_value: "Introduzca un valor mínimo mayor que o igual a 10"
+        description: "Introduzca una descripción de recompensa"
+      bank_account:
+        input_bank_number: "Número de banco inválida"
+        bank_id: "Número de banco inválida"
+        agency: "¿Cuál es el número de la agencia?"
+        account: "¿Cuál es el número de cuenta?"
+        account_digit: "¿Cuál es el dígito de verificador?"
+        agency_digit: "Que el dígito de la agencia?"
+        owner_name: "Introduzca un nombre con un mínimo de 5 y un máximo de 30 letras"
+        owner_document: "Introduzca un CPF o CNPJ válida para el titular de la cuenta"
+      contribution:
+        payer_name: "Por favor, introduzca el nombre del partidario"
+        payer_email: "Por favor, introduzca una dirección válida de correo electrónico"
+        payer_document: "Por favor, introduzca un CPF o CNPJ válida"
+        address_state: "Seleccione un estado"
+        address_street: "Escriba el nombre de la calle"
+        address_number: "Introduce el número de dirección"
+        address_city: "Introduce la ciudad"
+        address_zip_code: "Introduzca el código postal"
+        address_phone_number: "Introduzca el número de teléfono"
+    prompts:
+      project:
+        category: "Seleccione una categoría"
+        select: "Seleccione una opción"
+        traffic_sources: "¿Dónde conociste a HomeParte?"
+    hints:
+      project:
+        select: "Seleccione una opción"
+        traffic_sources: "¿Cómo conociste a Catarse?"
+        name: "Déle un nombre que la gente recuerde fácilmente. No superar los 50 caracteres."
+        permalink: "Prefiero algo sencillo, directo y así identificar su proyecto. Trate de no usar un guión, guión, etc."
+        category: "Elija el más adecuado para su proyecto inmobiliario."
+        city: "El sitio está ubicado el proyecto?"
+        goal: "Revise su proyecto,  el precio de venta de este y no se olvide incluir la tasa del 13% que cobra HomeParte si su proyecto tiene éxito. Si tiene dudas póngase en contacto con HomeParte."
+        online_days: "Usted puede elegir de 60 días a 6 meses como tiempo máximo para recaudar los fondos."
+        video_url: "Enlace su video en Vimeo o Youtub."
+        about_html: "Habla con pasión y claridad sobre lo que se hará. Posibles respuestas sobre cómo se utilizará el dinero, que está detrás del proyecto, siempre y cuando se entrega el proyecto. Transparencia atrae a más seguidores. Recuerde que su proyecto se puede acceder por la gente común que deciden si es o no apoyar su proyecto. Caprice!"
+        headline: "Frase de la tarjeta de proyecto para llamar a sus partidarios. Debe tener no más de 100 caracteres."
+        uploaded_image: "Esta imagen se utilizará como miniatura de su proyecto (PNG, JPG tamaño 600 x 340)"
+

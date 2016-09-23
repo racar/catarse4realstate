@@ -1,0 +1,23 @@
+es:
+  devise:
+    registrations:
+      new:
+        have_account_html: "Tienes una cuenta?"
+        titles:
+          site: 'Regístrate'
+          header: 'Regístrate'
+        links:
+          login: "Iniciar sesión"
+        form:
+          labels:
+            show_password: 'Muestra la contraseña'
+            name: 'Nombre'
+            password: 'Contraseña'
+            newsletter: 'Deseo suscribirme al boletín HomeParte'
+          hint:
+            password_length: 'Debe tener al menos 6 caracteres.'
+          inputs:
+            submit: 'Inscríbeme'
+            facebook: 'Regístrate con Facebook'
+
+

@@ -1,0 +1,98 @@
+es:
+  devise:
+    feedback_tab:
+      title: 'Feedback y Ayuda'
+      header_html: 'Bienvenido <br/> nuevo inicio de sesión a Catarse'
+      blog_button: 'Leer más en el blog'
+      form_feedback_link: 'Enviar feedback'
+      contact_link: 'Contacto'
+    links:
+      forgot_password: Olvidé mi contraseña
+    confirmations:
+      confirmed: Tu cuenta ha sido confirmado con éxito. Usted está en el sistema.
+      send_instructions: En cuestión de minutos, usted recibirá un correo electrónico con instrucciones para confirmar su cuenta.
+      send_paranoid_instructions: Si existe su correo electrónico en nuestra base de datos, usted recibirá un correo electrónico con instrucciones para confirmar su cuenta en unos pocos minutos.
+    failure:
+      password_token: 'El enlace para recuperar la contraseña ha caducado. Vuelva a introducir su email'
+      already_authenticated: ''
+      #already_authenticated: Você já está autenticado.
+      inactive: Este correo electrónico pertenece a una cuenta deshabilitada
+      invalid: E-mail o contraseña no válidos
+      invalid_token: El token de autenticación no es válido.
+      locked: Su cuenta está bloqueada.
+      not_found_in_database: E-mail o contraseña no válidos
+      timeout: Su sesión ha caducado, por favor conectarse de nuevo para continuar.
+      unauthenticated: ''
+      unconfirmed: Antes de continuar, verifique su cuenta.
+    mailer:
+      confirmation_instructions:
+        subject: Instrucción Confirmación
+      reset_password_instructions:
+        subject: Restablecer su contraseña
+      unlock_instructions:
+        subject: Instrucciones de Desbloqueo
+    omniauth_callbacks:
+      failure: No se puede autorizar una cuenta %{kind} porque "%{reason}".
+      success: ''
+      #success: Autorizado com sucesso de uma conta de %{kind}.
+    passwords:
+      no_token: ''
+      #no_token: Você não pode acessar esta página sem estar logado. Se você veio de um email de lembre de senha, por favor certifique-se de ter  digitado a URL corretamente.
+      send_instructions: Sólo tienes que enviar un correo electrónico con instrucciones para restablecer una contraseña nueva
+      send_paranoid_instructions: Si existe su correo electrónico en nuestra base de datos, usted recibirá un correo electrónico con un enlace a la recuperación de la contraseña.
+      updated: ''
+      #updated: Sua senha foi alterada com sucesso
+      updated_not_active: Su contraseña ha sido cambiada con éxito.
+      new:
+        site_title: 'Olvidé mi contraseña'
+        title: 'Confirme su correo electrónico y solicitar el cambio de contraseña'
+        submit: 'Enviar instrucciones para cambiar mi contraseña'
+      edit:
+        site_title: 'Establecer una nueva contraseña'
+        label_new_password: 'Nueva contraseña'
+        title: 'Establecer una nueva contraseña'
+        subtitle: 'Establecer una nueva contraseña para usar el correo electrónico y la contraseña cuando se quiere entrar en el Catarse.'
+        submit: 'Establecer nueva contraseña'
+    registrations:
+      destroyed: ¡Adiós! Tu cuenta ha sido cancelada con éxito. Esperamos volver a verte pronto.
+      signed_up: ''
+      #signed_up: Bem vindo! Você realizou seu registro com sucesso.
+      signed_up_but_inactive: Has registrado correctamente, sin embargo no podemos autenticar porque su cuenta no ha sido activada.
+      signed_up_but_locked: Has registrado correctamente. Pero no podemos autenticar porque su cuenta está bloqueada.
+      signed_up_but_unconfirmed: Un mensaje con un enlace de confirmación ha sido enviada a su correo electrónico. Por favor, visite el enlace para activar su cuenta.
+      update_needs_confirmation: Su cuenta ha sido actualizado correctamente, pero tenemos que comprobar la nueva dirección de correo electrónico. Por favor, consultar su correo electrónico y haga clic en el vínculo de confirmación para finalizar confirmando su nuevo correo electrónico.
+      updated: Su cuenta ha sido actualizado correctamente.
+    sessions:
+      new:
+        site_title: "Ingresar"
+        submit: "Ingresar"
+        title: "Entre utilizando su dirección de correo electrónico"
+        login_title: Login
+        login_subtitle: "Si ya tiene una cuenta"
+        register_title: Cadastre-se
+        register_subtitle: "Utilice su propio correo electrónico e-mail"
+        with_facebook: "Introduzca usando facebook"
+        with_facebook_subtitle: "Una manera muy rápida de acceso"
+        with_another_social: "Twitter se quitará en una semana"
+        google_warning_html: "Si ha utilizado una cuenta de <strong>Google</strong>:"
+        google_step_1: "1 - Haga clic en %{link}"
+        google_step_2: "2 - Siga los siguientes pasos para crear una nueva contraseña."
+        with_another_social_subtitle: "<a target=\"_blank\" href=\"http://blog.catarse.me/mudanca-no-sistema-de-login/\">Leer este post</a> para más información"
+      signed_in: ''
+      #signed_in: Login efetuado com sucesso.
+      signed_out: ''
+      #signed_out: Logout efetuado com sucesso.
+    unlocks:
+      send_instructions: En cuestión de minutos, usted recibirá un correo electrónico con instrucciones para desbloquear su cuenta.
+      send_paranoid_instructions: Si existe la cuenta en nuestra base de datos, pronto recibirá un correo electrónico con instrucciones para desbloquearlo.
+      unlocked: Su cuenta ha sido desbloqueado con éxito. Usted está en el sistema.
+  errors:
+    messages:
+      already_confirmed: ya confirmada
+      confirmation_period_expired: Se debe confirmar detro del período %{period}, consulte a un nuevo usuario.
+      expired: ha caducado, por favor solicite una nueva
+      not_found: que no se encuentra
+      not_locked: No fue bloqueado
+      not_saved:
+        one: ! ' '
+        other: ! ' '

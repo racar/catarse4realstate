@@ -1,0 +1,28 @@
+- content_for :title, t('.title')
+= render 'shared/header_big'
+
+.page-header.negative.u-marginbottom-40
+  .w-container
+    h1.fontsize-largest.u-text-center = t('.title')
+
+.section-one-column  
+  .w-container
+    .headline = t('.personal_date.title')
+    p.fontsize-base.u-marginbottom-60 = t('.personal_date.description_1').html_safe
+    p.fontsize-base.u-marginbottom-60 = t('.personal_date.description_2').html_safe
+    p.fontsize-base.u-marginbottom-60 = t('.personal_date.description_3').html_safe
+    p.fontsize-base.u-marginbottom-60 = t('.personal_date.description_4').html_safe
+    p.fontsize-base.u-marginbottom-60 = t('.personal_date.description_5').html_safe
+    p.fontsize-base.u-marginbottom-60 = t('.personal_date.description_6').html_safe
+    p.fontsize-base.u-marginbottom-60 = t('.personal_date.description_7').html_safe
+
+    .headline = t('.temporary_association.title')
+    p.fontsize-base.u-marginbottom-60 = t('.temporary_association.description').html_safe
+
+    .headline = t('.considerations.title')
+    p.fontsize-base.u-marginbottom-60 = t('.considerations.description').html_safe
+
+    .headline = t('.clauses.title')
+    p.fontsize-base.u-marginbottom-60 = t('.clauses.description').html_safe
+
+= render 'shared/footer_big'

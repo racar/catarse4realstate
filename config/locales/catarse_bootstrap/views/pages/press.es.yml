@@ -1,0 +1,28 @@
+es:
+  pages:
+    press:
+      page-title: "Sala de Prensa"
+      hero:
+        title: "Sala de Prensa"
+      stats:
+        title: "Nuestros números"
+        subtitle: "Muchos artistas, diseñadores, investigadores, jugadores, científicos, empresarios y activistas se reunieron en una potente plataforma para la viabilidad financiera de sus acciones y proyectos. Esta historia puede ser contada en los números."
+        people_html: "La gente ha apoyado, al menos,<br>1 proyecto en HomeParte"
+        projects_html: "Proyectos ya estaban <br>financiado"
+        money_html: "Donado a proyectos <br>publica aquí"
+        cta_html: "Ver los datos completos separados por categoría &gt;"
+      abstract:
+        title: "HomeParte es la primera y más grande sitio de crowdfunding, Colombia. Somos el punto de encuentro de una comunidad cada vez mayor de personas interesadas, juntos, contribuir económicamente a tomar un rol de los proyectos de diversas categorías."
+      history:
+        title: "Fundación Catarsis"
+        subtitle: "Primeira plataforma de financiamento coletivo para projetos criativos no Brasil, o Catarse entrou no ar em 17 de janeiro de 2011. O manifesto de fundação dizia que o site nasceu por causa de uma dor: ver gente brilhante com projetos engavetados..."
+        cta_html: "Lea la historia completa &gt;"      
+      social:
+        title: "Siga nuestras historias"
+        news: "Suscríbete a nuestro boletín semanal"
+      assets:
+        title: "Necesidad de archivos de alta resolución de nuestra marca y sellos?" 
+        cta_html: "Descarga nuestras marcas &gt;" 
+      email:
+        title: "Quieres hablar con nosotros?"
+        cta: "comunicacao@catarse.me"

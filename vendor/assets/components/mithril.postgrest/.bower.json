@@ -1,0 +1,37 @@
+{
+  "name": "mithril.postgrest",
+  "version": "1.3.1",
+  "homepage": "https://github.com/catarse/mithril.postgrest",
+  "authors": [
+    "Diogo Biazus <diogo@biazus.me>"
+  ],
+  "description": "A Mithril.js plugin to authenticate requests against PostgREST",
+  "main": "dist/mithril.postgrest.js",
+  "keywords": [
+    "mithril",
+    "postgrest",
+    "rest",
+    "request"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "mithril": "~0.2.0",
+    "underscore": "~1.8.3"
+  },
+  "_release": "1.3.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.3.1",
+    "commit": "c3c614c2613c524ac2ee5e35b51f0081233ed82d"
+  },
+  "_source": "https://github.com/catarse/mithril.postgrest.git",
+  "_target": "1.3.1",
+  "_originalSource": "mithril.postgrest"
+}

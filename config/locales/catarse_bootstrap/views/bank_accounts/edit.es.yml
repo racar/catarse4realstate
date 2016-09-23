@@ -1,0 +1,10 @@
+es:
+  bank_accounts:
+    edit:
+      project: 'proyecto'
+      page-title: "la espera de relleno reembolso en los datos bancarios"
+      fill_form: "Rellene los datos bancarios"
+      fill_form_text: "Usted tiene %{amount} en los reembolsos pendientes por un total de %{total_projects}: %{project_names}. Introduzca sus datos y rescata tu dinero!"
+      request_refunds: "Solicitud de reembolso"
+      input_bank_number_label: "Número de banco (3 números)"
+      search_bank_btn_html: "Búsqueda por nombre  &nbsp;&gt;"

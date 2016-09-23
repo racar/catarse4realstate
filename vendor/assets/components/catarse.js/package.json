@@ -1,0 +1,36 @@
+{
+  "name": "catarse.js",
+  "version": "0.0.10",
+  "author": "Diogo Biazus",
+  "contributors": [
+    {
+      "name": "Vinícius Andrade",
+      "email": "vchavesster@gmail.com"
+    }
+  ],
+  "description": "Catarse JS components",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-jscs": "^2.0.0",
+    "gulp-jshint": "^1.11.2",
+    "gulp-plumber": "^1.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-uglify": "^1.4.0",
+    "gulp-util": "^3.0.6",
+    "jasmine-core": "^2.3.4",
+    "jshint-stylish": "^2.0.1",
+    "karma": "^0.13.9",
+    "karma-jasmine": "^0.3.6",
+    "karma-phantomjs-launcher": "^0.2.1",
+    "karma-spec-reporter": "0.0.20",
+    "mithril-query": "^0.7.5",
+    "phantomjs": "^1.9.18",
+    "yargs": "^3.24.0"
+  },
+  "scripts": {
+    "test": "gulp test"
+  },
+  "dependencies": {}
+}

@@ -1,0 +1,28 @@
+es:
+  pages:
+    start:
+      page-title: "Como Catarsis trabajar?"
+      title: "Simplificando la financiación inmobiliaria"
+      submit: "Comience su proyecto"
+      learn-more: "Más información"
+      header:
+        people: "La gente ha apoyado al menos 01 proyectos en Catarsis"
+        success: "Los proyectos se han financiado Catarsis"
+        money: "Donado a proyectos publicados aquí"
+      start:
+        title: "Publique su Proyecto"
+        content: "HomeParte es la primera plataforma Colombiana de crowdfunding inmobiliario que te permite conseguir la financiación que necesitas para tus proyectos inmobiliarios. En HomeParte puedes financiar todo tipo de proyectos inmobiliarios: proyectos de reforma, de construcción, de compra para alquiler o de venta."
+        link: "Aprenda más sobre los primeros pasos de un proyecto"
+      people:
+        title: "Estudio de Rentabilidad"
+        content: "Buscamos publicar los inmuebles con mayor rentabilidad esperada para nuestro inversionistas. Nos ponemos en contacto con el promotor del proyecto con el fin de verificar la documentación del proyecto."
+        link: 'Aprenda cómo muchos partidarios necesita para inmovilizar'
+      work:
+        title: "Todo o Nada"
+        content: "Los proyectos tiene una duración de 90 días en los que se hace la recaudación de fondos. Si su proyecto es atractivo para nuestros inversionistas, obtendrá la cantidad recogida. De lo contrario, todos los que apoyaron el proyecto recibirán el dinero de vuelta. Solo cobramos un 13% del total del recaudo a proyectos que han alcanzado o superado la meta. "
+        link: 'Recibe consejos campañas de éxito en Catarse'
+      time:
+        title: "Da a conocer tu proyecto"
+        content: "Promociona tu proyecto publicado tu campaña de HomeParte a través de redes sociales, que toda la comunidad lo conozca, amplía tu red. Los inversionistas son la fuerza de tu proyecto, este determina el éxito o el fracaso de la campaña. HomeParte te asesora y te brinda acompañamiento en todo momento."
+        link: 'Conozca cómo nuestra aplicación ayuda a mantener Catarsis'
+        

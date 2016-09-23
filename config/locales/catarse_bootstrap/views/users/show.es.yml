@@ -1,0 +1,124 @@
+es:
+  users:
+    profile:
+      user_since: "Llegó a lo largo %{date}"
+      no_project_contribution: "No has apoyado proyectos"
+      single_project_contribution: "1 proyecto apoyado"
+      multiple_project_contribution: "Apoyado %{n_projects} proyectos"
+      single_project_created: " y ha creado un proyecto"
+      multiple_project_created: " y ha creado %{n_projects} proyectos"
+    contribution_row:
+      anonymous: Marcar apoyo como anónimo
+      print_slip: Imprimir boleto
+      slip_copy: Generar segunda vía
+      contributed_projects: "Proyectos apoyados"
+      contribution_value: "Valor Soporte"
+      contribution_status: "Estado de Apoyo"
+      request_refund: 'Solicitud de reembolso'
+      reward: Recompensa
+      no_reward: "No he seleccionado recompensa"
+      delivery_estimate: "Las estimaciones de entrega:"
+    card:
+      twitter_profile: "Perfil de Twitter"
+      facebook_profile: "Perfil de Facebook"
+      author_website: "Sitio web"
+      contact_author: "Enviar mensaje"
+    failed_reactivation: "La reactivación de enlace no es válido, por favor póngase en contacto con nuestro equipo."
+    reactivated: "Bienvenido de nuevo, su cuenta se ha reactivado."
+    project:
+      confirmed: "Confirmado"
+      refunded: "Devuelto"
+      requested_refund: "Reembolso solicitado"
+      waiting_confirmation: "a la espera de la confirmación"
+      tell_about_this_contribution: Dígale al mundo acerca de su apoyo!
+    credit_cards:
+      index:
+        last_digits: 'Tarjeta'
+        brand: 'Operadora'
+        title: 'Tarjetas de crédito'
+        remove: 'Remover'
+    credits:
+      modal:
+        title: '¿De verdad quiere solicitar un reembolso de su apoyo?'
+        text: "Aprenda cómo el Catarsis proceso de reembolso:"
+        link: "Normas y funcionamiento de reembolsos / descuentos"
+        reject_btn: "No, quiero mantener mis créditos"
+        accept_btn: "Sí, solicito un reembolso de mi apoyo"
+      index:
+        contribution_date: "Soporte Fecha"
+        current_credits_html: "Su saldo actual es <span id=\"current_credits\">%{credits}</span> créditos."
+        important_html: "Para saber todas las regras de funcionamento de reembolso, <a href='http://suporte.catarse.me/hc/pt-br/articles/202365507-Regras-e-funcionamento-dos-reembolsos-estornos' target='_blank'>clique aqui</a>.Cualquier pregunta, por favor visite nuestro <a href='http://suporte.catarse.me' target='_blank'>suporte</a>."
+        project: Proyecto
+        refunded: "Solicitud confirmada. Nos pondremos en contacto con usted dentro de 4 días hábiles."
+        insufficient_credits: "Usted no tiene suficientes créditos para realizar esta inversión."
+        refunds_title: "Apoyos que pueden haber hecho la inversión"
+        request_refund: "Solicitud reversión"
+        requested_refund: "Reversión preguntado"
+        status: Estado
+        title: "Mis créditos"
+        value: Valor
+      refund:
+        cannot_refund: "Este apoyo no se puede retornar."
+        error: "Vaya. Se produjo un error al solicitar su devolución de cargo."
+        no_credits: "Usted no tiene suficientes créditos para realizar esta inversión."
+        refunded: "Este apoyo se ha invertido."
+        requested_refund: "¿Ha solicitado a este apoyo devolución de cargo?"
+      title: "Mis créditos"
+    current_user_fields:
+      bank_account_title: "Los datos bancarios"
+      bank_account_hint: "Sus datos bancarios se utilizarán para llevar a cabo la devolución total de su apoyo, si el proyecto no llega a 100% de la meta."
+      my_facebook: 'Integración con facebook'
+      bio_limit: '140 caracteres'
+      updated: "Su información ha sido actualizado"
+      update_social_info: "Actualizar la información"
+      social_info: "Información de Contacto"
+      twitter: "twitter ( usuário )"
+      facebook_link: "perfil en Facebook (link completo)"
+      other_link: "enlace desde su página web"
+      change_password: "Cambiar mi contraseña"
+      current_password_hint: "<i>Para la contraseña para cambiar lo que necesita para confirmar su contraseña actual.</i>"
+      email_hint: "Su correo electrónico se utiliza sólo para enviar Catarsis de las comunicaciones y proyectos que apoya. Él no será visible en su perfil. Cuando usted apoya un proyecto, vamos a dar su correo electrónico para el propietario del proyecto por lo que puede ofrecer las recompensas."
+      email_tooltip: "Haga clic aquí para llenar en tu email ..."
+      gravatar_hint_html: "También puede cambiar tu foto utilizando %{link} con su correo electrónico. <br>Es tan simple como enviar una imagen y ya trabaja para otros sitios también;)"
+      local_avatar: "Mi avatar"
+      submit_text: "Cambiar la imagen"
+      submit: "Enviar"
+      my_data: "Mis datos"
+      newsletter: "Quiero recibir noticias de catarsis por email"
+      password_hint: "<i>Dejar en blanco si no desea cambiar su contraseña.</i>"
+      deactivate: "Desactivar mi cuenta"
+      deactivate_notice: "La cuenta %{name} Se ha desactivado."
+      deactivate_confirm: "Usted quiere desactivar esta cuenta?"
+      deactivate_hint: "Todo el apoyo se convierte en copias de seguridad anónimos, sus datos ya no es visible, se saldrá automáticamente del sistema y su cuenta estará incapacitado de forma permanente."
+    unsubscribes:
+      projects_in_reminder: "Proyectos con recordatorio activo:"
+      title: "Elegir qué proyectos desea recibir notificaciones:"
+      posts: "Quiero recibir las actualizaciones de proyectos"
+    show:
+      projects:
+        here: 'aquí'
+        no_projects: "%{name} aún no cualquier proyecto en Catarsis. ¿La inspiración llegará a uno de estos?"
+        no_projects_current_user_html: "Usted no tiene ningún proyecto sobre Catarsis. Que la inspiración golpear y haga clic %{link} para comenzar!"
+        title: "Projetos de %{name}"
+        title_current_user: "Mis proyectos"
+      contributions:
+        anonymous: "apoyo anónimo."
+        no_contributions: "%{name} No respaldado ningún proyecto todavía. Pero usted sabe que es sólo cuestión de tiempo! : D"
+        no_contributions_current_user_html: "No se ha realizado una copia de cualquier proyecto. ¿Qué pasa con<a href=\"/\">empezar ahora</a>?"
+        no_reward: "No ha seleccionado ninguna recompensa"
+        title: "Proyectos que %{name} ha apoyado"
+        title_current_user: "Los proyectos ya apoyados"
+        your_reward: "Su recompensa"
+      attention: "Atención"
+      tabs:
+        credit_cards: 'Tarjetas de crédito'
+        contributed_projects: "Proyectos apoyados"
+        created_projects: "Proyectos creado"
+        comments: Comentários
+        credits: Créditos
+        settings: Preferencias
+        unsubscribes: Notificaciones
+      user_social:
+        email: "Envíame un correo electrónico"
+        facebook: "Perfil en Facebook"
+        twitter: "Perfil en twitter"

@@ -1,0 +1,19 @@
+- content_for :title, t('.title')
+= render 'shared/header_big', overlayer: true
+
+.hero-jobs.hero-medium
+  .w-container.u-text-center
+    = image_tag "icon-jobs.png", class: "icon-hero"
+    .u-text-center.u-marginbottom-20.fontsize-largest Trabaja con nosotros
+
+.section
+  .w-container.u-margintop-40
+    .w-row
+      .u-text-center
+        .fontsize-large.u-marginbottom-60.text-success
+          a.link-hidden-success href="mailto:info@homeparte.co" envia tu curriculo a info@homeparte.co
+
+= render 'shared/footer_big'
+
+
+

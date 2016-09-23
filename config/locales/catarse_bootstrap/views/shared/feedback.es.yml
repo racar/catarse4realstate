@@ -1,0 +1,17 @@
+es:
+  shared:
+    feedback:
+      button: 'Comentarios y sugerencias'
+      inputs:
+        submit: 'Envía comentarios'
+        close: 'Fechar'
+      placeholders:
+        email: 'Email'
+        text: 'Escribe tus comentarios'
+      texts:
+        title: "Danos el placer de su palabra!"
+        content: "En los últimos meses hemos estado trabajando día y noche en una serie de cambios en la plataforma, que se detallan en esta <a target='_blank' href='http://blog.catarse.me/os-passos-para-um-novo-catarse/' class='link-underline'> puesto especial </a>. Sería fantástico si pudiéramos saber de usted lo que usted está pensando en esta transformación. <br> Suelte el verbo!"
+        response:
+          title: "Uau! <br> Gracias ;)"
+          content: "Valoramos cada feedback recibido. No podemos responder a cada uno en particular, pero escuchar con atención cada crítica y sugerencia. Tu comentario será sin duda muy importante en nuestro caminar, y nos ayudará a mejorar continuamente su experiencia aquí en la catarsis."
+

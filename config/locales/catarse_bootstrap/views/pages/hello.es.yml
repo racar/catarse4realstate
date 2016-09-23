@@ -1,0 +1,54 @@
+es:
+  pages:
+    hello:
+      page-title: "Más información"
+      hero:
+        title: "De planos a edificios"
+        people_html: "La gente ha apoyado, al menos, <br>1 proyecto en HomeParte"
+        projects_html: "Proyectos ya estaban<br> financiados"
+        money_html: "Donado a proyectos <br>publicados por aqui"
+        success: "Los proyectos se han financiado"
+        money: "Donado a proyectos publicados aquí"
+      idea:
+        title: "Todo Proyecto comienza en planos!"
+        subtitle: "Sin embargo, tener un proyecto inmobiliario no es suficiente. Debes tener acceso a las personas y los recursos necesarios para que se haga realidad. Hompearte te ayuda."
+      fund:
+        title: "Financiación colectiva"
+        subtitle: "En HomeParte, es posible invertir en proyectos inmobiliarios, de manera fácil desde la comodidad de tu casa. Sin intermediarios, con una alta rentabilidad."
+      campaign:
+        title: "Recaudación de fondos para Proyectos rentables"
+        subtitle: "Los promotores muestran su proyecto, con diferentes rentabilidades que se obtendrá en la inversión."
+      allornothing:
+        title: "Todo o nada!"
+        subtitle: "El objetivo es alcanzar la meta, recibiendo la cantidad recogida o todos los partidarios reciben el dinero. Planificación de la campaña es el secreto!"
+      success:
+        title: "Proyecto de echo realidad y generando rentabilidad"
+        subtitle: "seleccionamos las mejores inversiones inmobiliarias, con el objetivo de facilitar el proceso de inversión, para que cualquier inversionista con pequeñas cantidades de capital, pueda construirse una cartera diversificada de inversiones inmobiliarias"
+      cta:
+        title: "Comienza a usar HomeParte"
+        backer-cta: "Quieres invertir tu dinero y hacerlo creer"
+        backer-link: "Comienza a invertir"
+        maker-cta: "Eres un promotor inmobiliario, muestra tu proyecto a todo el país y recibe inversión."
+        maker-link: "Crea tu proyecto"
+      testimonial:
+        humberto:
+          text_html: "&#8220; Es una fascinante oportunidad de ser invitado a compartir el sueño de un solo y todavía recibir una recompensa por experiencia. &#8221;"
+          name: "Cristhiam Baquero Gomez"
+          credentials: "Apoyado más de 150 proyectos Catarse"
+      details:
+        fund:
+          title: "Financiación colectiva o Crowdfunding?"
+          text: "Dos nombres para la misma práctica en la que las personas aportan pequeñas cantidades a proyectos viabilizarem juntos. Multitud es alcanzar multitud en Inglés, la financiación, la financiación. Crowdfunding está financiando la multitud."
+        allornothing:
+          title: "¿Por qué todo o nada?"
+          text_html: "Creemos en el modelo &#8220;Todo o Nada&#8221; porque además de las campañas, esta es una manera podemos asegurar que un proyecto sólo ocurrirá si se puede entregar como se describe y prometió a los aficionados."
+        services:
+          title: "Nuestros servicios"
+          text: "HomeParte ofrece apoyo a los usuarios del sitio y hace posible la captura de recursos para los proyectos de una manera rápida y directa con el uso de Internet. Cualquier persona mayor de 18 años (o menos, pero con un representante legal) pueden utilizar nuestros servicios y hacer una campaña de crowdfunding ya que el proyecto está de acuerdo con nuestros criterios de selección."
+        fees:
+          title: "Como sostenemos"
+          text: "Cobramos un 13% del valor total de los proyectos que han alcanzado o superado el objetivo de recogida. Recibimos alrededor de un 9% y un 4% se transmite a Pagar.me, los medios de pago utilizados en HomeParte. Los proyectos que no han alcanzado el objetivo no tiene un costo y todos los participantes reciben el dinero."
+        work:
+          title: "Trabajamos con propósito y amor"
+          text: "HomeParte, de código abierto y construido con amor. Nuestra pasión es alcanzar un entorno donde cada vez más proyectos que vienen a la vida. Hoy somos un equipo de 23 personas deseosas de ayudar a distribuir más recursos a proyectos en todo el mundo."
+      staff: "Estos son algunos de nosotros esperando para que usted tome una parte del proyecto"

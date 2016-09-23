@@ -1,0 +1,37 @@
+- content_for :title, t('.title')
+= render 'shared/header_big'
+
+.page-header.negative.u-marginbottom-40
+  .w-container
+    h1.fontsize-largest.u-text-center = t('.title')
+
+.section-one-column  
+  .w-container
+    .headline = t('.content.title')
+    p.fontsize-base.u-marginbottom-60 = t('.content.description').html_safe
+
+    .headline = t('.content.rules')
+    p.fontsize-base.u-marginbottom-60 = t('.content.rules_description').html_safe
+
+    .headline = t('.contribution.title')
+    p.fontsize-base.u-marginbottom-60 = t('.contribution.description').html_safe
+
+    .headline = t('.copyright.title')
+    p.fontsize-base.u-marginbottom-60 = t('.copyright.description').html_safe
+
+    .headline = t('.intellectual.title')
+    p.fontsize-base.u-marginbottom-60 = t('.intellectual.description').html_safe
+
+    .headline = t('.material.title')
+    p.fontsize-base.u-marginbottom-60 = t('.material.description').html_safe
+
+    .headline = t('.disclaimer_warranty.title')
+    p.fontsize-base.u-marginbottom-60 = t('.disclaimer_warranty.description').html_safe
+
+    .headline = t('.general_guidelines.title')
+    p.fontsize-base.u-marginbottom-60 = t('.general_guidelines.description').html_safe
+
+= render 'shared/footer_big'
+
+
+

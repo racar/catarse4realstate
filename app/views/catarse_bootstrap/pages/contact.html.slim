@@ -1,0 +1,36 @@
+ - content_for "Contacto"
+
+ = render 'shared/header_big'
+ .w-section
+ 	.w-container    
+    	.w-row
+    		.w-col.w-col-10.w-col-push-1
+    			.w-form.card.card-terciary.u-marginbottom-20
+    				.fontsize-base.fontweight-semibold
+    					| Contacto
+    				.divider.u-marginbottom-20
+                     - if flash[:alert].present?
+                          .card.card-error.u-radius.zindex-10.u-marginbottom-30
+                            .fontsize-smaller.fontweight-bold.u-marginbottom-10= t('failure_title')
+                            .fontsize-smaller = flash[:alert]
+                    = render 'layouts/flash' if notice.present?
+    				= form_tag "/contact_email", method: "get" do
+                        .w-row
+        					.w-col.w-col-12.w-sub-col
+        						label.text.required.field-label.field-label.fontweight-semibold.force-text-dark Pregunta?
+                                =text_field_tag 'question', nil, class: "input string required w-input text-field positive"
+        					.w-col.w-col-12.w-sub-col
+        						label.text.required.field-label.field-label.fontweight-semibold.force-text-dark Detalle
+                                =text_field_tag 'detail', nil, class: "input string required w-input text-field positive"
+        					.w-col.w-col-6.w-sub-col
+        						label.text.required.field-label.field-label.fontweight-semibold.force-text-dark Nombre
+                                =text_field_tag 'name', nil, class: "input string required w-input text-field positive"
+    						.w-col.w-col-6.w-sub-col
+        						label.text.required.field-label.field-label.fontweight-semibold.force-text-dark Email
+                                = email_field_tag 'email', nil, class: "string required w-input text-field positive"
+        				.w-row
+        					.w-col.w-col-4.w-col-push-4
+                                = submit_tag("Enviar", :class => "btn btn-large")
+
+
+ = render 'shared/footer_big'

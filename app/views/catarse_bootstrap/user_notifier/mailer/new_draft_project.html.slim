@@ -1,0 +1,43 @@
+- project = @notification.project
+p
+  | Categoría: #{link_to project.category, explore_url(anchor: "by_category/#{project.category_id}", ref: 'notificacao_draft_project')}
+p
+  | Tiempo de preparación: #{distance_of_time_in_words(project.created_at, project.sent_to_analysis_at)}
+p
+  | Eslogan: #{project.headline}
+p
+  | Valor del objetivo: #{number_to_currency project.goal}
+p
+  | Link: #{link_to project_by_slug_url(project.permalink), project_by_slug_url(project.permalink, ref: 'notificacao_draft_project')}
+p
+  strong SOBRE O REALIZADOR
+p
+  | Nombre: #{project.user.name}
+p
+  | Email: #{project.user.email}
+p
+  | Teléfono: #{project.user.phone_number}
+p
+  | Links:
+
+- project.user.links.each do |link|
+  p
+    = link.link
+p
+  = project.user.facebook_link
+p
+  = project.user.decorate.twitter_link
+p
+  | Proyectos apoyados: #{project.user.total_contributed_projects}
+p
+  | Proyectos financiados: #{project.user.projects.with_state('successful').count}
+p
+  | Proyectos no financiados: #{project.user.projects.with_state('failed').count}
+p
+  | Proyectos en transcurso: #{project.user.projects.with_state('draft').count}
+p
+  | Proyectos en análisis: #{project.user.projects.with_state('in_analysis').count}p
+p
+  | Proyectos aprobados: #{project.user.projects.with_state('approved').count}
+p
+  | Proyectos rechazados: #{project.user.projects.with_state('rejected').count}

@@ -1,0 +1,18 @@
+es:
+  not_filled: 'Sin Mención'
+  days: dias
+  facebook_locale: pt_BR
+  failure_title: 'Por favor, corrija los siguientes errores:'
+  i_just_contributed: Acabo de apoyo al proyecto %{name} no @catarse
+  'no': No
+  'yes': Si
+  not_informed: no informado
+  or: o
+  sending: Enviando...
+  share_my_contributions: 'Echa un vistazo a el proyecto '
+  site:
+    description:  Catarse es la primera y mayor plataforma de crowdfunding. Venga y haga parte los proyectos!
+    keywords: crowdfunding, financiamento coletivo, projeto, catarse, comunidad de código abierto
+    meta_title: "%{title} · %{company_name}"
+    title: HomeParte
+

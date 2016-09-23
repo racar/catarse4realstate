@@ -1,0 +1,40 @@
+{
+  "name": "catarse.js",
+  "version": "0.1.0",
+  "homepage": "https://github.com/catarse/catarse.js",
+  "authors": [
+    "Diogo Biazus <diogo@biazus.me>",
+    "Vinícius Andrade <vchavesster@gmail.com>"
+  ],
+  "description": "A set of components to use in Catarse interface",
+  "main": "dist/catarse.js",
+  "keywords": [
+    "mithril",
+    "catarse"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "mithril": "~0.2.0",
+    "mithril.postgrest": "1.3.1",
+    "moment": "~2.10.3",
+    "replace-diacritics": "https://raw.githubusercontent.com/yvg/js-replace-diacritics/master/replace-diacritics.js",
+    "moment-timezone": "~0.4.0",
+    "chartjs": "1.0.2"
+  },
+  "_release": "0.1.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.1.0",
+    "commit": "fe26edb99b5c7c2ccf95f81f38164ca7ec4358a9"
+  },
+  "_source": "https://github.com/catarse/catarse.js.git",
+  "_target": "0.1.0",
+  "_originalSource": "catarse.js"
+}

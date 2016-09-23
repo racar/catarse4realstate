@@ -1,0 +1,105 @@
+es:
+  projects:
+    about_mobile:
+      by: 'por'
+      back: '< Volver'
+    project_embed:
+      insert: 'Inserte un widget en su sitio'
+    mobile_video:
+      read_more: "Leer más"
+    metrics:
+      titles:
+        confirmed_by_day: 'El apoyo total confirmó un día'
+        confirmed_amount_by_day: 'Total de recogida diaria'
+        address_state: 'El apoyo total confirmado por Estado'
+    reminder:
+      ok: 'Ok! Le enviaremos un recordatorio por correo electrónico 48 horas antes de finalizar la campaña'
+      active_btn: 'Recordarme este proyecto'
+      deactive_btn: 'No quiero ser recordado'
+    send_to_analysis: Su proyecto fue enviado a nuestro equipo.
+    send_to_analysis_error: Error al enviar el proyecto para llevar a cabo Rellene todos los campos obligatorios.
+    push_to_online: Su proyecto está en línea!
+    push_to_online_error: Error al colocar el proyecto en línea. Rellene todos los campos obligatorios.
+    twitter:
+      take_a_look: Echa un vistazo a el proyecto %{name} en @catarse
+    video_embed:
+      a_project_by_html: Un proyecto en %{link}
+    posts:
+      project_post:
+        exclusive: 'Puesto exclusivo para los participantes.'
+        unavailable: Esta novedad está disponible sólo para los participantes.
+        contribute: Soporte
+        unavailable_contribute: este proyecto para verlo.
+        destroy: elimina nuevos
+        destroy_confirmation: ¿Quieres eliminar esta noticia?
+      new:
+        notice: Exitosamente enviado Nuevo!
+        comment: Texto de su novedad
+        exclusive: Visible sólo a los participantes
+        submit: Enviar Nueva
+        title: Resumen de su Nuevo
+        warning: Recordando que cada nuevo puesto va directamente a su correo electrónico
+          sus participantes. Tan bien revisar el texto antes de enviarlo.
+    project_reports:
+      all_contributions_without_reward: Descargar informe de todos los participantes
+        no se selecciona una recompensa
+      link_reports_confirmed: Descargar informe de todos los participantes confirmados
+      link_reports_waiting_confirmation: Descargar informe de todos los participantes
+        con boleto impreso
+      link_reward: Partidarios Descargar recompensa del informe %{value}
+    project_about:
+      embed: < embed >
+      embed_title: Insertar este proyecto en su sitio web
+      active_btn: ' Recuérdame'
+      deactive_btn: ' Recordatorio activo'
+    show:
+      menu:
+        panel_html: "&nbsp;&nbsp;Panel de control"
+        about: Acerca de
+        add_reward: Añadir recompensa
+        comments: Comentarios
+        contributions: Apoyos
+        metrics: Métrica
+        edit: Edición
+        reports: Informes
+        posts: Noticia
+    project_main:
+      post_call: 'Todas las noticias publicadas en Catarsis se envía directamente al correo electrónico de aquellos que han apoyado el proyecto y también está disponible para su visualización en el sitio. Usted puede optar por dejar que sea pública o visibles sólo para sus seguidores aquí en esta ficha.'
+      send_post: 'Escribir nuevo'
+      share: "Compartir"
+      tweet: "Tweet"
+      contribute_project:
+        display_status:
+          approved: "Este proyecto ya ha sido aprobado por Catarsis. Pronto saldrá al aire y estar listo para recibir apoyo."
+          online: "Usted puede apoyar este proyecto hasta el día %{date} a las 23h59m59s"
+          failed: "Este proyecto no ha alcanzado el mínimo %{goal} a %{date} y no fue financiado"
+          rejected: "No se aceptó este proyecto. No puede realizar una copia de seguridad."
+          in_analysis: "Este proyecto se encuentra en revisión y que aún no está abierto para recibir apoyo."
+          successful: "Este proyecto tuvo éxito y fue financiado en %{date}"
+          waiting_funds: "La financiación a largo plazo de este proyecto está cerrado. Estamos esperando la confirmación del último pago."
+          draft: "Este diseño es sólo un proyecto y todavía no puede recibir apoyo."
+        submit: Apoya este proyecto
+      project_by: Diseñado por
+      funding_period: Período de campaña
+      project_header:
+        subtitle_html: "Un proyecto %{link}"
+        without_city: "Un proyecto de"
+        with_city: "Un proyecto %{category_name} por %{author} en %{city}"
+      menu:
+        about: Acerca de
+        add_reward: Añadir recompensa
+        comments: Comentarios
+        contributions: Apoyos
+        metrics: Métrica
+        edit: Edición
+        reports: Informes
+        posts: Noticia
+      no_rewards_warning: No viaje! Piense en cómo va a liberarlos y poner todo
+        esto en el presupuesto. Prometió?! SIGA! :D
+      no_rewards_warning_title: Crear aquí tus recompensas
+      contribution_states:
+        confirmed: "confirmado"
+        pending: "Destacado"
+      sidebar:
+        contributions: apoyo
+        goal: logrado de %{total}

@@ -1,0 +1,11 @@
+es:
+  bank_accounts:
+    confirm:
+      page-title: "Confirme sus datos bancarios"
+      agency_label: "Agencia: %{content}"
+      bank_label: "Banco: %{content}"
+      account_label: "cuenta: %{content}"
+      owner_name_label: "Nombre: %{content}"
+      owner_document_label: "CPF: %{content}"
+      answer_yes: "SI"
+      answer_no: "NO"
