@@ -95,6 +95,13 @@ gem 'httpclient',     '>= 2.2.5'
 gem 'payulatam', git: 'git://github.com/danielweinmann/payulatam.git'
 #gem 'catarse_payulatam'
 
+#Others
+gem 'sass-rails'
+gem 'coffee-rails'
+gem 'compass-rails'
+gem 'uglifier'
+gem 'sprockets'
+
 group :production do
   # Gem used to handle image uploading
   gem 'fog', '>= 1.3.1'
@@ -156,11 +163,6 @@ group :test do
   gem 'selenium-webdriver'
 end
 
-gem 'sass-rails'
-gem 'coffee-rails'
-gem 'compass-rails'
-gem 'uglifier'
-gem 'sprockets'
 
 # FIXME: Not-anymore-on-development
 # Gems that are with 1 or more years on the vacuum
