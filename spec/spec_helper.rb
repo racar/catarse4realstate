@@ -1,3 +1,5 @@
+require 'shoulda'
+
 RSpec.configure do |config|
   require 'zonebie'
 
