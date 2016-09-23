@@ -97,6 +97,8 @@ gem 'payulatam', git: 'git://github.com/danielweinmann/payulatam.git'
 
 #Others
 gem 'sass-rails'
+gem 'execjs'
+gem 'therubyracer'
 gem 'coffee-rails'
 gem 'compass-rails'
 gem 'uglifier'
