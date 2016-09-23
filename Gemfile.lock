@@ -7,13 +7,6 @@ GIT
       actionpack (>= 3.2)
 
 GIT
-  remote: git://github.com/capistrano/passenger.git
-  revision: 223bf12f06c79febabba61ef24eb3752ee8e8f5c
-  specs:
-    capistrano-passenger (0.2.0)
-      capistrano (~> 3.0)
-
-GIT
   remote: git://github.com/catarse/catarse_api.git
   revision: eb9eb3bcc41fedf16ae758682569009ea74c0f48
   specs:
@@ -115,6 +108,8 @@ GEM
       capistrano (~> 3.1)
       sshkit (~> 1.2)
     capistrano-harrow (0.5.3)
+    capistrano-passenger (0.2.0)
+      capistrano (~> 3.0)
     capistrano-rails (1.1.8)
       capistrano (~> 3.1)
       capistrano-bundler (~> 1.1)
@@ -729,7 +724,7 @@ DEPENDENCIES
   binding_of_caller
   browser
   capistrano
-  capistrano-passenger!
+  capistrano-passenger
   capistrano-rails
   capistrano-rbenv
   capybara (~> 2.2.0)

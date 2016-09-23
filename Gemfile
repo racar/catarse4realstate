@@ -127,7 +127,7 @@ group :development do
   gem 'binding_of_caller'
   gem 'thin'
   gem 'capistrano'
-  gem 'capistrano-passenger', require: false, github: 'capistrano/passenger'
+  gem 'capistrano-passenger'
   gem 'capistrano-rbenv'
   gem 'capistrano-rails'
   # Uncomment only for optimization, should be commented on master branch
