@@ -53,7 +53,8 @@ gem "cocoon"
 gem 'high_voltage'
 
 # Authentication and Authorization
-gem 'devise', '= 3.5.2', '>= 3.5.2'
+#gem 'devise', '= 3.5.2', '>= 3.5.2'
+gem 'devise', :git => 'git://github.com/plataformatec/devise.git', :ref => 'd9939d1'
 gem 'omniauth', '~> 1.2.2'
 gem 'omniauth-facebook', '~> 2.0.1'
 #gem "omniauth-google-oauth2"
