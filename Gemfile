@@ -56,7 +56,7 @@ gem 'high_voltage'
 gem 'omniauth', '~> 1.2.2'
 gem 'omniauth-facebook', '~> 2.0.1'
 #gem "omniauth-google-oauth2"
-gem 'devise', '~> 3.5.2'
+gem 'devise', '3.5.2'
 gem 'pundit'
 
 # Email marketing
