@@ -55,8 +55,8 @@ gem 'high_voltage'
 # Authentication and Authorization
 #gem 'devise', '= 3.5.2', '>= 3.5.2'
 gem 'devise', :git => 'git://github.com/plataformatec/devise.git', :ref => 'd9939d1'
-gem 'omniauth', '~> 1.2.2'
-gem 'omniauth-facebook', '~> 2.0.1'
+gem 'omniauth', :git => 'git://github.com/omniauth/omniauth.git', :ref => 'da86405'
+gem 'omniauth-facebook', :git => 'git://github.com/mkdynamic/omniauth-facebook.git', :ref => '0e922ac'
 #gem "omniauth-google-oauth2"
 
 gem 'pundit'

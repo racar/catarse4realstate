@@ -43,6 +43,23 @@ GIT
       hashie
 
 GIT
+  remote: git://github.com/mkdynamic/omniauth-facebook.git
+  revision: 0e922acc098e3212e8357037355419495019390a
+  ref: 0e922ac
+  specs:
+    omniauth-facebook (2.0.1)
+      omniauth-oauth2 (~> 1.2)
+
+GIT
+  remote: git://github.com/omniauth/omniauth.git
+  revision: da86405a781630af172dadbe67796ec88d6c4973
+  ref: da86405
+  specs:
+    omniauth (1.2.2)
+      hashie (>= 1.2, < 4)
+      rack (~> 1.0)
+
+GIT
   remote: git://github.com/plataformatec/devise.git
   revision: d9939d1ea01e53a53023511f48491544821bea3d
   ref: d9939d1
@@ -496,11 +513,6 @@ GEM
     oga (2.6)
       ast
       ruby-ll (~> 2.1)
-    omniauth (1.2.2)
-      hashie (>= 1.2, < 4)
-      rack (~> 1.0)
-    omniauth-facebook (2.0.1)
-      omniauth-oauth2 (~> 1.2)
     omniauth-oauth2 (1.4.0)
       oauth2 (~> 1.0)
       omniauth (~> 1.2)
@@ -778,8 +790,8 @@ DEPENDENCIES
   mixpanel_client
   moip!
   newrelic_rpm
-  omniauth (~> 1.2.2)
-  omniauth-facebook (~> 2.0.1)
+  omniauth!
+  omniauth-facebook!
   payulatam!
   pg
   pg_search
