@@ -21,7 +21,7 @@ html
       meta name="description"         content=t('site.description')
       meta name="keywords"            content=t('site.keywords')
       meta name="google-site-verification"  content=CatarseSettings[:google_verification_code]
-      
+
       meta property="og:title"        content=t('site.title')
       meta property="og:type"         content=:cause
       meta property="og:url"          content=root_url
@@ -29,15 +29,15 @@ html
       meta property="og:site_name"    content=CatarseSettings[:company_name]
       meta property="fb:app_id"       content=CatarseSettings[:facebook_app_id]
       meta property="og:description"  content=(t('projects.index_header.title') + '. ' +  t('projects.index_header.subtitle'))
-      /Call VWO on header to prevent flash of unmodified content on variation tests 
+      /Call VWO on header to prevent flash of unmodified content on variation tests
     - if request.subdomain.include? "beta"
       meta name="robots" content="noindex, nofollow"
-      
+
     - if Rails.env.production?
       = render 'layouts/vwo'
       = render_mixpanel_script
 
-  body#catarse_bootstrap[data-controller-name=controller_name data-action=action_name data-user="#{current_user.try(:to_analytics_json)}" data-referral="#{session[:referral_link]}" data-id=params[:id] data-mobile=browser.mobile?.to_s itemscope itemtype="http://schema.org/WebPage" class="#{'body-alert' if can_display_pending_refund_alert?} #{content_for :body_class}"] 
+  body#catarse_bootstrap[data-controller-name=controller_name data-action=action_name data-user="#{current_user.try(:to_analytics_json)}" data-referral="#{session[:referral_link]}" data-id=params[:id] itemscope itemtype="http://schema.org/WebPage" class="#{'body-alert' if can_display_pending_refund_alert?} #{content_for :body_class}"] 
     /= render 'layouts/global_alert'
     = render 'layouts/pending_refund_top_alert' if can_display_pending_refund_alert?
     = render 'layouts/new_zendesk'
