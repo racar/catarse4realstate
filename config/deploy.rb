@@ -18,7 +18,7 @@ set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets public/system public/upl
 set :passenger_restart_options, -> { "#{deploy_to}/current/tmp/restart.txt" }
 
 set :linked_files, %w{config/database.yml}
-
+set :assets_roles, [:web, :app] 
 
 
 
@@ -35,6 +35,7 @@ namespace :deploy do
   after :publishing, 'deploy:restart'
   after :finishing, 'deploy:cleanup'
 end
+
 
 
 # Default branch is :master
