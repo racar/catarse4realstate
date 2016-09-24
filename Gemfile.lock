@@ -204,7 +204,7 @@ GEM
       sass-rails
       slim-rails
     debug_inspector (0.0.2)
-    devise (3.5.2)
+    devise (3.5.10)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 3.2.6, < 5)
@@ -746,7 +746,7 @@ DEPENDENCIES
   compass-rails
   database_cleaner
   dbhero (>= 1.1.8)
-  devise (= 3.5.2)
+  devise (~> 3.5, >= 3.5.2)
   draper
   execjs
   factory_girl_rails
