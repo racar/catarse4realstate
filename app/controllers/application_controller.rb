@@ -10,6 +10,7 @@ class ApplicationController < ActionController::Base
     include NewRelic::Agent::Instrumentation::Rails3::ActionController
   end
 
+  AVAILABLE_LOCALES = ['es']
   layout 'catarse_bootstrap'
   protect_from_forgery
 
@@ -69,7 +70,8 @@ class ApplicationController < ActionController::Base
   end
 
   def is_locale_available?
-    params[:locale].blank? || I18n.available_locales.include?(params[:locale].to_sym)
+    #params[:locale].blank? || I18n.available_locales.include?(params[:locale].to_sym)
+    params[:locale].blank? || AVAILABLE_LOCALES.include?(params[:locale].to_s)
   end
 
   def after_sign_in_path_for(resource_or_scope)
