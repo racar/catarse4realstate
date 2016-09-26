@@ -30,6 +30,7 @@ puts 'Seeding the database...'
   host: 'homeparte.com',
   base_url: "http://homeparte.com",
 
+  #from_email: 'info@homeparte.com',
   email_contact: 'info@homeparte.com',
   email_payments: 'admin@homeparte.com',
   email_projects: 'info@homeparte.com',
@@ -93,6 +94,8 @@ CatarseSettings.all.each do |conf|
   a = conf.attributes
   puts "  #{a['name']}: #{a['value']}"
 end
+
+Rails.cache.clear
 
 puts '---------------------------------------------'
 puts 'Done!'
