@@ -2,12 +2,13 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 9.5.4
--- Dumped by pg_dump version 9.5.4
+-- Dumped from database version 9.6.0
+-- Dumped by pg_dump version 9.6.0
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
-SET client_encoding = 'UTF8';
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'SQL_ASCII';
 SET standard_conforming_strings = on;
 SET check_function_bodies = false;
 SET client_min_messages = warning;
@@ -2775,266 +2776,266 @@ ALTER SEQUENCE users_id_seq OWNED BY users.id;
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: authorizations id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY authorizations ALTER COLUMN id SET DEFAULT nextval('authorizations_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: bank_accounts id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY bank_accounts ALTER COLUMN id SET DEFAULT nextval('bank_accounts_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: banks id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY banks ALTER COLUMN id SET DEFAULT nextval('banks_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: categories id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY categories ALTER COLUMN id SET DEFAULT nextval('categories_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: category_followers id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY category_followers ALTER COLUMN id SET DEFAULT nextval('category_followers_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: category_notifications id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY category_notifications ALTER COLUMN id SET DEFAULT nextval('category_notifications_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: channel_partners id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY channel_partners ALTER COLUMN id SET DEFAULT nextval('channel_partners_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: channel_post_notifications id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY channel_post_notifications ALTER COLUMN id SET DEFAULT nextval('channel_post_notifications_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: channel_posts id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY channel_posts ALTER COLUMN id SET DEFAULT nextval('channel_posts_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: channels id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY channels ALTER COLUMN id SET DEFAULT nextval('channels_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: channels_projects id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY channels_projects ALTER COLUMN id SET DEFAULT nextval('channels_projects_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: channels_subscribers id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY channels_subscribers ALTER COLUMN id SET DEFAULT nextval('channels_subscribers_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: cities id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY cities ALTER COLUMN id SET DEFAULT nextval('cities_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: contribution_notifications id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY contribution_notifications ALTER COLUMN id SET DEFAULT nextval('contribution_notifications_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: contributions id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY contributions ALTER COLUMN id SET DEFAULT nextval('contributions_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: countries id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY countries ALTER COLUMN id SET DEFAULT nextval('countries_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: credit_cards id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY credit_cards ALTER COLUMN id SET DEFAULT nextval('credit_cards_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: dbhero_dataclips id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY dbhero_dataclips ALTER COLUMN id SET DEFAULT nextval('dbhero_dataclips_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: near_mes id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY near_mes ALTER COLUMN id SET DEFAULT nextval('near_mes_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: oauth_providers id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY oauth_providers ALTER COLUMN id SET DEFAULT nextval('oauth_providers_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: payment_logs id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY payment_logs ALTER COLUMN id SET DEFAULT nextval('payment_logs_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: payment_notifications id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY payment_notifications ALTER COLUMN id SET DEFAULT nextval('payment_notifications_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: payment_transfers id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY payment_transfers ALTER COLUMN id SET DEFAULT nextval('payment_transfers_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: payments id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY payments ALTER COLUMN id SET DEFAULT nextval('payments_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: project_accounts id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY project_accounts ALTER COLUMN id SET DEFAULT nextval('project_accounts_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: project_budgets id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY project_budgets ALTER COLUMN id SET DEFAULT nextval('project_budgets_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: project_notifications id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY project_notifications ALTER COLUMN id SET DEFAULT nextval('project_notifications_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: project_post_notifications id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY project_post_notifications ALTER COLUMN id SET DEFAULT nextval('project_post_notifications_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: project_posts id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY project_posts ALTER COLUMN id SET DEFAULT nextval('updates_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: projects id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY projects ALTER COLUMN id SET DEFAULT nextval('projects_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: redactor_assets id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY redactor_assets ALTER COLUMN id SET DEFAULT nextval('redactor_assets_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: rewards id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY rewards ALTER COLUMN id SET DEFAULT nextval('rewards_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: settings id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY settings ALTER COLUMN id SET DEFAULT nextval('configurations_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: states id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY states ALTER COLUMN id SET DEFAULT nextval('states_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: unsubscribes id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY unsubscribes ALTER COLUMN id SET DEFAULT nextval('unsubscribes_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: user_links id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY user_links ALTER COLUMN id SET DEFAULT nextval('user_links_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: user_notifications id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY user_notifications ALTER COLUMN id SET DEFAULT nextval('user_notifications_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: users id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY users ALTER COLUMN id SET DEFAULT nextval('users_id_seq'::regclass);
@@ -3043,7 +3044,7 @@ ALTER TABLE ONLY users ALTER COLUMN id SET DEFAULT nextval('users_id_seq'::regcl
 SET search_path = api_updates, pg_catalog;
 
 --
--- Name: contributions_pkey; Type: CONSTRAINT; Schema: api_updates; Owner: -
+-- Name: contributions contributions_pkey; Type: CONSTRAINT; Schema: api_updates; Owner: -
 --
 
 ALTER TABLE ONLY contributions
@@ -3053,7 +3054,7 @@ ALTER TABLE ONLY contributions
 SET search_path = postgrest, pg_catalog;
 
 --
--- Name: auth_pkey; Type: CONSTRAINT; Schema: postgrest; Owner: -
+-- Name: auth auth_pkey; Type: CONSTRAINT; Schema: postgrest; Owner: -
 --
 
 ALTER TABLE ONLY auth
@@ -3063,7 +3064,7 @@ ALTER TABLE ONLY auth
 SET search_path = public, pg_catalog;
 
 --
--- Name: authorizations_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: authorizations authorizations_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY authorizations
@@ -3071,7 +3072,7 @@ ALTER TABLE ONLY authorizations
 
 
 --
--- Name: bank_accounts_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: bank_accounts bank_accounts_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY bank_accounts
@@ -3079,7 +3080,7 @@ ALTER TABLE ONLY bank_accounts
 
 
 --
--- Name: banks_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: banks banks_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY banks
@@ -3087,7 +3088,7 @@ ALTER TABLE ONLY banks
 
 
 --
--- Name: categories_name_unique; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: categories categories_name_unique; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY categories
@@ -3095,7 +3096,7 @@ ALTER TABLE ONLY categories
 
 
 --
--- Name: categories_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: categories categories_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY categories
@@ -3103,7 +3104,7 @@ ALTER TABLE ONLY categories
 
 
 --
--- Name: category_followers_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: category_followers category_followers_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY category_followers
@@ -3111,7 +3112,7 @@ ALTER TABLE ONLY category_followers
 
 
 --
--- Name: category_notifications_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: category_notifications category_notifications_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY category_notifications
@@ -3119,7 +3120,7 @@ ALTER TABLE ONLY category_notifications
 
 
 --
--- Name: channel_partners_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: channel_partners channel_partners_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY channel_partners
@@ -3127,7 +3128,7 @@ ALTER TABLE ONLY channel_partners
 
 
 --
--- Name: channel_post_notifications_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: channel_post_notifications channel_post_notifications_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY channel_post_notifications
@@ -3135,7 +3136,7 @@ ALTER TABLE ONLY channel_post_notifications
 
 
 --
--- Name: channel_posts_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: channel_posts channel_posts_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY channel_posts
@@ -3143,7 +3144,7 @@ ALTER TABLE ONLY channel_posts
 
 
 --
--- Name: channels_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: channels channels_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY channels
@@ -3151,7 +3152,7 @@ ALTER TABLE ONLY channels
 
 
 --
--- Name: channels_projects_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: channels_projects channels_projects_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY channels_projects
@@ -3159,7 +3160,7 @@ ALTER TABLE ONLY channels_projects
 
 
 --
--- Name: channels_subscribers_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: channels_subscribers channels_subscribers_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY channels_subscribers
@@ -3167,7 +3168,7 @@ ALTER TABLE ONLY channels_subscribers
 
 
 --
--- Name: cities_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: cities cities_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY cities
@@ -3175,7 +3176,7 @@ ALTER TABLE ONLY cities
 
 
 --
--- Name: configurations_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: settings configurations_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY settings
@@ -3183,7 +3184,7 @@ ALTER TABLE ONLY settings
 
 
 --
--- Name: contribution_notifications_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: contribution_notifications contribution_notifications_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY contribution_notifications
@@ -3191,7 +3192,7 @@ ALTER TABLE ONLY contribution_notifications
 
 
 --
--- Name: contributions_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: contributions contributions_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY contributions
@@ -3199,7 +3200,7 @@ ALTER TABLE ONLY contributions
 
 
 --
--- Name: countries_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: countries countries_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY countries
@@ -3207,7 +3208,7 @@ ALTER TABLE ONLY countries
 
 
 --
--- Name: credit_cards_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: credit_cards credit_cards_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY credit_cards
@@ -3215,7 +3216,7 @@ ALTER TABLE ONLY credit_cards
 
 
 --
--- Name: dbhero_dataclips_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: dbhero_dataclips dbhero_dataclips_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY dbhero_dataclips
@@ -3223,7 +3224,7 @@ ALTER TABLE ONLY dbhero_dataclips
 
 
 --
--- Name: near_mes_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: near_mes near_mes_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY near_mes
@@ -3231,7 +3232,7 @@ ALTER TABLE ONLY near_mes
 
 
 --
--- Name: oauth_providers_name_unique; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: oauth_providers oauth_providers_name_unique; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY oauth_providers
@@ -3239,7 +3240,7 @@ ALTER TABLE ONLY oauth_providers
 
 
 --
--- Name: oauth_providers_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: oauth_providers oauth_providers_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY oauth_providers
@@ -3247,7 +3248,7 @@ ALTER TABLE ONLY oauth_providers
 
 
 --
--- Name: payment_logs_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: payment_logs payment_logs_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY payment_logs
@@ -3255,7 +3256,7 @@ ALTER TABLE ONLY payment_logs
 
 
 --
--- Name: payment_notifications_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: payment_notifications payment_notifications_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY payment_notifications
@@ -3263,7 +3264,7 @@ ALTER TABLE ONLY payment_notifications
 
 
 --
--- Name: payment_transfers_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: payment_transfers payment_transfers_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY payment_transfers
@@ -3271,7 +3272,7 @@ ALTER TABLE ONLY payment_transfers
 
 
 --
--- Name: payments_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: payments payments_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY payments
@@ -3279,7 +3280,7 @@ ALTER TABLE ONLY payments
 
 
 --
--- Name: project_accounts_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: project_accounts project_accounts_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY project_accounts
@@ -3287,7 +3288,7 @@ ALTER TABLE ONLY project_accounts
 
 
 --
--- Name: project_budgets_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: project_budgets project_budgets_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY project_budgets
@@ -3295,7 +3296,7 @@ ALTER TABLE ONLY project_budgets
 
 
 --
--- Name: project_notifications_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: project_notifications project_notifications_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY project_notifications
@@ -3303,7 +3304,7 @@ ALTER TABLE ONLY project_notifications
 
 
 --
--- Name: project_post_notifications_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: project_post_notifications project_post_notifications_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY project_post_notifications
@@ -3311,7 +3312,7 @@ ALTER TABLE ONLY project_post_notifications
 
 
 --
--- Name: projects_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: projects projects_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY projects
@@ -3319,7 +3320,7 @@ ALTER TABLE ONLY projects
 
 
 --
--- Name: redactor_assets_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: redactor_assets redactor_assets_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY redactor_assets
@@ -3327,7 +3328,7 @@ ALTER TABLE ONLY redactor_assets
 
 
 --
--- Name: rewards_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: rewards rewards_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY rewards
@@ -3335,7 +3336,7 @@ ALTER TABLE ONLY rewards
 
 
 --
--- Name: states_acronym_unique; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: states states_acronym_unique; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY states
@@ -3343,7 +3344,7 @@ ALTER TABLE ONLY states
 
 
 --
--- Name: states_name_unique; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: states states_name_unique; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY states
@@ -3351,7 +3352,7 @@ ALTER TABLE ONLY states
 
 
 --
--- Name: states_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: states states_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY states
@@ -3359,7 +3360,7 @@ ALTER TABLE ONLY states
 
 
 --
--- Name: total_backed_ranges_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: total_backed_ranges total_backed_ranges_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY total_backed_ranges
@@ -3367,7 +3368,7 @@ ALTER TABLE ONLY total_backed_ranges
 
 
 --
--- Name: unsubscribes_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: unsubscribes unsubscribes_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY unsubscribes
@@ -3375,7 +3376,7 @@ ALTER TABLE ONLY unsubscribes
 
 
 --
--- Name: updates_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: project_posts updates_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY project_posts
@@ -3383,7 +3384,7 @@ ALTER TABLE ONLY project_posts
 
 
 --
--- Name: user_links_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: user_links user_links_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY user_links
@@ -3391,7 +3392,7 @@ ALTER TABLE ONLY user_links
 
 
 --
--- Name: user_notifications_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: user_notifications user_notifications_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY user_notifications
@@ -3399,7 +3400,7 @@ ALTER TABLE ONLY user_notifications
 
 
 --
--- Name: users_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: users users_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY users
@@ -3934,7 +3935,7 @@ CREATE INDEX user_admin_id_ix ON users USING btree (id) WHERE admin;
 SET search_path = "1", pg_catalog;
 
 --
--- Name: _RETURN; Type: RULE; Schema: 1; Owner: -
+-- Name: project_totals _RETURN; Type: RULE; Schema: 1; Owner: -
 --
 
 CREATE RULE "_RETURN" AS
@@ -3951,7 +3952,7 @@ CREATE RULE "_RETURN" AS
 
 
 --
--- Name: _RETURN; Type: RULE; Schema: 1; Owner: -
+-- Name: project_details _RETURN; Type: RULE; Schema: 1; Owner: -
 --
 
 CREATE RULE "_RETURN" AS
@@ -3981,7 +3982,7 @@ CREATE RULE "_RETURN" AS
 
 
 --
--- Name: _RETURN; Type: RULE; Schema: 1; Owner: -
+-- Name: project_contributions_per_location _RETURN; Type: RULE; Schema: 1; Owner: -
 --
 
 CREATE RULE "_RETURN" AS
@@ -4004,7 +4005,7 @@ CREATE RULE "_RETURN" AS
 
 
 --
--- Name: update_from_details_to_contributions; Type: TRIGGER; Schema: 1; Owner: -
+-- Name: contribution_details update_from_details_to_contributions; Type: TRIGGER; Schema: 1; Owner: -
 --
 
 CREATE TRIGGER update_from_details_to_contributions INSTEAD OF UPDATE ON contribution_details FOR EACH ROW EXECUTE PROCEDURE public.update_from_details_to_contributions();
@@ -4013,7 +4014,7 @@ CREATE TRIGGER update_from_details_to_contributions INSTEAD OF UPDATE ON contrib
 SET search_path = postgrest, pg_catalog;
 
 --
--- Name: ensure_auth_role_exists; Type: TRIGGER; Schema: postgrest; Owner: -
+-- Name: auth ensure_auth_role_exists; Type: TRIGGER; Schema: postgrest; Owner: -
 --
 
 CREATE CONSTRAINT TRIGGER ensure_auth_role_exists AFTER INSERT OR UPDATE ON auth NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE PROCEDURE check_role_exists();
@@ -4022,42 +4023,42 @@ CREATE CONSTRAINT TRIGGER ensure_auth_role_exists AFTER INSERT OR UPDATE ON auth
 SET search_path = public, pg_catalog;
 
 --
--- Name: create_api_user; Type: TRIGGER; Schema: public; Owner: -
+-- Name: users create_api_user; Type: TRIGGER; Schema: public; Owner: -
 --
 
 CREATE TRIGGER create_api_user AFTER INSERT ON users FOR EACH ROW EXECUTE PROCEDURE postgrest.create_api_user();
 
 
 --
--- Name: delete_api_user; Type: TRIGGER; Schema: public; Owner: -
+-- Name: users delete_api_user; Type: TRIGGER; Schema: public; Owner: -
 --
 
 CREATE TRIGGER delete_api_user AFTER DELETE ON users FOR EACH ROW EXECUTE PROCEDURE postgrest.delete_api_user();
 
 
 --
--- Name: update_api_user; Type: TRIGGER; Schema: public; Owner: -
+-- Name: users update_api_user; Type: TRIGGER; Schema: public; Owner: -
 --
 
 CREATE TRIGGER update_api_user AFTER UPDATE OF id, admin, authentication_token ON users FOR EACH ROW EXECUTE PROCEDURE postgrest.update_api_user();
 
 
 --
--- Name: update_full_text_index; Type: TRIGGER; Schema: public; Owner: -
+-- Name: projects update_full_text_index; Type: TRIGGER; Schema: public; Owner: -
 --
 
 CREATE TRIGGER update_full_text_index BEFORE INSERT OR UPDATE OF name, permalink, headline ON projects FOR EACH ROW EXECUTE PROCEDURE update_full_text_index();
 
 
 --
--- Name: update_payments_full_text_index; Type: TRIGGER; Schema: public; Owner: -
+-- Name: payments update_payments_full_text_index; Type: TRIGGER; Schema: public; Owner: -
 --
 
 CREATE TRIGGER update_payments_full_text_index BEFORE INSERT OR UPDATE OF key, gateway, gateway_id, gateway_data, state ON payments FOR EACH ROW EXECUTE PROCEDURE update_payments_full_text_index();
 
 
 --
--- Name: contributions_project_id_reference; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: contributions contributions_project_id_reference; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY contributions
@@ -4065,7 +4066,7 @@ ALTER TABLE ONLY contributions
 
 
 --
--- Name: contributions_reward_id_reference; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: contributions contributions_reward_id_reference; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY contributions
@@ -4073,7 +4074,7 @@ ALTER TABLE ONLY contributions
 
 
 --
--- Name: contributions_user_id_reference; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: contributions contributions_user_id_reference; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY contributions
@@ -4081,7 +4082,7 @@ ALTER TABLE ONLY contributions
 
 
 --
--- Name: fk_authorizations_oauth_provider_id; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: authorizations fk_authorizations_oauth_provider_id; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY authorizations
@@ -4089,7 +4090,7 @@ ALTER TABLE ONLY authorizations
 
 
 --
--- Name: fk_authorizations_user_id; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: authorizations fk_authorizations_user_id; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY authorizations
@@ -4097,7 +4098,7 @@ ALTER TABLE ONLY authorizations
 
 
 --
--- Name: fk_bank_accounts_bank_id; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: bank_accounts fk_bank_accounts_bank_id; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY bank_accounts
@@ -4105,7 +4106,7 @@ ALTER TABLE ONLY bank_accounts
 
 
 --
--- Name: fk_bank_accounts_user_id; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: bank_accounts fk_bank_accounts_user_id; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY bank_accounts
@@ -4113,7 +4114,7 @@ ALTER TABLE ONLY bank_accounts
 
 
 --
--- Name: fk_category_followers_category_id; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: category_followers fk_category_followers_category_id; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY category_followers
@@ -4121,7 +4122,7 @@ ALTER TABLE ONLY category_followers
 
 
 --
--- Name: fk_category_followers_user_id; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: category_followers fk_category_followers_user_id; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY category_followers
@@ -4129,7 +4130,7 @@ ALTER TABLE ONLY category_followers
 
 
 --
--- Name: fk_category_notifications_category_id; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: category_notifications fk_category_notifications_category_id; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY category_notifications
@@ -4137,7 +4138,7 @@ ALTER TABLE ONLY category_notifications
 
 
 --
--- Name: fk_category_notifications_user_id; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: category_notifications fk_category_notifications_user_id; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY category_notifications
@@ -4145,7 +4146,7 @@ ALTER TABLE ONLY category_notifications
 
 
 --
--- Name: fk_channel_partners_channel_id; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: channel_partners fk_channel_partners_channel_id; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY channel_partners
@@ -4153,7 +4154,7 @@ ALTER TABLE ONLY channel_partners
 
 
 --
--- Name: fk_channel_post_notifications_channel_post_id; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: channel_post_notifications fk_channel_post_notifications_channel_post_id; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY channel_post_notifications
@@ -4161,7 +4162,7 @@ ALTER TABLE ONLY channel_post_notifications
 
 
 --
--- Name: fk_channel_post_notifications_user_id; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: channel_post_notifications fk_channel_post_notifications_user_id; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY channel_post_notifications
@@ -4169,7 +4170,7 @@ ALTER TABLE ONLY channel_post_notifications
 
 
 --
--- Name: fk_channel_posts_channel_id; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: channel_posts fk_channel_posts_channel_id; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY channel_posts
@@ -4177,7 +4178,7 @@ ALTER TABLE ONLY channel_posts
 
 
 --
--- Name: fk_channel_posts_user_id; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: channel_posts fk_channel_posts_user_id; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY channel_posts
@@ -4185,7 +4186,7 @@ ALTER TABLE ONLY channel_posts
 
 
 --
--- Name: fk_channels_projects_channel_id; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: channels_projects fk_channels_projects_channel_id; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY channels_projects
@@ -4193,7 +4194,7 @@ ALTER TABLE ONLY channels_projects
 
 
 --
--- Name: fk_channels_projects_project_id; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: channels_projects fk_channels_projects_project_id; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY channels_projects
@@ -4201,7 +4202,7 @@ ALTER TABLE ONLY channels_projects
 
 
 --
--- Name: fk_channels_subscribers_channel_id; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: channels_subscribers fk_channels_subscribers_channel_id; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY channels_subscribers
@@ -4209,7 +4210,7 @@ ALTER TABLE ONLY channels_subscribers
 
 
 --
--- Name: fk_channels_subscribers_user_id; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: channels_subscribers fk_channels_subscribers_user_id; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY channels_subscribers
@@ -4217,7 +4218,7 @@ ALTER TABLE ONLY channels_subscribers
 
 
 --
--- Name: fk_cities_state_id; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: cities fk_cities_state_id; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY cities
@@ -4225,7 +4226,7 @@ ALTER TABLE ONLY cities
 
 
 --
--- Name: fk_contribution_notifications_contribution_id; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: contribution_notifications fk_contribution_notifications_contribution_id; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY contribution_notifications
@@ -4233,7 +4234,7 @@ ALTER TABLE ONLY contribution_notifications
 
 
 --
--- Name: fk_contribution_notifications_user_id; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: contribution_notifications fk_contribution_notifications_user_id; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY contribution_notifications
@@ -4241,7 +4242,7 @@ ALTER TABLE ONLY contribution_notifications
 
 
 --
--- Name: fk_contributions_country_id; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: contributions fk_contributions_country_id; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY contributions
@@ -4249,7 +4250,7 @@ ALTER TABLE ONLY contributions
 
 
 --
--- Name: fk_credit_cards_user_id; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: credit_cards fk_credit_cards_user_id; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY credit_cards
@@ -4257,7 +4258,7 @@ ALTER TABLE ONLY credit_cards
 
 
 --
--- Name: fk_payment_notifications_payment_id; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: payment_notifications fk_payment_notifications_payment_id; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY payment_notifications
@@ -4265,7 +4266,7 @@ ALTER TABLE ONLY payment_notifications
 
 
 --
--- Name: fk_payment_transfers_payment_id; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: payment_transfers fk_payment_transfers_payment_id; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY payment_transfers
@@ -4273,7 +4274,7 @@ ALTER TABLE ONLY payment_transfers
 
 
 --
--- Name: fk_payment_transfers_user_id; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: payment_transfers fk_payment_transfers_user_id; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY payment_transfers
@@ -4281,7 +4282,7 @@ ALTER TABLE ONLY payment_transfers
 
 
 --
--- Name: fk_payments_contribution_id; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: payments fk_payments_contribution_id; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY payments
@@ -4289,7 +4290,7 @@ ALTER TABLE ONLY payments
 
 
 --
--- Name: fk_project_accounts_bank_id; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: project_accounts fk_project_accounts_bank_id; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY project_accounts
@@ -4297,7 +4298,7 @@ ALTER TABLE ONLY project_accounts
 
 
 --
--- Name: fk_project_accounts_project_id; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: project_accounts fk_project_accounts_project_id; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY project_accounts
@@ -4305,7 +4306,7 @@ ALTER TABLE ONLY project_accounts
 
 
 --
--- Name: fk_project_budgets_project_id; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: project_budgets fk_project_budgets_project_id; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY project_budgets
@@ -4313,7 +4314,7 @@ ALTER TABLE ONLY project_budgets
 
 
 --
--- Name: fk_project_notifications_project_id; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: project_notifications fk_project_notifications_project_id; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY project_notifications
@@ -4321,7 +4322,7 @@ ALTER TABLE ONLY project_notifications
 
 
 --
--- Name: fk_project_notifications_user_id; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: project_notifications fk_project_notifications_user_id; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY project_notifications
@@ -4329,7 +4330,7 @@ ALTER TABLE ONLY project_notifications
 
 
 --
--- Name: fk_project_post_notifications_project_post_id; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: project_post_notifications fk_project_post_notifications_project_post_id; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY project_post_notifications
@@ -4337,7 +4338,7 @@ ALTER TABLE ONLY project_post_notifications
 
 
 --
--- Name: fk_project_post_notifications_user_id; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: project_post_notifications fk_project_post_notifications_user_id; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY project_post_notifications
@@ -4345,7 +4346,7 @@ ALTER TABLE ONLY project_post_notifications
 
 
 --
--- Name: fk_projects_city_id; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: projects fk_projects_city_id; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY projects
@@ -4353,7 +4354,7 @@ ALTER TABLE ONLY projects
 
 
 --
--- Name: fk_redactor_assets_user_id; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: redactor_assets fk_redactor_assets_user_id; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY redactor_assets
@@ -4361,7 +4362,7 @@ ALTER TABLE ONLY redactor_assets
 
 
 --
--- Name: fk_user_links_user_id; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: user_links fk_user_links_user_id; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY user_links
@@ -4369,7 +4370,7 @@ ALTER TABLE ONLY user_links
 
 
 --
--- Name: fk_user_notifications_user_id; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: user_notifications fk_user_notifications_user_id; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY user_notifications
@@ -4377,7 +4378,7 @@ ALTER TABLE ONLY user_notifications
 
 
 --
--- Name: fk_users_channel_id; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: users fk_users_channel_id; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY users
@@ -4385,7 +4386,7 @@ ALTER TABLE ONLY users
 
 
 --
--- Name: fk_users_country_id; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: users fk_users_country_id; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY users
@@ -4393,7 +4394,7 @@ ALTER TABLE ONLY users
 
 
 --
--- Name: payment_notifications_backer_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: payment_notifications payment_notifications_backer_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY payment_notifications
@@ -4401,7 +4402,7 @@ ALTER TABLE ONLY payment_notifications
 
 
 --
--- Name: projects_category_id_reference; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: projects projects_category_id_reference; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY projects
@@ -4409,7 +4410,7 @@ ALTER TABLE ONLY projects
 
 
 --
--- Name: projects_user_id_reference; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: projects projects_user_id_reference; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY projects
@@ -4417,7 +4418,7 @@ ALTER TABLE ONLY projects
 
 
 --
--- Name: rewards_project_id_reference; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: rewards rewards_project_id_reference; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY rewards
@@ -4425,7 +4426,7 @@ ALTER TABLE ONLY rewards
 
 
 --
--- Name: unsubscribes_project_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: unsubscribes unsubscribes_project_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY unsubscribes
@@ -4433,7 +4434,7 @@ ALTER TABLE ONLY unsubscribes
 
 
 --
--- Name: unsubscribes_user_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: unsubscribes unsubscribes_user_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY unsubscribes
@@ -4441,7 +4442,7 @@ ALTER TABLE ONLY unsubscribes
 
 
 --
--- Name: updates_project_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: project_posts updates_project_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY project_posts
@@ -4449,7 +4450,7 @@ ALTER TABLE ONLY project_posts
 
 
 --
--- Name: updates_user_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: project_posts updates_user_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY project_posts
@@ -4460,7 +4461,7 @@ ALTER TABLE ONLY project_posts
 -- PostgreSQL database dump complete
 --
 
-SET search_path TO "$user", public, "1";
+SET search_path TO public, pg_catalog;
 
 INSERT INTO schema_migrations (version) VALUES ('20121226120921');
 
