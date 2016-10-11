@@ -11,6 +11,7 @@ lock '3.6.1'
 
 set :application, 'homepage'
 set :repo_url, 'git@bitbucket.org:dariofl/homepage.git'
+set :ssh_options, { :forward_agent => true }
 set :deploy_to, '/var/www/homepage'
 set :keep_releases, 3
 set :passenger_restart_command, 'touch'
@@ -18,7 +19,7 @@ set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets public/system public/upl
 set :passenger_restart_options, -> { "#{deploy_to}/current/tmp/restart.txt" }
 
 set :linked_files, %w{config/database.yml}
-set :assets_roles, [:web, :app] 
+set :assets_roles, [:web, :app]
 
 
 
