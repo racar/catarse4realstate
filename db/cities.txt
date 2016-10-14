@@ -1,0 +1,4 @@
+Bogota D.C.|Bogota D.C.
+Raquira|Cundinamarca
+Cali|Valle
+Medellin|Antioquia

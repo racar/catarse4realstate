@@ -1,0 +1,4 @@
+Bogota Distrito Capital|Bogota D.C.
+Cundinamarca|Cundinamarca
+Valle del Cauca|Valle
+Antioquia|Antioquia

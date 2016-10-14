@@ -1,0 +1,4 @@
+Apartamentos|Apartamentos
+Zona Franca|Zona Franca
+Bodega|Bodega
+Casa|Casa

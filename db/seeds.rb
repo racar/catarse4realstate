@@ -2,27 +2,63 @@
 
 puts 'Seeding the database...'
 
-[
-  { pt: 'Arte', es:'Apartamentos'},
-  { pt: 'Artes plásticas', es:'Zona Franca'},
-  { pt: 'Circo', es:'Bodega'},
-  { pt: 'Comunidade', es:'Casa'},
-  { pt: 'Humor', es:'Lote Urbanizado'},
-  { pt: 'Quadrinhos', es:'Proyecto Hotelero'},
-  { pt: 'Dança', es:'Edificio'},
-  { pt: 'Design', es:'Conjunto'},
-  { pt: 'Eventos', es:'Parqueadero'},
-  { pt: 'Moda', es:'Local'},
-  { pt: 'Gastronomia', es:'Lote'},
-  { pt: 'Cinema e Vídeo', es:'Finca'},
-  { pt: 'Jogos', es:'Oficina'},
-  { pt: 'Jornalismo', es:'Otros' }
-].each do |name|
-   category = Category.find_or_initialize_by(name_pt: name[:pt])
-   category.update_attributes({
-     name_en: name[:en]
-   })
- end
+#[
+#  { pt: 'Arte', es:'Apartamentos'},
+#  { pt: 'Artes plásticas', es:'Zona Franca'},
+#  { pt: 'Circo', es:'Bodega'},
+#  { pt: 'Comunidade', es:'Casa'},
+#  { pt: 'Humor', es:'Lote Urbanizado'},
+#  { pt: 'Quadrinhos', es:'Proyecto Hotelero'},
+#  { pt: 'Dança', es:'Edificio'},
+#  { pt: 'Design', es:'Conjunto'},
+#  { pt: 'Eventos', es:'Parqueadero'},
+#  { pt: 'Moda', es:'Local'},
+#  { pt: 'Gastronomia', es:'Lote'},
+#  { pt: 'Cinema e Vídeo', es:'Finca'},
+#  { pt: 'Jogos', es:'Oficina'},
+#  { pt: 'Jornalismo', es:'Otros' }
+#].each do |name|
+#   category = Category.find_or_initialize_by(name_pt: name[:pt])
+#   category.update_attributes({
+#     name_en: name[:en]
+#   })
+#end
+
+
+#USO: desde consola ejecutar - >> SEED_DATA=category rake db:seed
+
+
+if ENV['SEED_DATA'] == 'category'
+Category.delete_all
+    File.open("#{Rails.root}/db/categorias.txt") do |categorias|
+      categorias.read.each_line do |category|
+        name_pt, name_es = category.chomp.split("|")
+        Category.create!(:name_pt => name_pt, :name_es => name_es)
+      end
+    end
+elsif ENV['SEED_DATA'] == 'ciudades'
+  City.delete_all
+  State.delete_all
+
+    File.open("#{Rails.root}/db/states.txt") do |states|
+      states.read.each_line do |state|
+        name, acronym = state.chomp.split("|")
+        State.create!(:name => name, :acronym => acronym)
+      end
+    end
+
+    File.open("#{Rails.root}/db/cities.txt") do |cities|
+      cities.read.each_line do |city|
+        name, name_state = city.chomp.split("|")
+        state_id = State.find_by_acronym(name_state).id
+        City.create!(:name => name, :state_id => state_id)
+      end
+  end
+
+
+else
+
+end
 
 {
   company_name: 'Home Parte',
