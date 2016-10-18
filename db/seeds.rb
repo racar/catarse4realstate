@@ -28,7 +28,7 @@ puts 'Seeding the database...'
 #USO: desde consola ejecutar - >> SEED_DATA=category rake db:seed
 
 
-if ENV['SEED_DATA'] == 'category'
+#if ENV['SEED_DATA'] == 'category'
 Category.delete_all
     File.open("#{Rails.root}/db/categorias.txt") do |categorias|
       categorias.read.each_line do |category|
@@ -36,7 +36,7 @@ Category.delete_all
         Category.create!(:name_pt => name_pt, :name_es => name_es)
       end
     end
-elsif ENV['SEED_DATA'] == 'ciudades'
+#elsif ENV['SEED_DATA'] == 'ciudades'
   City.delete_all
   State.delete_all
 
@@ -56,9 +56,9 @@ elsif ENV['SEED_DATA'] == 'ciudades'
   end
 
 
-else
+#else
 
-end
+#end
 
 {
   company_name: 'Home Parte',
