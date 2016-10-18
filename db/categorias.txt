@@ -1,4 +1,3 @@
-Apartamentos|Apartamentos
-Zona Franca|Zona Franca
-Bodega|Bodega
-Casa|Casa
+En estudio|En estudio
+Comprado|Comprado
+Vendido|Vendido
