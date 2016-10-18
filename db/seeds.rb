@@ -29,6 +29,7 @@ puts 'Seeding the database...'
 
 
 #if ENV['SEED_DATA'] == 'category'
+Project.delete_all
 Category.delete_all
     File.open("#{Rails.root}/db/categorias.txt") do |categorias|
       categorias.read.each_line do |category|
