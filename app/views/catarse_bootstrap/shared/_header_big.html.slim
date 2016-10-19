@@ -23,4 +23,7 @@
     = link_to t('layouts.header.discover'), explore_path, class: 'header-link w-nav-link'
     = link_to t('layouts.header.submit'), start_path, class: 'header-link w-nav-link'
 
+
+
 = render 'shared/header', overlayer: (defined?(overlayer) && overlayer ? true : false)
+= render 'shared/google_analytics'
