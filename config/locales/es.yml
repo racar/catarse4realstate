@@ -11,8 +11,8 @@ es:
   sending: Enviando...
   share_my_contributions: 'Echa un vistazo a el proyecto '
   site:
-    description:  Catarse es la primera y mayor plataforma de crowdfunding. Venga y haga parte los proyectos!
-    keywords: crowdfunding, financiamento coletivo, projeto, catarse, comunidad de código abierto
+    description:  HomeParte. El futuro de la inversión inmobiliaria. plataforma de crowdfunding que permite a pequeños ahorradores invertir en grandes proyectos inmobiliarios
+    keywords: crowdfunding, financiamento colectivo, proyecto, inversión
     meta_title: "%{title} · %{company_name}"
     title: HomeParte
 
