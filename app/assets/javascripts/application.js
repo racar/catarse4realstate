@@ -29,7 +29,7 @@
 // *******************************
 // Adding references, lost in production env. Att. @racar
 // *******************************
-//= require lib/skull
+
 //= require app/app
 //= require app/utils/mix_panel
 //= require app/user/user
