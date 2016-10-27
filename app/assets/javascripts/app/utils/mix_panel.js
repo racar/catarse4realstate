@@ -1,4 +1,4 @@
-App.addChild('MixPanel', {
+window.App.addChild('MixPanel', {
   el: 'body',
 
   activate: function(){  
