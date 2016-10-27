@@ -32,11 +32,7 @@
 
 //= require app/app
 //= require app/utils/mix_panel
-//= require app/user/user
-//= require app/user/user_edit
-//= require app/user/user_menu
-//= require app/user/user_document
-//= require app/admin/admin
+
 
 
 // *********************************
