@@ -25,6 +25,7 @@
 //= require store
 //= require mithril
 //= require mithril.postgrest
+//= require apps/utils/mix_panel
 // *********************************
 //  Rails GEMs front-end dependencies
 // *********************************
@@ -37,3 +38,4 @@
 //= require_tree ./lib
 //= require ./app/app
 //= require_tree ./app
+//= require app/app
