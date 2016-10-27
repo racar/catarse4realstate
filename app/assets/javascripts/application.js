@@ -30,7 +30,7 @@
 // Adding references, lost in production env. Att. @racar
 // *******************************
 
-//= require app/app
+
 //= require app/utils/mix_panel
 
 
