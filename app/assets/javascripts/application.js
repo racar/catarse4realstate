@@ -25,6 +25,11 @@
 //= require store
 //= require mithril
 //= require mithril.postgrest
+
+// *******************************
+// Adding references, lost in production env. Att. @racar
+// *******************************
+//= require app/app
 //= require app/utils/mix_panel
 // *********************************
 //  Rails GEMs front-end dependencies
@@ -38,4 +43,4 @@
 //= require_tree ./lib
 //= require ./app/app
 //= require_tree ./app
-//= require app/app
+
