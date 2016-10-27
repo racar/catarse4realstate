@@ -34,7 +34,7 @@ App.addChild('ProjectNav', {
 
   closeNav: function(){
     window.scrollTo(0, 0);
-    if(app.isMobile()){
+    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
       this.toggleNav();
     }
   },
