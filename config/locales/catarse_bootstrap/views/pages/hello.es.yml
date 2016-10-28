@@ -11,7 +11,7 @@ es:
         money: "Donado a proyectos publicados aquí"
       idea:
         title: "Todo Proyecto comienza en planos!"
-        subtitle: "Sin embargo, tener un proyecto inmobiliario no es suficiente. Debes tener acceso a las personas y los recursos necesarios para que se haga realidad. Hompearte te ayuda."
+        subtitle: "Sin embargo, tener un proyecto inmobiliario no es suficiente. Debes tener acceso a las personas y los recursos necesarios para que se haga realidad. Homeparte te ayuda- Elegimos los mejore proyectos con rentabilidades proyectadas de 20 a 28% EA."
       fund:
         title: "Financiación colectiva"
         subtitle: "En HomeParte, es posible invertir en proyectos inmobiliarios, de manera fácil desde la comodidad de tu casa. Sin intermediarios, con una alta rentabilidad."
@@ -32,9 +32,9 @@ es:
         maker-link: "Crea tu proyecto"
       testimonial:
         humberto:
-          text_html: "&#8220; Es una fascinante oportunidad de ser invitado a compartir el sueño de un solo y todavía recibir una recompensa por experiencia. &#8221;"
-          name: "Cristhiam Baquero Gomez"
-          credentials: "Apoyado más de 150 proyectos Catarse"
+          text_html: "&#8220; Es fascinante tener la oportunidad de invertir en inmuebles desde pequeños montos, una oportunidad que un banco o inmobiliario no me darian, el sueño de ser dueño de tu propio inmueble un solo click y recibir una rentabilidad mensual desde la comodidad de mi casa. &#8221;"
+          name: "Andres Castro"
+          credentials: "Apoyado más de 150 proyectos HomeParte"
       details:
         fund:
           title: "Financiación colectiva o Crowdfunding?"
