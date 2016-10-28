@@ -1,33 +1,35 @@
 - content_for :title, t('site.title')
 = render 'shared/header_big', overlayer: true
 
-section#hero-home.hero-full.hero-knowmore
-  .w-container.u-text-center
-    .hero-home-words-content
-      .fontsize-megajumbo.u-marginbottom-60.fontweight-semibold
-        .w-embed
-          .cd-headline.letters.type
-            span.title_main = t('.banner_before')     
-            span.cd-words-wrapper
-              - t('.banner_words').each do |index, word|
-                - if index == 0 
-                  b.is-visible.title_main = word
-                - else
-                  b.title_main = word
-            span.title_main = t('.banner_after')
-    .w-row
-      .w-col.w-col-4.w-col-push-4
-        a.btn.btn-large.u-marginbottom-10 href="#{hello_path(ref: 'home_banner')}" más información
-#project-index-root
-= javascript_include_tag 'api/application' 
+
+
+
+
+
+= javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js'
+= javascript_include_tag 'api/application'
+
+= render 'shared/slider'
+
 
 section#blog.section-large.bg-gray.before-footer
+
+  .w-container
+      ul class="bxslider"
+        li
+           img src="https://c7.staticflickr.com/6/5337/30508390742_c80ae2d5ca_h.jpg"
+        li
+           img src="https://c7.staticflickr.com/6/5540/30589292446_237191e6e3_h.jpg"
+        li
+           img src="https://c1.staticflickr.com/6/5723/30589291376_9abf44383b_h.jpg"
+
+
   .w-container
     .u-text-center
-      = link_to "http://www.blog.homeparte.co", target: :blank do
+      = link_to "https://medium.com/@homeparte", target: :blank do
         = image_tag "icon-blog.png", class: "u-marginbottom-10"
       .fontsize-large.u-marginbottom-60.text-success
-        = link_to t('.blog'), "http://www.blog.homeparte.co", target: '__blank', class: 'link-hidden-success'
+        = link_to t('.blog'), "https://medium.com/@homeparte", target: '__blank', class: 'link-hidden-success'
     .w-row
       - (Blog.fetch_last_posts rescue [])[0..2].each do |post|
         .w-col.w-col-4.col-blog-post

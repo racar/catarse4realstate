@@ -32,7 +32,7 @@
 
 
 //= require app/utils/mix_panel
-
+//= require lib/jquery.wmuslider
 
 
 // *********************************

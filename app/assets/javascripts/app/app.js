@@ -101,4 +101,6 @@ var App = window.App = Skull.View.extend({
 $(function(){
   var app = window.app = new App();
   window.toggleMenu = app.toggleMenu;
+
+
 });
