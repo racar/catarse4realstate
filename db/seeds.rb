@@ -31,6 +31,7 @@ puts 'Seeding the database...'
 #if ENV['SEED_DATA'] == 'category'
 connection = ActiveRecord::Base.connection()
 connection.execute("delete from project_notifications where 1=1;")
+connection.execute("delete from rewards where 1=1;")
 Project.delete_all
 Category.delete_all
     File.open("#{Rails.root}/db/categorias.txt") do |categorias|
