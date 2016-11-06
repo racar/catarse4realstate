@@ -43,7 +43,7 @@ namespace :deploy do
 
   after :publishing, 'deploy:restart'
   after :finishing, 'deploy:cleanup'
-  # after :finishing, 'deploy:seed'
+  after :finishing, 'deploy:seed'
 end
 
 

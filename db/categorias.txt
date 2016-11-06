@@ -1,3 +1,6 @@
-En estudio|En estudio
-Comprado|Comprado
-Vendido|Vendido
+Apartamento|Apartamento
+Casa|Casa
+Proyecto en Planos|Proyecto en Planos
+Lote|Lote
+Oficina|Oficina
+Bodega|Bodega
