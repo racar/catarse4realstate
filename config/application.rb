@@ -54,7 +54,7 @@ module Catarse
     # TODO: remove
     config.active_record.whitelist_attributes = false
 
-    config.i18n.enforce_available_locales = false
+    config.i18n.enforce_available_locales = true
     config.i18n.available_locales = [:es, :en]
 
   end
