@@ -2,8 +2,8 @@ es:
   projects:
     edit:
       posts: "Escribe una novedad"
-      budget: Presupuesto
-      budget_subtitle: "¿Cómo se utilizará su dinero? Cuanto más transparencia, mejor. Mostrar pasos y procesos están involucrados en el uso de estos recursos. Una lista de las principales partidas del presupuesto o incluso un gráfico circular va muy bien aquí."
+      budget: "Presupuesto"
+      budget_subtitle: "¿Cómo se utilizará su dinero? Cuanto más transparencia, mejor. Mostrar pasos y procesos que estarán involucrados en el uso de estos recursos. Una lista de las principales partidas del presupuesto o incluso un gráfico circular va muy bien aquí."
       card: 'Diseño del proyecto'
       card_subtitle: 'Usted sabe que cardzinho proyecto que aparece en la casa y la búsqueda? Pues bien, es hermoso porque dicen que la primera impresión es la que es;)'
       video: 'Vídeo'
@@ -16,31 +16,31 @@ es:
       user_settings: 'Registro y bancarias de datos'
       user_settings_subtitle: 'Con el siguiente formulario completado su proyecto estará listo para el aire. Después de completar el relleno, haga clic en Guardar. Revisión. Si todo está bien, sólo tiene que pulsar el botón Publicar y comenzar su campaña!'
       user_about: "Quiero saber más acerca de usted!"
-      reward: "Creación y edición de sus premios aquí"
-      reward_subtitle: "Esta es tu programa de agradecimiento a los seguidores. Recuerde que debe incluir el costo de recompensas en su presupuesto. Prometeo, ENTREGADO!"
+      reward: "Creación y edición de sus FIDIS aquí"
+      reward_subtitle: "Puede crear distintos tipos de Fidis (Derechos Fiduciarios de Inversión Inmobiliaria Internacional) si su proyecto lo requiere. Póngase en contacto con info@homepate.com"
       user_about_subtitle: "Los partidarios quieren aprender más acerca de los directores del proyecto. Links que ayudan a contar su historia son siempre bienvenidos."
       description: 'Cuenta la historia de tu proyecto!'
       description_subtitle: 'Apasiona a los potenciales inversionistas con su proyecto, plasme esos argumentos que buscan para invertir en su proyecto inmobiliario'
     reward_fields:
-      edit: "Editar recompensa"
-      reward: Recompensa
+      edit: "Editar Fidis"
+      reward: "Fidi"
       info_box: "Describir el valor de la recompensa y poner una fecha de entrega real de previsión para los aficionados. También puede limitar una recompensa y cuando se alcanza el límite que aparece como agotado. Si desea cambiar el orden en que las recompensas aparecen en tu proyecto, simplemente hacer esto arrastrando hacia arriba o hacia abajo."
-      minimum_value: "Valor:"
+      minimum_value: "Valor Fidi:"
       deliver_at: "Entrega:"
-      description: "Descripción:"
-      limit_reward: "Límite de recompensa"
+      description: "Describa rentabilidad esperada:"
+      limit_reward: "Límite de Fidis"
       available: "Cantidad"
       submit: "Guardar"
       index:
-        select_reward: "Seleccione esta recompensa"
+        select_reward: "Seleccione este Fidi"
         display_remaining: "%{remaining} de %{maximum} disponible"
-        dont_want: "No quiero recompensa"
-        limited: Limitada
-        sold_out: Agotado
+        dont_want: "No quiero Fidi"
+        limited: "Limitada"
+        sold_out: "Agotado"
         contributions_to_confirm:
-          one: 1 apoyo en la confirmación plazo.
+          one: "1 apoyo en la confirmación plazo."
           other: "%{count} confirmación de apoyo a largo plazo."
-        edit_reward: Editar recompensa
+        edit_reward: "Editar Fidi"
         new_reward: recompensa sesión
         reward_deliver_time: "<b>Estimado de Entrega:</b> %{estimate}"
         reward_title: Para %{minimum} o más
@@ -59,10 +59,10 @@ es:
     dashboard_home_templates:
       status: "Estado:"
       project_numbers:
-        financed: financiado
-        backed: levantados
-        contributions: apoyo
-        left: otro
+        financed: "financiado"
+        backed: "levantados"
+        contributions: "apoyo"
+        left: "otro"
       waiting_funds:
         title: "%{name}, estamos procesando los pagos finales."
         subtitle_html: "Su diseño se finalizó en %{expires} y está a la espera de confirmación resbalones y pagos. Debido a la fecha de vencimiento de las facturas, proyectos que tuvieron último soporte get minutos para hasta 4 días en ese estado, a partir de la fecha de finalización del proyecto. %{link}."
@@ -134,7 +134,7 @@ es:
       card_tab: Diseño de tarjeta
       description_tab: Descripción
       video_tab: Vídeo
-      rewards_tab: Recompensas
+      rewards_tab: "Crear FIDIS"
       about_you_tab: Sobre usted
     dashboard_user_about:
       submit: "Salvar"
@@ -158,8 +158,8 @@ es:
       submit: "Salvar"
     dashboard_reward:
       submit: "Salvar"
-      add_reward: "Adicionar recompensa"
-      reward: "Recompensa"
+      add_reward: "Adicionar Fidi"
+      reward: "FIDIS"
     dashboard_preview:
       header_subtitle: "Es hora de comentarios!"
       header_text: "Compartir el enlace con tus amigos y disfrutar de su tiempo para hacer ajustes finos para ayudarle en su campaña."
@@ -186,7 +186,7 @@ es:
       online_date: 'La inscripción en el aire'
       user_id: 'ID de usuario'
       name: 'Nombre del proyecto'
-      name_label: 'El más directo, mejor. No exceda de 50 caracteres'
+      name_label: 'Entre más directo, mejor. No exceda de 50 caracteres'
       url: 'URL del proyecto'
       url_label: 'Es la dirección de su proyecto debe ser fácil de recordar. Evite subrayado, guión y símbolos'
       category: 'Categoría'
