@@ -117,7 +117,8 @@ Catarse::Application.routes.draw do
   end
 
   # Root path should be after channel constraints
-  root to: 'projects#index'
+  #root to: 'explore'
+  root :to => redirect('/explore')
 
   namespace :reports do
     resources :contribution_reports_for_project_owners, only: [:index]
