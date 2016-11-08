@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
     include NewRelic::Agent::Instrumentation::Rails3::ActionController
   end
 
-  AVAILABLE_LOCALES = ['es']
+  AVAILABLE_LOCALES = ['es','en']
   layout 'catarse_bootstrap'
   protect_from_forgery
 
