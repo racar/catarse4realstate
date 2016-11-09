@@ -15,7 +15,7 @@ set :ssh_options, { :forward_agent => true }
 set :deploy_to, '/var/www/homepage'
 set :keep_releases, 3
 set :passenger_restart_command, 'touch'
-set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets public/system}
+set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets public/system public/uploads}
 set :passenger_restart_options, -> { "#{deploy_to}/current/tmp/restart.txt" }
 
 set :linked_files, %w{config/database.yml}
