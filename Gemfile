@@ -72,8 +72,11 @@ gem 'kaminari'
 gem 'redactor-rails', github: 'catarse/redactor-rails'
 
 # Uploads
-gem 'carrierwave', github: 'carrierwaveuploader/carrierwave', ref: '1578777fe3f30140347ebf27d1943471bbe4d425'
-gem "mini_magick"
+gem 'carrierwave', '>= 1.0.0.beta', '< 2.0'
+
+gem 'mini_magick'
+gem 'rmagick', '2.15.0'
+
 
 # Other Tools
 gem 'to_xls'
