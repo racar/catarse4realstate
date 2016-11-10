@@ -1,7 +1,7 @@
 Catarse::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
   # esta linea debería resolver tambien la comunicacion de las imagenes con passenger (quedo funcionando pero por cualquier cosa la dejo aca)
-  #ENV['PATH'] = "/usr/local/bin:#{ENV['PATH']}"
+  ENV['PATH'] = "/usr/local/bin:#{ENV['PATH']}"
 
   # Code is not reloaded between requests.
   config.cache_classes = true
