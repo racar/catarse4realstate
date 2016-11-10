@@ -74,8 +74,8 @@ gem 'redactor-rails', github: 'catarse/redactor-rails'
 # Uploads
 gem 'carrierwave', '>= 1.0.0.beta', '< 2.0'
 
-gem 'mini_magick'
-gem 'rmagick', '2.15.0'
+gem 'mini_magick', '3.5', :require => 'mini_gmagick'
+
 
 
 # Other Tools
