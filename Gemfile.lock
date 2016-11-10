@@ -7,6 +7,17 @@ GIT
       actionpack (>= 3.2)
 
 GIT
+  remote: git://github.com/carrierwaveuploader/carrierwave.git
+  revision: 1578777fe3f30140347ebf27d1943471bbe4d425
+  ref: 1578777fe3f30140347ebf27d1943471bbe4d425
+  specs:
+    carrierwave (0.10.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
+
+GIT
   remote: git://github.com/catarse/catarse_api.git
   revision: eb9eb3bcc41fedf16ae758682569009ea74c0f48
   specs:
@@ -151,10 +162,6 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    carrierwave (1.0.0.rc)
-      activemodel (>= 4.0.0)
-      activesupport (>= 4.0.0)
-      mime-types (>= 1.16)
     catarse_moip (3.2.0)
       enumerate_it
       httparty
@@ -748,7 +755,7 @@ DEPENDENCIES
   capistrano-rails
   capistrano-rbenv
   capybara (~> 2.2.0)
-  carrierwave (~> 1.0.0.rc)
+  carrierwave!
   catarse_api!
   catarse_moip (~> 3.2.0)
   catarse_monkeymail (>= 0.1.6)
@@ -781,7 +788,7 @@ DEPENDENCIES
   launchy
   letter_opener
   mail_form
-  mini_magick (= 4.5.1)
+  mini_magick (~> 4.5, >= 4.5.1)
   mixpanel-ruby
   mixpanel_client
   moip!
