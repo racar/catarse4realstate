@@ -45,10 +45,10 @@ nav.project-nav.u-text-center.u-marginbottom-30.profile style='z-index: 10; posi
         span.fa.fa-cog
         | &nbsp; Editar perfil
     = link_to '#contributed', id: 'contributed_link', class: 'nav-tab' , data: {target: '#contributed-tab'} do
-      | Apoyados &nbsp;
+      | Proyectos Apoyados &nbsp;
       span.badge= projects_to_show.count
     = link_to '#created', id: 'created_link', class: 'nav-tab' , data: {target: '#created-tab'} do
-      | Creado &nbsp;
+      | Proyectos Creados &nbsp;
       span.badge= resource.created_projects.count
     = link_to '#about', id: 'about_link', class: 'nav-tab' , data: {target: '#about-tab'} do
       | Acerca de

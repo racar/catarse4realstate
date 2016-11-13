@@ -16,7 +16,7 @@ es:
       login_with_facebook: Iniciar sesión con Facebook
     user:
       my_contributions: Mi apoyo
-      logout: Deja
+      logout: Cerrar Sesión
       my_credits: Saldo acreedor
       refund_link: Solicitud de reembolso
 
