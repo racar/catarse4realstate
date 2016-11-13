@@ -15,7 +15,7 @@
           .divider.u-marginbottom-20
 
           .fontsize-base.fontweight-semibold Dirección
-          .fontsize-small.u-marginbottom-20 Esta es la dirección que se le dijo para hacer su último apoyo. Si cambia de dirección, cambiar aquí y si espera alguna recompensa, deje por correo electrónico a la directora del proyecto apoyado.
+          .fontsize-small.u-marginbottom-20 Esta es la dirección donde realizo su ultima inversión. Si cambia de dirección, cambiar aquí y si espera alguna recompensa, deje por correo electrónico a la directora del proyecto apoyado.
           .w-row  
             = form.association :country, as: :select, label_html:{class: 'field-label fontweight-semibold'}, wrapper_html: {class: 'w-col w-col-6 w-sub-col'}, input_html: {class: 'w-select positive', required: true}, required: true, label: 'País'
             .w-col.w-col-6
@@ -49,7 +49,7 @@
 
           .divider.u-marginbottom-20
           .fontweight-semibold.fontsize-smaller Desactivar mi cuenta
-          .fontsize-smallest Todo el apoyo se convierte en copias de seguridad anónimos, sus datos ya no es visible, se saldrá automáticamente del sistema y su cuenta estará incapacitado de forma permanente.
+          .fontsize-smallest Todo las inversiones se convierten en copias de seguridad, sus datos ya no seran visibles, se saldrá automáticamente del sistema y su cuenta estará incapacitadade forma permanente.
           = link_to 'Desactivar mi cuenta', resource, method: :delete, data: { confirm: 'Usted quiere desactivar esta cuenta?' }, class: 'alt-link fontsize-smaller'
 
     div
