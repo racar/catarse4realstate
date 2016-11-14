@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 ruby '2.3.1'
-#ruby '2.2.2'
+# ruby '2.2.2'
 gem 'rails', '~> 4.1.6'
 
 #gem 'catarse_api', path: '~/code/catarse_api'
@@ -57,7 +57,7 @@ gem 'high_voltage'
 gem 'devise', :git => 'git://github.com/plataformatec/devise.git', :ref => 'd9939d1'
 gem 'omniauth', :git => 'git://github.com/omniauth/omniauth.git', :ref => 'da86405'
 gem 'omniauth-facebook', :git => 'git://github.com/mkdynamic/omniauth-facebook.git', :ref => '0e922ac'
-gem "omniauth-google-oauth2"
+gem "omniauth-google-oauth2", :git => 'https://github.com/zquestz/omniauth-google-oauth2'
 gem 'omniauth-linkedin'
 
 gem 'pundit'
