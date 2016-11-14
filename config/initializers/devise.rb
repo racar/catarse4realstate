@@ -221,7 +221,7 @@ Devise.setup do |config|
        # OauthProvider.all.each do |p|
           #config.omniauth p.name, p.key, p.secret, scope: p.scope, info_fields: 'email, name'
           config.omniauth :facebook, "1017777181607166", "21c155a62b8813e58e9d1d930be6e70a", scope: 'email', info_fields: 'id,name,email'
-          #config.omniauth :google_oauth2, "457831993796-h9sgfosib03iufaomhf1vntvklmi786q.apps.googleusercontent.com", "eySfW1-cywKw1f3EnbNYj4B5", {access_type: 'online'}
+          config.omniauth :google_oauth2, "593746662819-t9rpb9vce1rili5etboj3j0cmd1fbu7c.apps.googleusercontent.com", "ApW9ISaqSiAQUWD7AWr1EbVl", {access_type: 'online'}
         #end
       #end
     #rescue Exception => e
