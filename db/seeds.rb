@@ -110,7 +110,7 @@ OauthProvider.find_or_create_by!(name: 'facebook') do |o|
   o.path = 'facebook'
 end
 
-OauthProvider.find_or_create_by!(name: 'google') do |o|
+OauthProvider.find_or_create_by!(name: 'google_oauth2') do |o|
   o.key = '593746662819-t9rpb9vce1rili5etboj3j0cmd1fbu7c.apps.googleusercontent.com'
   o.secret = 'ApW9ISaqSiAQUWD7AWr1EbVl'
   o.path = 'google_oauth2'
