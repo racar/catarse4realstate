@@ -28,7 +28,7 @@ puts 'Seeding the database...'
 #USO: desde consola ejecutar - >> SEED_DATA=category rake db:seed
 
 
-#if ENV['SEED_DATA'] == 'category'
+if ENV['SEED_DATA'] == 'category'
 connection = ActiveRecord::Base.connection()
 connection.execute("delete from project_notifications where 1=1;")
 connection.execute("delete from rewards where 1=1;")
@@ -40,7 +40,7 @@ Category.delete_all
         Category.create!(:name_pt => name_pt, :name_es => name_es)
       end
     end
-#elsif ENV['SEED_DATA'] == 'ciudades'
+elsif ENV['SEED_DATA'] == 'ciudades'
   City.delete_all
   State.delete_all
 
@@ -60,9 +60,9 @@ Category.delete_all
   end
 
 
-#else
+else
 
-#end
+end
 
 {
   company_name: 'Home Parte',
@@ -91,7 +91,7 @@ Category.delete_all
   terms_url: 'http://suporte.catarse.me/knowledgebase/articles/161100-termos-de-uso',
   privacy_url: 'http://suporte.catarse.me/knowledgebase/articles/161103-pol%C3%ADtica-de-privacidade',
   about_channel_url: 'http://blog.catarse.me/conheca-os-canais-do-catarse/',
-  instagram_url: 'http://instagram.com/catarse_',
+  instagram_url: 'http://instagram.com/',
   blog_url: "http://blog.catarse.me",
   github_url: 'http://github.com/catarse',
   contato_url: 'http://suporte.catarse.me/'
@@ -109,6 +109,14 @@ OauthProvider.find_or_create_by!(name: 'facebook') do |o|
   o.secret = 'cca3da37b7ac90f31b06f8f83f0eba4c'
   o.path = 'facebook'
 end
+
+OauthProvider.find_or_create_by!(name: 'google') do |o|
+  o.key = '593746662819-t9rpb9vce1rili5etboj3j0cmd1fbu7c.apps.googleusercontent.com'
+  o.secret = 'ApW9ISaqSiAQUWD7AWr1EbVl'
+  o.path = 'google'
+end
+
+
 
 puts
 puts '============================================='
