@@ -14,15 +14,15 @@ es:
         address_neighbourhood: Barrio
         address_number: Número
         address_state: Estado
-        address_street: Dirección
+        address_street: Calle
         address_zip_code: CEP
         cpf: 'CPF / CNPJ '
         state_inscription: 'Registro de Estado'
-        email: Email
+        email: 'Email'
         full_name: "Nombre completo / Nombre de la empresa"
         phone_number: "Teléfono"
         bank: 'Banco'
-        bank_id: 'Banco'
+        bank_id: 'Cuenta'
         owner_name: 'Nombre del Titular'
         owner_document: 'CPF el titular de la cuenta bancaria'
         agency: 'Organismo'
@@ -56,7 +56,7 @@ es:
         address_city: "Ciudad"
         address_zip_code: "CEP"
         address_phone_number: "Teléfono"
-        value: Valor del soporte
+        value: "Valor del soporte"
         payer_name: "Nombre Completo"
         payer_email: "Email"
         country: "País"
@@ -73,9 +73,9 @@ es:
       reward:
         deliver_at: Plazo de entrega
       project:
-        channels: Canales
-        category: Categoría
-        expires_at: Plazo
+        channels: "Canales"
+        category: "Categoría"
+        expires_at: "Plazo"
         online_days: "Plazo del proyecto"
         headline: "Eslogan"
         image_url: "URL de la imagen"
@@ -92,23 +92,23 @@ es:
         budget: 'Presupuesto del proyecto'
         uploaded_image: 'Diseño del proyecto'
       user:
-        address_city: Ciudad
-        address_complement: Complemento
-        address_neighbourhood: Barrio
-        address_number: Número
-        address_state: Estado
-        address_street: Dirección
+        address_city: 'Ciudad'
+        address_complement: 'Complemento'
+        address_neighbourhood: 'Barrio'
+        address_number: 'Número'
+        address_state: 'Estado'
+        address_street: 'Dirección'
         address_zip_code: CEP
         cpf: 'CPF / CNPJ '
         cpf_hint: '(?)'
         state_inscription: 'registro de Estado'
         current_password: "contraseña actual"
-        email: Email
+        email: 'Email'
         full_name: "Nombre completo / Nombre de la empresa"
         bio: 'Mini Bio'
-        name: "Apellido"
-        newsletter: 'Quiero recibir noticias de Catarsis'
-        password: Contraseña
+        name: "Nombre"
+        newsletter: 'Quiero recibir noticias de Homeparte'
+        password: 'Contraseña'
         password_confirmation: "Confirmación de la contraseña"
         phone_number: "Teléfono"
         cpf_hint_title: Factura se emitirá para este documento
@@ -200,7 +200,7 @@ es:
         project:
           attributes:
             city:
-              blank: La ciudad del proyecto no puede estar en blanco
+              blank: 'La ciudad del proyecto no puede estar en blanco'
             video_url:
               blank: 'El video del proyecto no puede estar en blanco'
             budget:
@@ -253,11 +253,11 @@ es:
               blank: "Imagen del usuario no puede estar en blanco"
   project:
     update:
-      success: Esta información ha sido actualizada
+      success: 'Esta información ha sido actualizada'
       failed: 'La información no se salvó, compruebe que todos los campos se rellenan correctamente'
     delete:
       posts: 'Eliminado correctamente'
-    video_regex_validation: se aceptan YouTube o Vimeo sólo las URLs
+    video_regex_validation: 'se aceptan YouTube o Vimeo sólo las URLs'
   payment:
     state:
       pending: "En espera de la confirmación del pago"
@@ -277,8 +277,8 @@ es:
       transferencia_bancaria: "Transferencia bancaria"
       carteira_mo_ip: "Carteira MoIP"
       financiamento_bancario: "Financiamiento bancario"
-    project_should_be_online: No se puede apoyar un proyecto que no está en el aire
-    reward_must_be_from_project: debe ser del mismo proyecto
+    project_should_be_online: 'No se puede apoyar un proyecto que no está en el aire'
+    reward_must_be_from_project: 'debe ser del mismo proyecto'
     should_not_contribute_if_maximum_contributions_been_reached: ha alcanzado su número
       la mayoría de los partidarios
     value_must_be_at_least_rewards_value: debe ser por lo menos %{minimum_value} para
@@ -299,11 +299,11 @@ es:
     complement: Complemento
     neighbourhood: Barrio
     city: Ciudad
-    address_state: Estado
+    address_state: 'Estado'
     zip_code: CEP
-    anonymous: Anonimo
+    anonymous: 'Anonimo'
   user:
-    no_name: Sin nombre
+    no_name: 'Sin nombre'
     contributions_text:
       many: "Apoyado esto y la mayoría de otros %{total} proyectos"
       one: "Sólo apoyado este proyecto hasta ahora"
@@ -312,8 +312,8 @@ es:
     created: 'Ahora sigues %{channel}'
     deleted: 'Usted no pudo seguir el %{channel}'
   channels:
-    edit: Atualizar canal
-    image_hint: Tamaño máximo (600x121px)
+    edit: 'Atualizar canal'
+    image_hint: 'Tamaño máximo (600x121px)'
     subscribed: "+ %{count} seguidores"
     back_to_news: '← Volver a las noticias'
     follow: "Sigue el canal"
