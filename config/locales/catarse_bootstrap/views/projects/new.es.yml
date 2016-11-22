@@ -24,8 +24,8 @@ es:
             description: "Complete la siguiente información para iniciar su proyecto inmobiliario."
 
         info:
-          permalink: http://www.homeParte.com/
-          goal: R$
-          online_days: días
+          permalink: "http://www.homeParte.com/"
+          goal: $
+          online_days: "días"
 
         submit: "Guardar y continuar"
