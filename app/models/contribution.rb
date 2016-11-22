@@ -91,8 +91,7 @@ class Contribution < ActiveRecord::Base
         shippingAddress:contribution[:address_street] + contribution[:address_number],
         shippingCity:contribution[:address_city],
         shippingCountry:'CO',
-        telephone:contribution[:address_phone_number],
-        test: 1
+        telephone:contribution[:address_phone_number]
 
 
     }
