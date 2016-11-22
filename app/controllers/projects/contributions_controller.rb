@@ -27,7 +27,8 @@ class Projects::ContributionsController < ApplicationController
     authorize resource
     resource.update_attributes(permitted_params)
     if resource.save
-      redirect_to resource.paypal_url(project_path(resource.project.id))
+      #redirect_to resource.paypal_url(project_path(resource.project.id))
+      redirect_to resource.payu_url(params[:contribution])
     else
       render :edit
     end

@@ -71,6 +71,35 @@ class Contribution < ActiveRecord::Base
     "#{Rails.application.secrets.paypal_host}/cgi-bin/webscr?" + values.to_query
   end
 
+  def payu_url(contribution)
+
+      amount = Contribution.find(contribution[:id]).value()
+      signatureString="#{Rails.application.secrets.apiKey}"+"~"+"#{Rails.application.secrets.merchantId}"+"~"+contribution[:project_id]+Time.now.strftime("%d%m%Y%H%M")+"~"+amount.to_s+"~COP"
+      signature = Digest::MD5.hexdigest(signatureString)
+    values = {
+        merchantId:"#{Rails.application.secrets.merchantId}",
+        referenceCode: contribution[:project_id]+Time.now.strftime("%d%m%Y%H%M"),
+        description:'Proyecto '+Project.find(contribution[:project_id]).name+', inversión en homeparte.com',
+        amount: amount,
+        tax:0,
+        taxReturnBase:0,
+        signature:signature,
+        accountId:"#{Rails.application.secrets.accountId}",
+        currency:'COP',
+        buyerFullName: contribution[:payer_name],
+        buyerEmail: contribution[:payer_email],
+        shippingAddress:contribution[:address_street] + contribution[:address_number],
+        shippingCity:contribution[:address_city],
+        shippingCountry:'CO',
+        telephone:contribution[:address_phone_number],
+        test: 1
+
+
+    }
+    #"https://sandbox.gateway.payulatam.com/ppp-web-gateway?"+values.to_query
+    "#{Rails.application.secrets.payu}"+values.to_query
+  end
+
   def recommended_projects
     user.recommended_projects.where("projects.id <> ?", project.id).order("count DESC")
   end
