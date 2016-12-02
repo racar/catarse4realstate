@@ -1,6 +1,8 @@
 - target = defined?(embed_link) ? '__blank' : ''
 - @project = card if defined?(card)
 - ref = defined?(ref) ? ref : nil
+- per_tenencia = @project.periodo_tenencia.nil? ? ' ' : @project.periodo_tenencia
+- tir_proyectada = @project.tir_proyectada.nil? ? ' ' : @project.tir_proyectada
 
 div[itemtype="http://schema.org/CreativeWork" class="#{defined?(wrapper_class) ? wrapper_class : ''}"] 
   .card-project.card.u-radius
@@ -13,8 +15,8 @@ div[itemtype="http://schema.org/CreativeWork" class="#{defined?(wrapper_class) ?
         = link_to project_by_slug_path(@project.permalink, ref: ref), title: @project.headline, target: target, class: 'link-hidden' do
           = truncate(@project.headline, length: 140)
 
-      .w-hidden-small.w-hidden-tiny.fontsize-smallest.fontcolor-secondary[itemprop="name" content="#{@project.user.display_name}"]= 'Periodo de Tenencia:' + ' ' + @project.periodo_tenencia + ' años'
-      .w-hidden-small.w-hidden-tiny.fontsize-smallest.fontcolor-secondary[itemprop="name" content="#{@project.user.display_name}"]= 'TIR proyectada:' + ' ' + @project.tir_proyectada + ' %'
+      .w-hidden-small.w-hidden-tiny.fontsize-smallest.fontcolor-secondary[itemprop="name" content="#{@project.user.display_name}"]= 'Periodo de Tenencia:' + ' ' + per_tenencia + ' años'
+      .w-hidden-small.w-hidden-tiny.fontsize-smallest.fontcolor-secondary[itemprop="name" content="#{@project.user.display_name}"]= 'TIR proyectada:' + ' ' + tir_proyectada + ' %'
 
     - if @project.decorate.show_city
       .w-hidden-small.w-hidden-tiny.card-project-author.altt
