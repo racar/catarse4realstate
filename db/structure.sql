@@ -263,7 +263,9 @@ CREATE TABLE projects (
     full_text_index tsvector,
     budget_html text,
     expires_at timestamp without time zone,
-    city_id integer
+    city_id integer,
+    periodo_tenencia character varying(255),
+    tir_proyectada character varying(255)
 );
 
 
@@ -4460,7 +4462,7 @@ ALTER TABLE ONLY project_posts
 -- PostgreSQL database dump complete
 --
 
-SET search_path TO public, pg_catalog;
+SET search_path TO "$user", public, "1";
 
 INSERT INTO schema_migrations (version) VALUES ('20121226120921');
 
@@ -5147,4 +5149,6 @@ INSERT INTO schema_migrations (version) VALUES ('20150911145304');
 INSERT INTO schema_migrations (version) VALUES ('20150915160559');
 
 INSERT INTO schema_migrations (version) VALUES ('20160920190458');
+
+INSERT INTO schema_migrations (version) VALUES ('20161202014138');
 

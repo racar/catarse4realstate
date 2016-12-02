@@ -12,6 +12,10 @@ div[itemtype="http://schema.org/CreativeWork" class="#{defined?(wrapper_class) ?
       .w-hidden-small.w-hidden-tiny.fontcolor-secondary.fontsize-smaller
         = link_to project_by_slug_path(@project.permalink, ref: ref), title: @project.headline, target: target, class: 'link-hidden' do
           = truncate(@project.headline, length: 140)
+
+      .w-hidden-small.w-hidden-tiny.fontsize-smallest.fontcolor-secondary[itemprop="name" content="#{@project.user.display_name}"]= 'Periodo de Tenencia:' + ' ' + @project.periodo_tenencia + ' años'
+      .w-hidden-small.w-hidden-tiny.fontsize-smallest.fontcolor-secondary[itemprop="name" content="#{@project.user.display_name}"]= 'TIR proyectada:' + ' ' + @project.tir_proyectada + ' %'
+
     - if @project.decorate.show_city
       .w-hidden-small.w-hidden-tiny.card-project-author.altt
         .fontsize-smallest.fontcolor-secondary
@@ -31,7 +35,7 @@ div[itemtype="http://schema.org/CreativeWork" class="#{defined?(wrapper_class) ?
         .w-col.w-col-4.w-col-small-4.w-col-tiny-4.u-text-center-small-only
           .fontsize-smaller.fontweight-semibold 
             = @project.display_pledged
-          .fontsize-smallest.lineheight-tightest Levantados
+          .fontsize-smallest.lineheight-tightest Financiado
         .w-col.w-col-4.w-col-small-4.w-col-tiny-4.u-text-right
           - unless @project.expired?
             .fontsize-smaller.fontweight-semibold 

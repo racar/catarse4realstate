@@ -21,7 +21,7 @@ es:
     push_to_online: Su proyecto está en línea!
     push_to_online_error: Error al colocar el proyecto en línea. Rellene todos los campos obligatorios.
     twitter:
-      take_a_look: Echa un vistazo a el proyecto %{name} en @catarse
+      take_a_look: "Echa un vistazo a el proyecto %{name} en @homeparte"
     video_embed:
       a_project_by_html: Un proyecto en %{link}
     posts:
@@ -78,7 +78,7 @@ es:
           successful: "Este proyecto tuvo éxito y fue financiado en %{date}"
           waiting_funds: "La financiación a largo plazo de este proyecto está cerrado. Estamos esperando la confirmación del último pago."
           draft: "Este diseño es sólo un proyecto y todavía no puede recibir apoyo."
-        submit: Apoya este proyecto
+        submit: "Invierte en este proyecto"
       project_by: Diseñado por
       funding_period: Período de campaña
       project_header:
@@ -87,7 +87,7 @@ es:
         with_city: "Un proyecto %{category_name} por %{author} en %{city}"
       menu:
         about: Acerca de
-        add_reward: Añadir recompensa
+        add_reward: "Añadir fidi"
         comments: Comentarios
         contributions: Apoyos
         metrics: Métrica
@@ -96,10 +96,10 @@ es:
         posts: Noticia
       no_rewards_warning: No viaje! Piense en cómo va a liberarlos y poner todo
         esto en el presupuesto. Prometió?! SIGA! :D
-      no_rewards_warning_title: Crear aquí tus recompensas
+      no_rewards_warning_title: "Crear aquí tus fidis"
       contribution_states:
         confirmed: "confirmado"
         pending: "Destacado"
       sidebar:
-        contributions: apoyo
-        goal: logrado de %{total}
+        contributions: "apoyo"
+        goal: "invertido de %{total}"
