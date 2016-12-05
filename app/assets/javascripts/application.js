@@ -30,7 +30,7 @@
 // Adding references, lost in production env. Att. @racar
 // *******************************
 
-
+//= require app/utils/chartkick
 //= require app/utils/mix_panel
 //= require app/utils/jquery.smooth-scroll
 

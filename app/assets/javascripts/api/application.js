@@ -3,7 +3,7 @@
 //= require mithril.postgrest
 //= require moment
 //= require replace-diacritics
-//= require chartjs
+
 //= require api/init
 //= require catarse.js/dist/catarse.js
 //= require_self

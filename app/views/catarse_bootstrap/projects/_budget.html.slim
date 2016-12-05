@@ -1,3 +1,6 @@
+=javascript_include_tag "https://www.gstatic.com/charts/loader.js"
+=javascript_include_tag '//www.google.com/jsapi', 'chartkick'
+javascript: src="https://www.gstatic.com/charts/loader.js"
 - if @project.budget.present?
   p.fontsize-large.fontweight-semibold
     | Presupuesto
@@ -6,3 +9,6 @@
   /- if @project.budgets.present?
     = pie_chart @project.budgets.pluck(:name, :value), id: "budget-chart"
 
+
+p.fontsize-base
+  = line_chart YAML.load(@project.proyeccion),  {discrete: true, library: {width: 800} }
