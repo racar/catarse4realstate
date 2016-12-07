@@ -35,7 +35,7 @@
               input_html: { class: 'redactor positive', required: false },
               validation_text: false
 
-            - if form.object.proyeccion.nil? then form.object.proyeccion = data
+            - if @project.proyeccion.nil? then form.object.proyeccion = data
             = form.input :proyeccion, as: :string,
               wrapper: :two_columns,
               wrapper_class: 'w-row u-marginbottom-30 card card-terciary medium',
@@ -44,7 +44,7 @@
               input_html: { required: true},
               validation_text: false
 
-            -if(!form.object.proyeccion.nil?) 
+            -if(!@project.proyeccion.nil?)
               = line_chart  YAML.load(form.object.proyeccion), {discrete: true, library: {width: 800}}
 
   .w-section.section
