@@ -1,10 +1,81 @@
+= javascript_include_tag 'http://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyBmtpykEj79ALb2D23rSCkivK3SiFmY3vM&callback=loadmap'.html_safe, :defer => "defer"
+javascript:
+  /*
+   * Google Maps: Latitude-Longitude Finder Tool
+   * http://salman-w.blogspot.com/2009/03/latitude-longitude-finder-tool.html
+   */
+  function loadmap() {
+    // initialize map
+
+      var lat = '#{@project.latitud}';
+      var lng = '#{@project.longitud}';
+
+
+    var map = new google.maps.Map(document.getElementById("map-canvas"), {
+      center: new google.maps.LatLng(parseFloat(lat), parseFloat(lng)),
+      zoom: 13,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+    // initialize marker
+    var marker = new google.maps.Marker({
+      position: map.getCenter(),
+      draggable: true,
+      map: map
+    });
+    // intercept map and marker movements
+    google.maps.event.addListener(map, "idle", function () {
+      marker.setPosition(map.getCenter());
+      document.getElementById("map-output").innerHTML = "Latitud:  " + map.getCenter().lat().toFixed(6) + "<br>Longitud: " + map.getCenter().lng().toFixed(6);
+      document.getElementById("project_latitud").value = map.getCenter().lat().toFixed(6);
+      document.getElementById("project_longitud").value = map.getCenter().lng().toFixed(6);
+    });
+    google.maps.event.addListener(marker, "dragend", function (mapEvent) {
+      map.panTo(mapEvent.latLng);
+    });
+    // initialize geocoder
+    var geocoder = new google.maps.Geocoder();
+    google.maps.event.addDomListener(document.getElementById("search-btn"), "click", function () {
+      geocoder.geocode({address: document.getElementById("search-txt").value}, function (results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+          var result = results[0];
+          document.getElementById("search-txt").value = result.formatted_address;
+          if (result.geometry.viewport) {
+            map.fitBounds(result.geometry.viewport);
+          } else {
+            map.setCenter(result.geometry.location);
+          }
+        } else if (status == google.maps.GeocoderStatus.ZERO_RESULTS) {
+          alert("Sorry, geocoder API failed to locate the address.");
+        } else {
+          alert("Sorry, geocoder API failed with an error.");
+        }
+      });
+    });
+    google.maps.event.addDomListener(document.getElementById("search-txt"), "keydown", function (domEvent) {
+      if (domEvent.which === 13 || domEvent.keyCode === 13) {
+        google.maps.event.trigger(document.getElementById("search-btn"), "click");
+      }
+    });
+    // initialize geolocation
+    if (navigator.geolocation) {
+      google.maps.event.addDomListener(document.getElementById("detect-btn"), "click", function () {
+        navigator.geolocation.getCurrentPosition(function (position) {
+          map.setCenter(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
+        }, function () {
+          alert("Sorry, geolocation API failed to detect your location.");
+        });
+      });
+      document.getElementById("detect-btn").disabled = false;
+    }
+  }
+
 - if resource.video_url.present?
   .w-embed.w-video.project-video
     iframe itemprop="video" src="#{@project.display_video_embed_url}" class="embedly-embed" width="100%" height="379" frameborder="0" allowFullScreen
 
 .project-share.u-marginbottom-30.w-row
   .w-col.w-col-3
-    #facebook_share.img-share = render_facebook_share title: @project.name, href: project_by_slug_url(@project.permalink, locale: I18n.locale, ref: 'facebook')
+    #facebook_share.img-share = render_facebook_share title: @project.name, href: project_by_slug_url(@project.permalink, ref: 'facebook')
   .w-col.w-col-3
     #twitter_share.img-share = render_twitter(url: project_by_slug_url(permalink: @project.permalink, ref: 'twitter'), title: @project.name)
   .w-col.w-col-3
@@ -29,3 +100,10 @@
   .no-mobile
     .fontsize-base[itemprop="budget"]
       = render 'budget'
+
+.project-about
+  .no-mobile
+    .fontsize-base[itemprop="budget"]
+
+        div id='map-canvas'
+        div id='map-output'

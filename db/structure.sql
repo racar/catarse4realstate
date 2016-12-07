@@ -266,7 +266,9 @@ CREATE TABLE projects (
     city_id integer,
     periodo_tenencia character varying(255),
     tir_proyectada character varying(255),
-    proyeccion character varying(255)
+    proyeccion character varying(255),
+    latitud character varying(255),
+    longitud character varying(255)
 );
 
 
@@ -5154,4 +5156,6 @@ INSERT INTO schema_migrations (version) VALUES ('20160920190458');
 INSERT INTO schema_migrations (version) VALUES ('20161202014138');
 
 INSERT INTO schema_migrations (version) VALUES ('20161204215507');
+
+INSERT INTO schema_migrations (version) VALUES ('20161207043142');
 
