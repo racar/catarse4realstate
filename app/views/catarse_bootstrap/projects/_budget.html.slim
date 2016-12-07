@@ -11,4 +11,5 @@ javascript: src="https://www.gstatic.com/charts/loader.js"
 
 
 p.fontsize-base
-  = line_chart YAML.load(@project.proyeccion),  {discrete: true, library: {width: 800} }
+  -if(!@project.proyeccion.nil?) then
+    = line_chart YAML.load(@project.proyeccion),  {discrete: true, library: {width: 800} }
