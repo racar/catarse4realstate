@@ -12,4 +12,4 @@ javascript: src="https://www.gstatic.com/charts/loader.js"
 
 p.fontsize-base
   -if(!@project.proyeccion.nil?) then
-    = line_chart [[1, 1], [2, 3], [3, 5]],  {discrete: true, library: {width: 800} }
+    = line_chart YAML.load(@project.proyeccion),  {discrete: true, library: {width: 800} }
