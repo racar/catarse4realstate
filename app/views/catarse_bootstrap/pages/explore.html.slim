@@ -6,8 +6,12 @@
   #nearOfData data-state="#{current_user.address_state}"
 
 = javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js'
+= javascript_include_tag "https://code.jquery.com/jquery-1.11.0.min.js"
+= javascript_include_tag "https://code.jquery.com/jquery-migrate-1.2.1.min.js"
+
 
 = render 'shared/slider'
+= render 'shared/slich'
 
 section#blog.section-large.bg-gray.before-footer
 
@@ -60,6 +64,31 @@ section.section.loadmore
 
 
   .hero-search.fontweight-light.fontsize-larger Como Invertir
+
+  div class="section-invertir"
+      div class="panel-invertir"
+        div
+          div class="slick-invertir"
+            div
+              img src="https://c6.staticflickr.com/6/5504/31432082261_0529188497.jpg"
+            div
+              img src="https://c4.staticflickr.com/1/308/31432083011_d5c6a05f79.jpg"
+            div
+              img src="https://c3.staticflickr.com/1/518/31509554626_82745a7364.jpg"
+
+      div class="panel-invertir-text"
+        p.u-text-center.fontweight-bold.fontsize-large Paso 1:
+        p.u-text-center.fontcolor-secondary.fontsize-large Seleccionamos el proyecto Inmobiliario
+        p.u-text-center.fontweight-bold.fontsize-large Paso 2:
+        p.u-text-center.fontcolor-secondary.fontsize-large Decides cuantos titulos fiduciarios quieres comprar (Cada FiDi representa $50.000 COP)
+        p.u-text-center.fontweight-bold.fontsize-large Paso 3:
+        p.u-text-center.fontcolor-secondary.fontsize-large Homeparte adquiere y administra el proyecto
+        p.u-text-center.fontweight-bold.fontsize-large Paso 4:
+        p.u-text-center.fontcolor-secondary.fontsize-large Recibe los rendimientos inmobiliarios en tu cuenta bancaria
+
+
+  .hero-search.fontweight-light.fontsize-larger Es segura mi inversión?
+  p.u-text-center.fontcolor-secondary.fontsize-large Todo el proceso es vigilado por la Super Intendencia Financiera de Colombia
   img src="https://c7.staticflickr.com/6/5498/30490889454_bb3ac8a6b1_h.jpg"
 
 
