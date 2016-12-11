@@ -61,7 +61,7 @@ RSpec.describe UserDecorator do
       failed_project.update_column(:state, 'failed')
     end
 
-    it { is_expected.to eq("R$ 25,45") }
+    it { is_expected.to eq("$ 25,45") }
   end
 
   describe "#display_name" do
@@ -110,7 +110,7 @@ RSpec.describe UserDecorator do
 
   describe "#display_credits" do
     subject { create(:user) }
-    its(:display_credits) { should == 'R$ 0'}
+    its(:display_credits) { should == '$ 0'}
   end
 
   describe "#display_total_of_contributions" do
@@ -119,7 +119,7 @@ RSpec.describe UserDecorator do
       before do
         create(:confirmed_contribution, user: subject, value: 500.0)
       end
-      its(:display_total_of_contributions) { should == 'R$ 500'}
+      its(:display_total_of_contributions) { should == '$ 500'}
     end
   end
 end

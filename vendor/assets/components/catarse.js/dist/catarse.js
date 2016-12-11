@@ -112,7 +112,7 @@ window.c.AdminContribution = (function(m, h){
     view: function(ctrl, args) {
       var contribution = args.item;
       return m('.w-row.admin-contribution', [
-        m('.fontweight-semibold.lineheight-tighter.u-marginbottom-10.fontsize-small', 'R$' + contribution.value),
+        m('.fontweight-semibold.lineheight-tighter.u-marginbottom-10.fontsize-small', '$' + contribution.value),
           m('.fontsize-smallest.fontcolor-secondary', h.momentify(contribution.created_at, 'DD/MM/YYYY HH:mm[h]')),
           m('.fontsize-smallest', [
             'ID do Gateway: ',
@@ -398,7 +398,7 @@ window.c.AdminProjectDetailsCard = (function(m, h){
                   ]),
                   m('.w-col.w-col-3.w-col-small-3.w-col-tiny-6', [
                     m('.fontweight-semibold.fontsize-large.lineheight-tight', [
-                      'R$ ' + h.formatNumber(project.pledged, 2),
+                      '$ ' + h.formatNumber(project.pledged, 2),
                     ]),
                     m('.fontcolor-secondary.lineheight-tighter.fontsize-small.u-marginbottom-10', 'levantados')
                   ]),
@@ -615,7 +615,7 @@ window.c.AdminRadioAction = (function(m, h, c){
                         m('input#r-' + index + '.w-radio-input[type=radio][name="admin-radio"][value="' + radio.id + '"]' + ((selected) ? '[checked]' : ''),{
                           onclick: set
                         }),
-                        m('label.w-form-label[for="r-' + index + '"]', 'R$' + radio.minimum_value)
+                        m('label.w-form-label[for="r-' + index + '"]', '$' + radio.minimum_value)
                       ]);
                     }) : h.loader(),
                   m('strong', 'Descrição'),
@@ -649,7 +649,7 @@ window.c.AdminReward = (function(m, h, _){
         m('.fontsize-smallest.lineheight-looser', (_.isEmpty(reward)) ? 'Apoio sem recompensa.' : [
             'ID: ' + reward.id,
             m('br'),
-            'Valor mínimo: R$' + h.formatNumber(reward.minimum_value, 2, 3),
+            'Valor mínimo: $' + h.formatNumber(reward.minimum_value, 2, 3),
             m('br'),
             m.trust('Disponíveis: ' + available + ' / ' + (reward.maximum_contributions || '&infin;')),
             m('br'),
@@ -715,9 +715,9 @@ window.c.AdminTransaction = (function(m, h){
       return m('.w-col.w-col-4',[
         m('.fontweight-semibold.fontsize-smaller.lineheight-tighter.u-marginbottom-20', 'Detalhes do apoio'),
         m('.fontsize-smallest.lineheight-looser',[
-          'Valor: R$' + h.formatNumber(contribution.value, 2, 3),
+          'Valor: $' + h.formatNumber(contribution.value, 2, 3),
           m('br'),
-          'Taxa: R$' + h.formatNumber(contribution.gateway_fee, 2, 3),
+          'Taxa: $' + h.formatNumber(contribution.gateway_fee, 2, 3),
           m('br'),
           'Aguardando Confirmação: ' + (contribution.waiting_payment ? 'Sim' : 'Não'),
           m('br'),
@@ -983,7 +983,7 @@ window.c.ProjectCard = (function(m, h, models){
                 m('.fontsize-base.fontweight-semibold', Math.ceil(project.progress) +  '%')
               ]),
               m('.w-col.w-col-4.w-col-small-4.w-col-tiny-4.u-text-center-small-only', [
-                m('.fontsize-smaller.fontweight-semibold', 'R$ ' + project.pledged),
+                m('.fontsize-smaller.fontweight-semibold', '$ ' + project.pledged),
                 m('.fontsize-smallest.lineheight-tightest', 'Levantados')
               ]),
               m('.w-col.w-col-4.w-col-small-4.w-col-tiny-4.u-text-right', [
@@ -1005,7 +1005,7 @@ window.c.ProjectChartContributionAmountPerDay = (function(m, Chart, _, h){
       var resource = args.collection()[0],
           mountDataset = function() {
             return [{
-              label: 'R$ arrecadados por dia',
+              label: '$ arrecadados por dia',
               fillColor: 'rgba(126,194,69,0.2)',
               strokeColor: 'rgba(126,194,69,1)',
               pointColor: 'rgba(126,194,69,1)',
@@ -1038,7 +1038,7 @@ window.c.ProjectChartContributionAmountPerDay = (function(m, Chart, _, h){
     },
     view: function(ctrl) {
       return m('.card.u-radius.medium.u-marginbottom-30', [
-        m('.fontweight-semibold.u-marginbottom-10.fontsize-large.u-text-center', 'R$ arrecadados por dia'),
+        m('.fontweight-semibold.u-marginbottom-10.fontsize-large.u-text-center', '$ arrecadados por dia'),
         m('.w-row',[
           m('.w-col.w-col-12', [
             m('canvas[id="chart"][width="860"][height="300"]', {config: ctrl.renderChart})
@@ -1153,7 +1153,7 @@ window.c.ProjectContributionsPerLocationTable = (function(m, models, h, _) {
               ]),
               m('.w-col.w-col-4.w-col-small-4.w-col-tiny-4.table-col[data-ix="sort-arrows"]', [
                 m('a.link-hidden[href="javascript:void(0);"]', {onclick: ctrl.generateSort('total_contributed')}, [
-                  'R$ apoiados ',
+                  '$ apoiados ',
                   m('span.w-hidden-small.w-hidden-tiny','(% do total) '),
                   ' ',m('span.fa.fa-sort')
                 ])
@@ -1170,7 +1170,7 @@ window.c.ProjectContributionsPerLocationTable = (function(m, models, h, _) {
                   ]),
                   m('.w-col.w-col-4.w-col-small-4.w-col-tiny-4.table-col', [
                     m('div', [
-                      'R$ ',
+                      '$ ',
                       h.formatNumber(source.total_contributed, 2, 3),
                       m('span.w-hidden-small.w-hidden-tiny', '  (' + source.total_on_percentage.toFixed(2) + '%)')
                     ])
@@ -1289,7 +1289,7 @@ window.c.TeamTotal = (function(m, h, models){
                   'Hoje somos ' + teamTotal.member_count + ' pessoas espalhadas por ' + teamTotal.total_cities + ' cidades em ' + teamTotal.countries.length +
                     ' países (' + teamTotal.countries.toString() + ')! O Catarse é independente, sem investidores, de código aberto e construído com amor. Nossa paixão é construir um ambiente onde cada vez mais projetos possam ganhar vida.'),
                   m('.fontsize-larger.lineheight-tight.text-success',
-                    'Nossa equipe, junta, já apoiou R$' + h.formatNumber(teamTotal.total_amount) + ' para ' + teamTotal.total_contributed_projects + ' projetos!')]),
+                    'Nossa equipe, junta, já apoiou $' + h.formatNumber(teamTotal.total_amount) + ' para ' + teamTotal.total_contributed_projects + ' projetos!')]),
                     m('.w-col.w-col-2')
             ])
           ]);

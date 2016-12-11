@@ -103,7 +103,7 @@ window.c.AdminRadioAction = (function(m, h, c){
                         m('input#r-' + index + '.w-radio-input[type=radio][name="admin-radio"][value="' + radio.id + '"]' + ((selected) ? '[checked]' : ''),{
                           onclick: set
                         }),
-                        m('label.w-form-label[for="r-' + index + '"]', 'R$' + radio.minimum_value)
+                        m('label.w-form-label[for="r-' + index + '"]', '$' + radio.minimum_value)
                       ]);
                     }) : h.loader(),
                   m('strong', 'Descrição'),

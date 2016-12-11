@@ -260,7 +260,7 @@ fr:
     hints:
       contribution:
         credits: "Vous avez <strong>%{credits}</strong> en crédits et vous pouvez les utiliser sans faire un nouveau paiement."
-        value: "Choisissez votre montant ;) mise de départ R$10, tout montant supérieur est encore meilleur"
+        value: "Choisissez votre montant ;) mise de départ $10, tout montant supérieur est encore meilleur"
       project:
         video_url_edit: 'Collez ici le lien de votre vidéo Vimeo/Youtube'
         about: "Dites-nous ce qui vous a inspiré pour arriver à ce projet. Soyez fin, objectif, attractif, présentez à vos lecteurs  un contenu qui les mobilise, tout en étant très transparent sur votre projet!"
@@ -268,7 +268,7 @@ fr:
         category: "Avant de formater votre projet explorez d'autres projets (réussis) pour vous en inspirer!"
         expires_at: "Enfin, choisissez combien de temps vous voulez que votre campagne dure. Encore une fois, il s'agit d'un choix stratégique: si vous mettez beaucoup de temps, les gens vont perdre de l'intérêt, si vous en mettez trop peu, vous risquez de ne pas atteindre l'objectif."
         online_days: "Enfin, choisissez combien de temps vous voulez que votre campagne dure. Encore une fois, il s'agit d'un choix stratégique: si vous mettez beaucoup de temps, les gens vont perdre de l'intérêt, si vous en mettez trop peu, vous risquez de ne pas atteindre l'objectif."
-        goal: "Montant en reais (R$)"
+        goal: "Montant en reais ($)"
         first_contributions: "Pour atteindre votre objectif financier il est indispensable d'impliquer les gens proches de vous et de votre projet. Donc, énumérez ici qui seront vos 20 premiers bailleurs de fonds ;)"
         headline: "Résumez votre projet en 140 caractères. Ce sera le premier contact que les visiteurs auront avec votre projet, avant même de voir la vidéo. Soyez créatif, clair et direct ;)"
         name: "Soyez aussi objectif que possible. Donnez des explications dans la section 'à propos'."
@@ -424,7 +424,7 @@ fr:
         error: "Ooops. There was an error while registering your contribution. Please try again."
         international:
           description: "You can use PayPal to make international payments"
-          important_html: "<p>The use of PayPal is destinated mostly for international payments. That's because you'll have only 60 days to receive an eventual refund without paying any fee.</p><p>In case you can make the regular payment through MoIP, we recommend you to do it.</p><p>But if that's not possible, don't worry: you'll always be able to receive your money back. Only, in case your refund is made more than 60 days after your payment, you'll have to pay PayPal's fee, which is 5,4% + R$0,60 per transaction.</p>"
+          important_html: "<p>The use of PayPal is destinated mostly for international payments. That's because you'll have only 60 days to receive an eventual refund without paying any fee.</p><p>In case you can make the regular payment through MoIP, we recommend you to do it.</p><p>But if that's not possible, don't worry: you'll always be able to receive your money back. Only, in case your refund is made more than 60 days after your payment, you'll have to pay PayPal's fee, which is 5,4% + $0,60 per transaction.</p>"
           submit: "Proceed to PayPal's checkout"
           title: "Want to make an international payment?"
         review_with_reward_html: "You will contribute with <strong>%{value}</strong> and receive the following reward:"

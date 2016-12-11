@@ -72,7 +72,7 @@ fr:
         you_have_credits: "Vous possedez <strong>%{credits}</strong> en crédits pour realizer ce opération."
         choose_reward: Choisissez la récompense et le montant du opération
         choose_value: Entrez le montant de votre opération
-        minimum_disclaimer: 'A partir de R$ <span id="minimum-value">10</span> vous êtes bon ;)'
+        minimum_disclaimer: 'A partir de $ <span id="minimum-value">10</span> vous êtes bon ;)'
         next_step: "Relisez-vous et effctuez le pagamento"
         no_reward: Merci. Je veux seulement aider le projet.
       review:

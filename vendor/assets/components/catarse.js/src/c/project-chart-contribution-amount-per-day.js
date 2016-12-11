@@ -4,7 +4,7 @@ window.c.ProjectChartContributionAmountPerDay = (function(m, Chart, _, h){
       var resource = args.collection()[0],
           mountDataset = function() {
             return [{
-              label: 'R$ arrecadados por dia',
+              label: '$ arrecadados por dia',
               fillColor: 'rgba(126,194,69,0.2)',
               strokeColor: 'rgba(126,194,69,1)',
               pointColor: 'rgba(126,194,69,1)',
@@ -37,7 +37,7 @@ window.c.ProjectChartContributionAmountPerDay = (function(m, Chart, _, h){
     },
     view: function(ctrl) {
       return m('.card.u-radius.medium.u-marginbottom-30', [
-        m('.fontweight-semibold.u-marginbottom-10.fontsize-large.u-text-center', 'R$ arrecadados por dia'),
+        m('.fontweight-semibold.u-marginbottom-10.fontsize-large.u-text-center', '$ arrecadados por dia'),
         m('.w-row',[
           m('.w-col.w-col-12', [
             m('canvas[id="chart"][width="860"][height="300"]', {config: ctrl.renderChart})

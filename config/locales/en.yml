@@ -267,7 +267,7 @@ en:
     hints:
       contribution:
         credits: "You have <strong>%{credits}</strong> in credits. You can contribute up to this amount without needing to make a new payment."
-        value: "You choose the amount! Starting with R$10, any amount works."
+        value: "You choose the amount! Starting with $10, any amount works."
         # TODO: Change this depending on currency.
       project:
         video_url_edit: 'Paste here the URL of your Vimeo/Youtube video.'
@@ -276,7 +276,7 @@ en:
         category: "Before you set up your project, explore other successful projects to inspire yourself!"
         expires_at: "Finally, choose how long you want your campaign to last. This is a strategic choice: if you put a lot of time, people will lose interest along the way; if put too little, you may not reach the minimum in time."
         online_days: "Finally, choose how long you want your campaign to last. This is a strategic choice: if you put a lot of time, people will lose interest along the way; if put too little, you may not reach the minimum in time."
-        goal: "Values in reais (R$)"
+        goal: "Values in reais ($)"
         # TODO: Change this depending on currency.
         first_contributions: "To reach your financial goal, it’s indispensable to engage the people who are close to you and close to the cause. If you can list here your first 20 contributors, you're gonna be in great shape!"
         headline: "Summarize your project in 140 characters. This sentence will be the first contact people will have with your project, before even seeing the video. Be creative, clear and direct."
@@ -468,7 +468,7 @@ en:
         error: "Oops. There was an error while registering your contribution. Please try again."
         international:
           description: "You can use PayPal to make international payments"
-          important_html: "<p>You can use PayPal for international payments. Note that you'll have 60 days to receive a refund without paying any fees.</p><p>If you can make the regular payment through MoIP, we recommend you do so.</p><p>But if that's not possible, don't worry: you'll always be able to receive your money back. Note that if your refund is made more than 60 days after your payment, you'll have to pay PayPal's fee, which is 5,4% + R$0,60 per transaction.</p>"
+          important_html: "<p>You can use PayPal for international payments. Note that you'll have 60 days to receive a refund without paying any fees.</p><p>If you can make the regular payment through MoIP, we recommend you do so.</p><p>But if that's not possible, don't worry: you'll always be able to receive your money back. Note that if your refund is made more than 60 days after your payment, you'll have to pay PayPal's fee, which is 5,4% + $0,60 per transaction.</p>"
           # TODO: Alter this depending on your currency.
           submit: "Proceed to PayPal's checkout"
           title: "Want to make an international payment?"

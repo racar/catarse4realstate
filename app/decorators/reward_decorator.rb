@@ -25,7 +25,7 @@ class RewardDecorator < Draper::Decorator
         <div class="w-col w-col-8 w-col-small-8 w-col-tiny-8 w-sub-col-middle w-clearfix">
           <div class="w-row">
             <div class="w-col w-col-3 w-col-small-3 w-col-tiny-3">
-              <div class="back-reward-input-reward placeholder">R$</div>
+              <div class="back-reward-input-reward placeholder">$</div>
             </div>
             <div class="w-col w-col-9 w-col-small-9 w-col-tiny-9">
               <input class="user-reward-value back-reward-input-reward" type="tel" min="#{number_with_precision(source.minimum_value, precison: 2)}" placeholder="#{source.minimum_value > 0 ? number_with_precision(source.minimum_value, precison: 2) : '10,00'}">

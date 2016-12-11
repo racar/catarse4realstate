@@ -97,9 +97,9 @@ es:
         page-title: Apoyar a %{name}
         title: Oohh yeah!
         you_have_credits: "tienes <strong>%{credits}</strong> en créditos para hacer de este apoyo."
-        choose_reward: Elija la recompensa y luego el valor del apoyo
+        choose_reward: "Elija el FiDi"
         choose_value: Introduzca la cantidad de su apoyo.
-        minimum_disclaimer: 'Desde R$ <span id="minimum-value">10</span> Se ve muy bien ;)'
+        minimum_disclaimer: 'Desde $ <span id="minimum-value">10</span> Se ve muy bien ;)'
         next_step: "Revisar y hacer el pago"
         no_reward: Gracias. Sólo quiero ayudar al proyecto.
       review:

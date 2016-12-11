@@ -51,7 +51,7 @@ window.c.AdminProjectDetailsCard = (function(m, h){
                   ]),
                   m('.w-col.w-col-3.w-col-small-3.w-col-tiny-6', [
                     m('.fontweight-semibold.fontsize-large.lineheight-tight', [
-                      'R$ ' + h.formatNumber(project.pledged, 2),
+                      '$ ' + h.formatNumber(project.pledged, 2),
                     ]),
                     m('.fontcolor-secondary.lineheight-tighter.fontsize-small.u-marginbottom-10', 'levantados')
                   ]),
