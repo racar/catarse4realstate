@@ -4,19 +4,18 @@ es:
       no_estimate: "No disponible"
       you_selected: "Eligió esto!"
       contribute_text:
-        credits_tab: Mis créditos
+        credits_tab: "Mis créditos"
       checkout:
-        no_credits: Usted no tiene suficientes créditos para llevar a cabo este apoyo.
-        success: Su apoyo fue exitoso. Gracias!
+        no_credits: "Usted no tiene suficientes créditos para llevar a cabo este apoyo."
+        success: "Su apoyo fue exitoso. Gracias!"
       contribution:
         anonymous_contribution: Anonymous partidario
-        anonymous_description: Decidió permanecer de incógnito
-        no_reward: Este aficionado no ha seleccionado ninguna recompensa
+        anonymous_description: "Decidió permanecer como anónimo"
+        no_reward: "No ha seleccionado ningun FiDi"
       selected_reward:
-        review_without_reward_html: Va a ayudar con <strong>%{value}</strong>
-          y no quiere ninguna recompensa por su apoyo.
+        review_without_reward_html: "Va a ayudar con <strong>%{value}</strong> y no quiere ningun retorno por su apoyo."
         value: 'Valor Soporte'
-        reward: 'recompensa seleccionada'
+        reward: 'Inversión seleccionada'
         edit: 'Editar'
       existing_payment:
         page_title: 'Su apoyo a %{name} se realizó'
@@ -29,13 +28,13 @@ es:
       faq:
         common_questions: 'Preguntas más frecuentes'
         how_contribute: 'Como yo apoyo este proyecto?'
-        how_contribute_answer: 'Elija la cantidad y la recompensa deseada. Luego se llenan en la forma y los detalles del pago para llevar a cabo el apoyo.'
+        how_contribute_answer: 'Elija el monto deseado. Luego se llenan en la forma y los detalles del pago para llevar a cabo el apoyo.'
         when_made_payment: 'Cuando se efectúa el pago?'
         when_made_payment_answer: 'Si usted pagó con tarjeta de crédito, la confirmación debe estar en el mismo día. Si se trataba de deslizarse en un máximo de 4 días hábiles.'
         when_project_fails: 'Y si el proyecto no llega a la meta?'
         when_project_fails_answer: 'En este caso, a recuperar el 100% de lo que pago a través de un reembolso.'
-        when_project_funded: 'Si se financia el proyecto, ¿cómo puedo obtener mi recompensa?'
-        when_project_funded_answer: 'Cuando su recompensa está listo, %{name} se pondrá en contacto con usted para concertar la entrega.'
+        when_project_funded: 'Si se financia el proyecto, ¿cómo puedo retornar mi inversion?'
+        when_project_funded_answer: 'Cuando su retorno de inversión esté lista, %{name} se pondrá en contacto con usted para concertar la entrega.'
       edit:
         review_slip_email: "También recibirá un correo electrónico con este boleto."
         slip_expiration: "Este proyecto de ley bancaria gana el día %{date}."
