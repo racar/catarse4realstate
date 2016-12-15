@@ -34,6 +34,9 @@ class ProjectsController < ApplicationController
     @project = Project.new
     @project.attributes = permitted_params.merge(user: current_user, referral_link: referral_link)
     authorize @project
+
+    @project.proyeccion = '[[1, 5], [2, 3], [3, 5], [4, 8], [6, 4], [7, 2], [8, 1], [9, 3], [10, 5], [11, 8], [12, 4], [13, 2]]'
+
     if @project.save
       redirect_to edit_project_path(@project, anchor: 'home')
     else
