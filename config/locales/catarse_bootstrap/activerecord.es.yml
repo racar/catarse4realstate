@@ -15,8 +15,8 @@ es:
         address_number: Número
         address_state: Estado
         address_street: Calle
-        address_zip_code: CEP
-        cpf: 'CPF / CNPJ '
+        address_zip_code: 'Código Postal'
+        cpf: 'Cédula'
         state_inscription: 'Registro de Estado'
         email: 'Email'
         full_name: "Nombre completo / Nombre de la empresa"
@@ -36,7 +36,7 @@ es:
         bank: 'Banco'
         bank_id: 'Banco'
         owner_name: 'Nombre del  Titular'
-        owner_document: 'CPF / CNPJ titular'
+        owner_document: 'Cédula titular'
         agency: 'Organismo'
         agency_digit: 'Dígitos de agencia'
         account: 'No. de cuenta'
@@ -46,11 +46,11 @@ es:
       contribution:
         payer_name: "Nombre Completo"
         payer_email: "Email"
-        payer_document: "CPF o CNPJ"
+        payer_document: "Cédula"
         country: "País"
         address_street: "Calle"
         address_number: "Número"
-        address_complement: "Complemento"
+        address_complement: "Información adicional"
         address_neighbourhood: "Barrio"
         address_state: "Estado"
         address_city: "Ciudad"

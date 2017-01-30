@@ -24,11 +24,11 @@ es:
         account_digit: "¿Cuál es el dígito de verificador?"
         agency_digit: "Que el dígito de la agencia?"
         owner_name: "Introduzca un nombre con un mínimo de 5 y un máximo de 30 letras"
-        owner_document: "Introduzca un CPF o CNPJ válida para el titular de la cuenta"
+        owner_document: "Introduzca una cédula válida para el titular de la cuenta"
       contribution:
         payer_name: "Por favor, introduzca el nombre del partidario"
         payer_email: "Por favor, introduzca una dirección válida de correo electrónico"
-        payer_document: "Por favor, introduzca un CPF o CNPJ válida"
+        payer_document: "Por favor, introduzca un cédula válida"
         address_state: "Seleccione un estado"
         address_street: "Escriba el nombre de la calle"
         address_number: "Introduce el número de dirección"
