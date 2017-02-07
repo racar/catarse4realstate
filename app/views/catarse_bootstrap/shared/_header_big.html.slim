@@ -1,22 +1,3 @@
-- content_for :header_controls do
-  = link_to t('layouts.header.hello'), hello_path, class: 'w-hidden-small w-hidden-tiny header-link w-nav-link'
-
-  = link_to t('layouts.header.discover'), explore_path, class: 'w-hidden-small w-hidden-tiny header-link w-nav-link'
-
-  = link_to t('layouts.header.submit'), start_path, class: 'w-hidden-small w-hidden-tiny header-link w-nav-link'
-
-  = link_to 'Noticias','https://medium.com/@homeparte',class: 'w-hidden-small w-hidden-tiny header-link w-nav-link'
-
-- content_for :headermobile_controls do
-  .w-hidden-main.w-hidden-medium.header-controls-mobile
-    = link_to t('layouts.header.hello'), hello_path, class: 'header-link w-nav-link'
-    = link_to t('layouts.header.discover'), explore_path, class: 'header-link w-nav-link'
-    = link_to t('layouts.header.submit'), start_path, class: 'header-link w-nav-link'
-    = link_to 'Noticias','https://medium.com/@homeparte',class: 'header-link w-nav-link'
-
-
-
-
 = render 'shared/header', overlayer: (defined?(overlayer) && overlayer ? true : false)
 = render 'shared/google_analytics'
 = render 'shared/smartsupp_chat'

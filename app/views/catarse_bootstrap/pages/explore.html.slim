@@ -10,86 +10,15 @@
 = javascript_include_tag "https://code.jquery.com/jquery-migrate-1.2.1.min.js"
 
 
-= render 'shared/slider'
-= render 'shared/slich'
-
-section#blog.section-large.bg-gray.before-footer
-
-  .w-container
-    ul class="bxslider"
-      li
-        img src="https://c7.staticflickr.com/6/5337/30508390742_c80ae2d5ca_h.jpg"
-      li
-        img src="https://c7.staticflickr.com/6/5540/30589292446_237191e6e3_h.jpg"
-      li
-        img src="https://c1.staticflickr.com/6/5723/30589291376_9abf44383b_h.jpg"
-
-
-  .hero-search.fontweight-light.fontsize-larger Proyectos
-
-section.w-container.u-marginbottom-10
-    .w-row.u-margintop-10.u-marginbottom-40
-      #explore_results[data-projects-path=projects_path]
-        .w-row
-          .follow-category.w-hidden
-            .w-col.w-col-6.w-col-small-7.w-col-tiny-7
-              .category-info.fontsize-larger
-                | Category-name
-            .w-col.w-col-6.w-col-small-5.w-col-tiny-5
-              .category-follow
-                .w-row
-                  .w-col.w-col-8.w-hidden-small.w-hidden-tiny.w-clearfix
-                    .following.fontsize-small.fontcolor-secondary.u-right
-                      span.count
-                        | 0
-                      '  #{t('.following')}
-                  .w-col.w-col-4.w-col-small-12.w-col-tiny-12
-                    a href="javascript:(void);" class='btn btn-medium follow-btn'
-                      = t('.follow')
-                    a href="javascript:(void);" class='btn btn-medium btn-terciary unfollow-btn'
-                      = t('.unfollow')
-
-          .clearfix
-        .w-row.u-margintop-30
-          .results &nbsp;
-          .clearfix
-          #loading.loader.u-text-center.w-col.w-col-12 = image_tag "catarse_bootstrap/loader.gif"
-
-section.section.loadmore
-  .w-container
-    .w-row
-      .w-col.w-col-push-5.w-col-2
-        button id="load-more" class="btn btn-medium btn-terciary hidden"
-          = t('shared.load_more')
-
-
-  .hero-search.fontweight-light.fontsize-larger Como Invertir
-
-  div class="section-invertir"
-      div class="panel-invertir"
-        div
-          div class="slick-invertir"
-            div
-              img src="https://c6.staticflickr.com/6/5504/31432082261_0529188497.jpg"
-            div
-              img src="https://c4.staticflickr.com/1/308/31432083011_d5c6a05f79.jpg"
-            div
-              img src="https://c3.staticflickr.com/1/518/31509554626_82745a7364.jpg"
-
-      div class="panel-invertir-text"
-        p.u-text-center.fontweight-bold.fontsize-large Paso 1:
-        p.u-text-center.fontcolor-secondary.fontsize-large Seleccionamos el proyecto Inmobiliario
-        p.u-text-center.fontweight-bold.fontsize-large Paso 2:
-        p.u-text-center.fontcolor-secondary.fontsize-large Decides cuantos titulos fiduciarios quieres comprar (Cada FiDi representa $50.000 COP)
-        p.u-text-center.fontweight-bold.fontsize-large Paso 3:
-        p.u-text-center.fontcolor-secondary.fontsize-large Homeparte adquiere y administra el proyecto
-        p.u-text-center.fontweight-bold.fontsize-large Paso 4:
-        p.u-text-center.fontcolor-secondary.fontsize-large Recibe los rendimientos inmobiliarios en tu cuenta bancaria
-
-
-  .hero-search.fontweight-light.fontsize-larger Es segura mi inversión?
-  p.u-text-center.fontcolor-secondary.fontsize-large Todo el proceso es vigilado por la Super Intendencia Financiera de Colombia
-  img src="https://c7.staticflickr.com/6/5498/30490889454_bb3ac8a6b1_h.jpg"
-
+= render 'home/slider'
+= render 'home/channel'
+= render 'home/definition'
+= render 'home/process'
+= render 'home/projects'
+= render 'home/invest'
+= render 'home/start'
 
 = render 'shared/footer_big'
+
+
+= javascript_include_tag "homeparte.js"

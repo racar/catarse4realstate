@@ -1,0 +1,65 @@
+section#project-list.home-page.scrollspy
+  .parallax-container
+    .parallax
+      = image_tag 'catarse_bootstrap/home/project_bg.jpg', alt: 'Proyectos de Inversión'
+  .container
+    .section-caret.white.light
+    .row
+      .preamble.col.s12.wow.fadeIn data-wow-duration="0.7s"
+        h2
+          | Proyectos de Inversión
+          span.heading-divider
+    .row
+      .col.s12.m4.wow.flipInY data-wow-delay="0.4s" data-wow-duration="0.7s"
+        .card
+          .ribbon-wrapper.completed
+            .ribbon 100% Completada
+          .card-image
+            a href="#"
+            .front
+              = image_tag 'https://www.crowdium.com.ar/img/proyectos/estancia-villa-maria/thumb/37177.jpg', alt: 'Proyecto de Inversión'
+              .shadow
+              .card-header
+                .card-icon
+                  = image_tag 'https://www.crowdium.com.ar/img/proyectos/estancia-villa-maria/logo.jpg', alt: 'XXXX'
+                span.card-title Estancia Villa
+                span.card-location
+                  i.material-icons> room
+                  | Canning, Buenos Aires
+              .fase-title
+                p
+                  i.material-icons> data_usage
+                  | Inversión Completada
+            .details.valign-wrapper
+              .valign
+                h3 NOMBRE PROP Estancia Villa
+                p
+                  b "
+                  | Descripción.
+                  b "
+          .card-content
+            .row.type-info
+              .col.s12
+                p
+                  i.material-icons.icon> business
+                  | Proyecto de Lotes
+            ul.row
+              li.col.s6
+                i.material-icons.icon today
+                .info
+                  span Duración Estimada en Años
+                  p.value 2
+              li.col.s6
+                i.material-icons.icon equalizer
+                .info
+                  span.project-disclaimer.tooltipped data-delay="0" data-position="top" data-tooltip=("descripcion de cosas.")  Rentabilidad Estimada en Dólares
+                  p.value 25~35%
+            .status-progress
+              p
+                font.percentage 100%
+                | Completado
+              .progress
+                .determinate style=("width: 100%")
+              span.start 0%
+              span.end 100%
+            span.waves-effect.waves-light.grey.lighten-2.action-btn.grey-text.text-darken-2 style=("pointer-events: none;")  Inversión completada

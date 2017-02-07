@@ -1,4 +1,11 @@
-.w-row
-  .w-col.w-col-12.u-text-center.u-marginbottom-10
-    = link_to root_path do
-      = image_tag 'catarse_bootstrap/logo_icon_catarse.png', class: 'logo-login'
+header#single
+  .header-container
+    nav
+      .nav-wrapper
+        h1.brand-logo
+          a href="#{root_path}"  HomeParte
+        .action-btn
+          a#back.waves-effect.waves-stamplay.btn-flat href="#{root_path}"
+            i.fa.fa-caret-left
+            | Inicio
+          a#sign-in.waves-effect.waves-light.btn.shape-red href="#{new_user_registration_path}" #{t('layouts.header.signup')}

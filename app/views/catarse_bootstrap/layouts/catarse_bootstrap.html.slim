@@ -4,14 +4,19 @@ html
     title= content_for(:title)
     = auto_discovery_link_tag :atom, projects_url(format: :atom)
     = auto_discovery_link_tag :rss, projects_url(format: :rss)
-    = stylesheet_link_tag 'catarse_bootstrap/fonts'
-    = stylesheet_link_tag 'catarse_bootstrap/catarse'
-    = stylesheet_link_tag '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'
+    /= stylesheet_link_tag 'catarse_bootstrap/fonts'
+    /= stylesheet_link_tag 'catarse_bootstrap/catarse'
+    = stylesheet_link_tag '//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css'
+    = stylesheet_link_tag 'https://fonts.googleapis.com/icon?family=Material+Icons'
+    = stylesheet_link_tag 'catarse_bootstrap/homeparte'
+
     = content_for(:stylesheets)
     = favicon_link_tag 'favicon.ico'
     = csrf_meta_tag
+    meta charset="UTF-8"
     meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"
     meta#api-host name="api-host" content=CatarseSettings[:api_host]
+    meta content="#008fd8" name="theme-color"
 
     - if content_for? :meta_tags
       /project specific meta tags
@@ -35,10 +40,10 @@ html
 
     - if Rails.env.production?
       = render 'layouts/vwo'
-      = render_mixpanel_script
+      /= render_mixpanel_script
 
-  body#catarse_bootstrap[data-controller-name=controller_name data-action=action_name data-user="#{current_user.try(:to_analytics_json)}" data-referral="#{session[:referral_link]}" data-id=params[:id] itemscope itemtype="http://schema.org/WebPage" class="#{'body-alert' if can_display_pending_refund_alert?} #{content_for :body_class}"] 
-    /= render 'layouts/global_alert'
+  body#catarse_bootstrap[data-controller-name=controller_name data-action=action_name data-user="#{current_user.try(:to_analytics_json)}" data-referral="#{session[:referral_link]}" data-id=params[:id] itemscope itemtype="http://schema.org/WebPage" class="#{'body-alert' if can_display_pending_refund_alert?} #{content_for :body_class}"]
+
     = render 'layouts/pending_refund_top_alert' if can_display_pending_refund_alert?
     = render 'layouts/new_zendesk'
     = render_facebook_sdk

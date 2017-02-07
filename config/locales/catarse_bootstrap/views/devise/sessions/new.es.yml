@@ -11,7 +11,7 @@ es:
           forgot_password: "Olvidé mi contraseña"
         form:
           labels:
-            remember_me: 'Recuérdame'
+            remember_me: 'Recordarme en este dispositivo.'
           inputs:
-            submit: 'Iniciarme'
+            submit: 'Ingresar'
             facebook: 'Iniciar sesión con Facebook'

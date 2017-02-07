@@ -1,17 +1,85 @@
-header class="main-header w-section #{'alert' if can_display_pending_refund_alert?} #{((defined?(overlayer) && overlayer) ? 'overlayer' : '')}"
-  .w-clearfix
-    = link_to (image_tag "catarse_bootstrap/logo_small.png"), '/', class: 'header-logo w-nav-brand', :title => "Home Parte"
-    = yield :header_controls
-    - if current_user
-      .w-dropdown.user-profile
-        = link_to 'javascript:toggleMenu()', id: 'user-menu', class: 'w-dropdown-toggle dropdown-toggle' do
-          = image_tag(current_user.display_image, :size => "40x40", class: 'user-avatar')
-          .w-icon-dropdown-toggle.dropdown-icon.positive
-        = render 'shared/user_menu'
-    - else
-      = link_to t('layouts.header.signin'), new_user_session_path, class: 'w-nav-link header-link w-nav-link btn-edit u-right'
-      = link_to t('Regístrate'), new_user_registration_path, class: 'w-nav-link header-link w-nav-link btn-edit-ctoaction u-right'
-    = link_to t('layouts.header.help'), contact_path, target: :_blank, class: 'w-nav-link w-hidden-small w-hidden-tiny header-link w-nav-link u-right',  id: 'guidelines_header_modal' if CatarseSettings[:support_forum].present?
+header#global
+  .header-container
+    nav
+      .nav-wrapper
+        h1.brand-logo
+          a href="https://www.homeparte.com"  HomeParte
+        a.button-collapse data-activates="mobile-nav" href="#"
+          i.material-icons menu
 
-  = yield :headermobile_controls
+        - if current_user
+          .right.user-btn.hide-on-med-and-down
+            a#user_btn.dropdown-button.user-access.shape-green data-activates="dropdown-user" href="#!"
+            .header-avatar
+              /img alt="Dario" src="https://www.crowdium.com.ar/img/users/profile.jpg"
+              = image_tag(current_user.display_image)
+            span = current_user.decorate.display_name
+            i.fa.fa-ellipsis-v.right
+            ul#dropdown-user.dropdown-content
+              li
+                a.waves-effect.waves-light href="https://www.crowdium.com.ar/mi-cuenta"
+                  i.material-icons.left> person_pin
+                  | Mi Cuenta
+              li
+                a.waves-effect.waves-light href="https://www.crowdium.com.ar/mi-cuenta/editar-perfil"
+                  i.material-icons.left> mode_edit
+                  | Editar Perfil
+              li
+                a.waves-effect.waves-light href="https://www.crowdium.com.ar/mi-cuenta/mensajes"
+                  i.material-icons.left> question_answer
+                  | Mensajes
+              li.divider
+              li
+                a.waves-effect.waves-light href="https://www.crowdium.com.ar/logout"
+                  i.material-icons.left> power_settings_new
+                  | Salir
 
+
+        - else
+          .right.action-btn.hide-on-med-and-down
+            = link_to t('layouts.header.signin'), new_user_session_path, class: 'waves-effect waves-stamplay btn-flat', id: 'log-in'
+            = link_to t('layouts.header.signup'), new_user_registration_path, class: 'waves-effect shape-red waves-light btn orange darken-1', id: 'sign-in'
+
+        ul.right.main-ul.hide-on-med-and-down
+          li.active
+            a.dropdown-button data-activates="dropdown-home" data-hover="true" href="https://www.crowdium.com.ar"
+              i.material-icons> home
+              | Inicio
+            #dropdown-home.dropdown-content
+              ul
+                li
+                  a.waves-effect.waves-light href="#definition"  ¿Qué es Crowdium?
+                li
+                  a.waves-effect.waves-light href="#process"  ¿Cómo es el Proceso?
+                li
+                  a.waves-effect.waves-light href="#project-list"  Proyectos de Inversión
+                li
+                  a.waves-effect.waves-light href="#attributes"  Invertir con Crowdium
+                li
+                  a.waves-effect.waves-light href="#home-brokers"  Brokers Asociados
+              .clearfix
+
+        ul#mobile-nav.side-nav
+          li
+            a href="#{root_path}"
+              i.material-icons> home
+              | Inicio
+          li
+            a href="#{faq_path}"
+              i.material-icons> help
+              | #{t('layouts.footer.links.faq_questions')}
+          - if current_user
+            li
+              a.user-access.shape-green href="#"
+              .header-avatar
+                = image_tag(current_user.display_image)
+              span = current_user.display_name
+            li
+              a.waves-effect.waves-light.sign-off href="#{destroy_user_session_path}"
+                i.material-icons.left> power_settings_new
+                | Salir
+          - else
+            li
+              a.login href="#{new_user_session_path}" #{t('layouts.header.signin')}
+            li
+              a.sign-in.shape-red href="#{new_user_registration_path}" #{t('layouts.header.signup')}

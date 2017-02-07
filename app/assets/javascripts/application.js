@@ -34,6 +34,10 @@
 //= require app/utils/mix_panel
 //= require app/utils/jquery.smooth-scroll
 
+// *********************************
+//  HOMEPARTE
+// *********************************
+//= require homeparte.js
 
 // *********************************
 //  Rails GEMs front-end dependencies
@@ -47,4 +51,3 @@
 //= require_tree ./lib
 //= require ./app/app
 //= require_tree ./app
-

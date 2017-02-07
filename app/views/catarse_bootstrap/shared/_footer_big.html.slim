@@ -1,26 +1,53 @@
-footer.main-footer.main-footer-neg
-  section.w-container
-    .w-row
-      .w-col.w-col-9
-        .w-row
-          .w-col.w-col-4.w-col-small-4.w-col-tiny-4.w-hidden-tiny
-            = render 'shared/footer_welcome'
-          .w-col.w-col-4.w-col-small-4.w-col-tiny-4.footer-full-firstcolumn
-            = render 'shared/footer_about'
-          .w-col.w-col-4.w-col-small-4.w-col-tiny-4.footer-full-lastcolumn
-            = render 'shared/footer_navigate'
-      .w-col.w-col-3.column-social-media-footer
-        .footer-full-signature-text.fontsize-small Suscríbete a nuestras noticias
-        .w-form
-          = render 'shared/newsletter'
-        .footer-full-signature-text.fontsize-small Redes sociales
-        .w-widget.w-widget-facebook.u-marginbottom-20
-          = render_facebook_like colorscheme: "dark"
-        .w-widget.w-widget-twitter
-          = link_to "Follow HomeParte", "https://twitter.com/homeparte", :class => 'twitter-follow-button', :"data-button"=>"blue", :"data-text-color" => "#ffffff", :"data-link-color"=>"#fffffff", :"data-width" => "224px"
-  .w-container
-    .footer-full-copyleft 
-      = image_tag "catarse_bootstrap/logo_small.png", class: "u-marginbottom-20"
-      .lineheight-loose: a.link-footer-inline Los FiDis (Figura Internacional de Derecho Fiduciario Inmobiliario) es una inversión financiera. Por tanto, no garantizan una rentabilidad ni su redención en un plazo determinado. Los FiDis son un derecho fiduciario tradicional sobre área, cuya rentabilidad depende del desempeño del activo inmobiliario subyacente. Cada FiDi variará según el contrato de fiducia que lo regule. La información aquí presentada es de carácter exclusivamente informativo e ilustrativo y no es, ni pretende ser, fuente de asesoría legal o financiera de ningún tema. Esta información no constituye oferta de ningún tipo y está sujeta a cambios sin previo aviso.
-      .lineheight-loose: a.link-footer-inline HomeParte 2015 - El futuro de la inversión inmobiliaria
-      .lineheight-loose: a.link-footer-inline Carrera 7 # 29-34 Oficina 701 - Bogotá (Colombia) - Teléfono: 7443254
+footer.page-footer
+  .container
+    .row.footer-top
+      .col.l6.m9.s12
+        h5.logo-footer HomeParte - Crowdfunding Inmobiliario
+        .footer-number
+          .number 7443254
+          .number-info
+            span Líneas Telefónicas Rotativas.
+            span Lunes a Viernes de XX:XX a XX:XX.
+        ul.social-footer
+          li
+            a href="https://facebook.com/HomeParte" target="_blank"
+              i.fa.fa-facebook
+          li
+            a href="http://twitter.com/homeparte" target="_blank"
+              i.fa.fa-twitter
+      .col.l2.m4.s12.info-col
+        h5.white-text #{t('layouts.footer.titles.contact')}
+        ul
+          li
+            a href="#{team_url}" #{t('layouts.footer.links.team')}
+          li
+            a href="#{jobs_url}" #{t('layouts.footer.links.jobs')}
+      .col.l2.m4.s12.info-col
+        h5.white-text #{t('layouts.footer.titles.about')}
+        ul
+          li
+            a href="#{contact_path}" #{t('layouts.footer.links.contact')}
+          li
+            a href="#{faq_path}" #{t('layouts.footer.links.faq_questions')}
+      .col.l2.m4.s12.info-col
+        h5.white-text #{t('layouts.footer.titles.sitemap')}
+        ul
+          li
+            a href="#{hello_path}" #{t('layouts.header.hello')}
+          li
+            a href="#{start_path}" #{t('layouts.footer.links.submit')}
+          li
+            a href="#{explore_path}" #{t('layouts.footer.links.discover')}
+    a#scroll-up href="#!"
+      i.fa.fa-arrow-up
+  .footer-copyright
+    .container
+      .c-line
+        p
+          | Carrera 7 # 29-34 Oficina 701 - Bogotá (Colombia) - Teléfono: 7443254
+        p
+          | © HomeParte 2017 - El futuro de la inversión inmobiliaria
+        .copy-links
+          a.grey-text.text-lighten-4.right href="#{terms_of_use_path}" #{t('layouts.footer.links.terms')}
+          a.grey-text.text-lighten-4.right href="#{privacy_policy_path}" #{t('layouts.footer.links.privacy')}
+      p.disclaimer Los FiDis (Figura Internacional de Derecho Fiduciario Inmobiliario) es una inversión financiera. Por tanto, no garantizan una rentabilidad ni su redención en un plazo determinado. Los FiDis son un derecho fiduciario tradicional sobre área, cuya rentabilidad depende del desempeño del activo inmobiliario subyacente. Cada FiDi variará según el contrato de fiducia que lo regule. La información aquí presentada es de carácter exclusivamente informativo e ilustrativo y no es, ni pretende ser, fuente de asesoría legal o financiera de ningún tema. Esta información no constituye oferta de ningún tipo y está sujeta a cambios sin previo aviso.
