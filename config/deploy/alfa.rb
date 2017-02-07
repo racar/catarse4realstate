@@ -7,10 +7,10 @@
 # server 'example.com', user: 'deploy', roles: %w{app web}, other_property: :other_value
 # server 'db.example.com', user: 'deploy', roles: %w{db}
 
-set :stage, :production
+set :stage, :alfa
 set :rails_env, "production"
-set :branch, "master"
-set :deploy_to, '/var/www/homepage'
+set :branch, "project_design"
+set :deploy_to, '/var/www/homepage_alfa'
 server '192.241.165.233', user: 'deploy', roles: %w{web app db}
 
 
