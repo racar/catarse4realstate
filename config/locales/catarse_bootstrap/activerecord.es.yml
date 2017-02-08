@@ -107,6 +107,7 @@ es:
         full_name: "Nombre completo / Nombre de la empresa"
         bio: 'Mini Bio'
         name: "Nombre"
+        lastname: "Apellido"
         newsletter: 'Quiero recibir noticias de Homeparte'
         password: 'Contraseña'
         password_confirmation: "Confirmación de la contraseña"
@@ -241,12 +242,16 @@ es:
               too_short: "La contraseña que usted eligió es demasiado corto"
               confirmation: "La contraseña y la confirmación de contraseña cumplido no son iguales"
               blank: "La contraseña no puede estar en blanco"
+            phone_number:
+              blank: "Ingrese un teléfono válido"
             current_password:
               invalid: "Contraseña actual no es válido"
             reset_password_token:
               invalid: 'Token expiró. Ir a <a href="/password/new" class="alt-link">restablecimiento de contraseña</a> y otra vez pedir un restablecimiento de contraseña.'
             name:
-              blank: "Nombre de usuario no puede estar en blanco"
+              blank: "El nombre no puede estar en blanco"
+            lastname:
+              blank: "El apellido no puede estar en blanco"
             about_html:
               blank: "Acerca de usted no puede estar en blanco"
             uploaded_image:
@@ -304,6 +309,7 @@ es:
     anonymous: 'Anonimo'
   user:
     no_name: 'Sin nombre'
+    no_lastname: 'Sin apellido'
     contributions_text:
       many: "Apoyado esto y la mayoría de otros %{total} proyectos"
       one: "Sólo apoyado este proyecto hasta ahora"

@@ -1,38 +1,86 @@
 - content_for :title, t('.titles.site')
+= render 'devise/shared/header'
 
-.w-section
-  .w-container
-    = render 'devise/shared/header'     
-    .w-row
-      .w-col.w-col-6.box-login.w-col-push-3
-        .fontweight-semibold.u-text-center.fontsize-large.u-marginbottom-30= t '.titles.header'
-        .login-fb
-          = link_to "Regístrate con Google", user_omniauth_authorize_path(provider: :google_oauth2, locale: nil), class: 'btn btn-medium btn-google'
-        .login-fb
-          = link_to t('.form.inputs.facebook'), user_omniauth_authorize_path(provider: :facebook, locale: nil), class: 'btn btn-medium btn-fb'
-        .separator
-          .text.or = t('or')
-        .w-form
-          = simple_form_for resource, as: resource_name, html: {novalidate: true}, url: sign_up_path  do |form|
-            = render 'devise/shared/alert'
-            = form.input :name, as: :string, wrapper_html: {class: 'no-asterisk'}, input_html: {class: 'w-input text-field'}, required: false
+= content_for :js
+  = javascript_include_tag "app/user/register.js"
 
-            = form.input :email, as: :email, wrapper_html: { class: 'no-asterisk' }, input_html: { class: 'w-input text-field' }, required: false
-            .u-right
-              = form.input_field :show_password, as: :boolean, boolean_style: :inline, class: 'checkbox-fix', checked: false
-              label.w-form-label.fontsize-smallest= t('.form.labels.show_password')
-            = form.input :password, as: :password, label: t('.form.labels.password'), input_html: { class: 'w-input text-field' }
-            = form.input :phone_number, as: :string, wrapper_html: {class: 'no-asterisk'}, input_html: {class: 'w-input text-field'}, required: false
-            .u-marginbottom-20
-              = form.input_field :newsletter, as: :boolean, boolean_style: :inline, class: 'checkbox-fix', checked: true
-              label.w-form-label.fontsize-smallest= t('.form.labels.newsletter')
-            .w-row.u-marginbottom-20
-              .w-col.w-col-6.w-col-small-6.w-col-tiny-6
-                = form.button :submit, t('.form.inputs.submit'), class:'btn btn-large'
-              .w-col.w-col-6.w-col-small-6.w-col-tiny-6
-                .devise-opt
-                  .lineheight-tight.fontsize-small
-                    .fontcolor-secondary=> t '.have_account_html'
-                    = link_to t('.links.login'), new_user_session_path, class: 'link alt-link fontweight-semibold'            
-
-
+section#signup
+  .wrapper
+    .table
+      .container
+        .container.login-container
+          = render 'devise/shared/alert'
+          .card
+            h2.card-title
+              i.material-icons person_pin
+              | Creá tu cuenta gratis
+            p
+              | Registrate para poder acceder a la sección de proyectos de inversión. Si ya estás registrado hacé clic en
+              a href="#{new_user_session_path}"  #{t('layouts.header.signin')}
+            .row
+              /form.col.s12.register-form accept-charset="UTF-8" action="https://www.crowdium.com.ar/registracion" method="POST"
+              = simple_form_for resource, as: resource_name, url: sign_up_path, class: 'col s12 register-form'  do |form|
+                .row
+                  .input.col.s12
+                    /label for="name"  Nombre
+                    /input#name.validate.tooltipped data-delay="50" data-position="top" data-tooltip=("Ingresé SOLO tu nombre completo como figura en tu cedula.") name="name" required="required" type="text" /
+                    /= form.input :name, as: :string, wrapper_html: {class: 'no-asterisk'}, input_html: {class: 'w-input text-field'}, required: false
+                    = form.input :name, as: :string, label: t('.form.labels.name'), input_html: { class: 'validate tooltipped', "data-tooltip" => 'Ingrese su nombre como figura en su cedula'},  required: true
+                .row
+                  .input.col.s12
+                    /label for="lastname"  Apellido
+                    /input#last_name.validate.tooltipped data-delay="50" data-position="top" data-tooltip=("Ingres&aacute; SOLO tu apellido completo como figura en tu documento.") name="last_name" required="required" type="text" /
+                    = form.input :lastname, as: :string, label: t('.form.labels.lastname'), input_html: { class: 'validate tooltipped', "data-tooltip" => 'Ingrese su apellido como figura en su cedula' }, required: true
+                .row
+                  .input.col.s12
+                    /label for="email"  Email
+                    /input#email.validate.tooltipped data-delay="50" data-position="top" data-tooltip=("Ingres&aacute; el e-mail que utilize habitualmente.") name="email" required="required" type="email" /
+                    = form.input :email, as: :email, label: t('.form.labels.email'), input_html: { class: 'validate tooltipped', "data-tooltip" => 'Ingrese su email que utiliza habitualmente.' }, required: true
+                    ////= form.input :email, as: :email, wrapper_html: { class: 'no-asterisk' }, input_html: { class: 'w-input text-field' }, required: false
+                .row
+                  .input.col.s12
+                    = form.input :phone_number, as: :tel, label: t('.form.labels.phone_number'), input_html: { class: 'validate tooltipped', "data-tooltip" => 'Ingrese un número de teléfono para contactarlo.' }, required: true
+                .row
+                  .input.pwd-form.col.s12
+                    /label for="password"  Contraseña
+                    /input#password.tooltipped data-delay="50" data-position="top" data-tooltip=("Debe tener entre 8 y 16 caracteres), al menos un d&iacute;gito (n&uacute;mero) y no puede tener espacios ni caracteres raros." name="password" required="required" type="password" value="" /
+                    = form.input :password, as: :password, label: t('.form.labels.password'), input_html: { class: 'tooltipped', "data-tooltip" => 'Debe tener entre 8 y 16 caracteres.' }, required: true
+                    span.input-message
+                    a.pwd-reveal href="#!"  Ver Contraseña
+                .row
+                  .input.pwd-validate.col.s12
+                    /label for="password_confirmation"  Confirmar Contraseña
+                    /input#password_confirmation.tooltipped data-delay="50" data-position="top" data-tooltip=("Debe ser id&eacute;ntica a la contrase&ntilde;a ingresada anteriormente.") name="password_confirmation" required="required" type="password" value="" /
+                    = form.input :password_confirmation, as: :password, label: t('.form.labels.password_confirmation'), input_html: { class: 'tooltipped', "data-tooltip" => 'Debe ser identica a la contraseña ingresa anteriormente.' }, required: true
+                    span.input-message
+                .row
+                  .col.s12
+                    p.form-checks
+                      input#terms.filled-in name="terms" type="checkbox" /
+                      label for="terms"
+                        | Acepto los
+                        a href="#" target="_blank"  Términos y Condiciones
+                        | y las
+                        a href="#" target="_blank"  Políticas de Privacidad
+                .row.action-btn
+                  .col.s12
+                    button#register-btn.waves-effect.submit-btn.waves-light.btn.orange.darken-2 type="submit"  Crear Cuenta
+            .social-connect
+              em
+              ul.row
+                li.col.s6
+                  a.btn.waves-effect.facebook-btn href="#{user_omniauth_authorize_path(provider: :facebook, locale: nil)}"
+                    i.fa.fa-facebook
+                    b Registrate
+                    | con
+                    b Facebook
+                li.col.s6
+                  a.btn.waves-effect.google-btn href="#{user_omniauth_authorize_path(provider: :google_oauth2, locale: nil)}"
+                    i.fa.fa-google-plus
+                    b Registrate
+                    | con
+                    b Google+
+          p.terms
+            a href="#" target="_blank"  Términos y Condiciones
+            | \
+            a href="#" target="_blank"  Políticas de Privacidad

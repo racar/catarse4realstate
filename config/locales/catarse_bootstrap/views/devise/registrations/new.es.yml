@@ -12,12 +12,14 @@ es:
           labels:
             show_password: 'Muestra la contraseña'
             name: 'Nombre'
+            lastname: 'Apellido'
+            email: 'Email'
+            phone_number: 'Teléfono'
             password: 'Contraseña'
+            password_confirmation: 'Confirmar Contraseña'
             newsletter: 'Deseo suscribirme al boletín HomeParte'
           hint:
             password_length: 'Debe tener al menos 6 caracteres.'
           inputs:
             submit: 'Inscríbeme'
             facebook: 'Regístrate con Facebook'
-
-

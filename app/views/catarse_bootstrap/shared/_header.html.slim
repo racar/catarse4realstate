@@ -11,7 +11,6 @@ header#global
           .right.user-btn.hide-on-med-and-down
             a#user_btn.dropdown-button.user-access.shape-green data-activates="dropdown-user" href="#!"
               .header-avatar
-                / ver como poner algo por defecto
                 = image_tag(current_user.display_image)
               span = current_user.decorate.display_name
               i.fa.fa-ellipsis-v.right

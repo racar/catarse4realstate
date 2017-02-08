@@ -8,12 +8,12 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :trackable, :omniauthable, :omniauth_providers => [:facebook, :google_oauth2]
 
-  delegate  :display_name, :display_image, :short_name, :display_image_html,
+  delegate  :display_name, :display_lastname, :display_fullname, :display_image, :short_name, :display_image_html,
     :medium_name, :display_credits, :display_total_of_contributions, :contributions_text,
     :twitter_link, :display_bank_account, :display_bank_account_owner, to: :decorator
 
   # FIXME: Please bitch...
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :permalink,
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :lastname, :permalink,
     :image_url, :uploaded_image, :newsletter, :address_street, :address_number,
     :address_complement, :address_neighbourhood, :address_city, :address_state, :address_zip_code, :phone_number,
     :cpf, :state_inscription, :locale, :twitter, :facebook_link, :other_link, :moip_login, :deactivated_at, :reactivate_token,
@@ -32,6 +32,11 @@ class User < ActiveRecord::Base
   validates_presence_of :password, if: :password_required?
   validates_confirmation_of :password, if: :password_confirmation_required?
   validates_length_of :password, within: Devise.password_length, allow_blank: true
+
+  validates_presence_of :name
+  validates_presence_of :lastname
+  validates_presence_of :phone_number
+
 
   belongs_to :country
   has_one :user_total
@@ -92,6 +97,7 @@ class User < ActiveRecord::Base
       WHERE contributions.user_id = users.id AND payment_notifications.extra_data ~* ?)', email)
   }
   scope :by_name, ->(name){ where('users.name ~* ?', name) }
+  scope :by_lastname, ->(name){ where('users.lastname ~* ?', lastname) }
   scope :by_id, ->(id){ where(id: id) }
   scope :by_key, ->(key){ where('EXISTS(
                                 SELECT true

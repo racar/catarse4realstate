@@ -2,8 +2,8 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 9.4.5
--- Dumped by pg_dump version 9.5.2
+-- Dumped from database version 9.5.5
+-- Dumped by pg_dump version 9.5.5
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -515,7 +515,8 @@ CREATE TABLE users (
     about_html text,
     cover_image text,
     permalink text,
-    subscribed_to_project_posts boolean DEFAULT true
+    subscribed_to_project_posts boolean DEFAULT true,
+    lastname character varying(255)
 );
 
 
@@ -549,7 +550,7 @@ CREATE VIEW projects AS
      JOIN public.users u ON ((p.user_id = u.id)))
      LEFT JOIN public.cities c ON ((c.id = p.city_id)))
      LEFT JOIN public.states s ON ((s.id = c.state_id)))
-  ORDER BY random();
+  ORDER BY (random());
 
 
 SET search_path = public, pg_catalog;
@@ -1012,8 +1013,8 @@ CREATE VIEW project_contributions_per_day AS
            FROM (public.contributions c
              JOIN public.payments p ON ((p.contribution_id = c.id)))
           WHERE (public.was_confirmed(c.*) AND (p.paid_at IS NOT NULL))
-          GROUP BY (p.paid_at)::date, c.project_id
-          ORDER BY (p.paid_at)::date) i
+          GROUP BY ((p.paid_at)::date), c.project_id
+          ORDER BY ((p.paid_at)::date)) i
   GROUP BY i.project_id;
 
 
@@ -1070,9 +1071,9 @@ CREATE VIEW recommendations AS
              JOIN public.contributions backers_same_projects USING (project_id))
              JOIN public.contributions recommenders ON ((recommenders.user_id = backers_same_projects.user_id)))
              JOIN public.projects recommendations_1 ON ((recommendations_1.id = recommenders.project_id)))
-          WHERE ((((((((public.was_confirmed(b.*) AND public.was_confirmed(backers_same_projects.*)) AND public.was_confirmed(recommenders.*)) AND (b.updated_at > (now() - '6 mons'::interval))) AND (recommenders.updated_at > (now() - '2 mons'::interval))) AND ((recommendations_1.state)::text = 'online'::text)) AND (b.user_id <> backers_same_projects.user_id)) AND (recommendations_1.id <> b.project_id)) AND (NOT (EXISTS ( SELECT true AS bool
+          WHERE (public.was_confirmed(b.*) AND public.was_confirmed(backers_same_projects.*) AND public.was_confirmed(recommenders.*) AND (b.updated_at > (now() - '6 mons'::interval)) AND (recommenders.updated_at > (now() - '2 mons'::interval)) AND ((recommendations_1.state)::text = 'online'::text) AND (b.user_id <> backers_same_projects.user_id) AND (recommendations_1.id <> b.project_id) AND (NOT (EXISTS ( SELECT true AS bool
                    FROM public.contributions b2
-                  WHERE ((public.was_confirmed(b2.*) AND (b2.user_id = b.user_id)) AND (b2.project_id = recommendations_1.id))))))
+                  WHERE (public.was_confirmed(b2.*) AND (b2.user_id = b.user_id) AND (b2.project_id = recommendations_1.id))))))
           GROUP BY b.user_id, recommendations_1.id
         UNION
          SELECT b.user_id,
@@ -1084,9 +1085,9 @@ CREATE VIEW recommendations AS
           WHERE (public.was_confirmed(b.*) AND ((recommendations_1.state)::text = 'online'::text))) recommendations
   WHERE (NOT (EXISTS ( SELECT true AS bool
            FROM public.contributions b2
-          WHERE ((public.was_confirmed(b2.*) AND (b2.user_id = recommendations.user_id)) AND (b2.project_id = recommendations.project_id)))))
+          WHERE (public.was_confirmed(b2.*) AND (b2.user_id = recommendations.user_id) AND (b2.project_id = recommendations.project_id)))))
   GROUP BY recommendations.user_id, recommendations.project_id
-  ORDER BY (sum(recommendations.count))::bigint DESC;
+  ORDER BY ((sum(recommendations.count))::bigint) DESC;
 
 
 --
@@ -1142,8 +1143,8 @@ CREATE MATERIALIZED VIEW user_totals AS
                 WHEN (((p.state)::text <> 'failed'::text) AND (NOT public.uses_credits(pa.*))) THEN (0)::numeric
                 WHEN (((p.state)::text = 'failed'::text) AND public.uses_credits(pa.*)) THEN (0)::numeric
                 WHEN (((p.state)::text = 'failed'::text) AND (((pa.state = ANY (ARRAY[('pending_refund'::character varying)::text, ('refunded'::character varying)::text])) AND (NOT public.uses_credits(pa.*))) OR (public.uses_credits(pa.*) AND (NOT (pa.state = ANY (ARRAY[('pending_refund'::character varying)::text, ('refunded'::character varying)::text])))))) THEN (0)::numeric
-                WHEN ((((p.state)::text = 'failed'::text) AND (NOT public.uses_credits(pa.*))) AND (pa.state = 'paid'::text)) THEN pa.value
-                ELSE (pa.value * ((-1))::numeric)
+                WHEN (((p.state)::text = 'failed'::text) AND (NOT public.uses_credits(pa.*)) AND (pa.state = 'paid'::text)) THEN pa.value
+                ELSE (pa.value * ('-1'::integer)::numeric)
             END)
         END AS credits
    FROM (((public.contributions b
@@ -2330,7 +2331,7 @@ CREATE VIEW projects_for_home AS
             recommends.video_embed_url
            FROM projects recommends
           WHERE (recommends.recommended AND ((recommends.state)::text = 'online'::text))
-          ORDER BY random()
+          ORDER BY (random())
          LIMIT 3
         ), recents_projects AS (
          SELECT 'recents'::text AS origin,
@@ -2359,9 +2360,9 @@ CREATE VIEW projects_for_home AS
             recents.uploaded_image,
             recents.video_embed_url
            FROM projects recents
-          WHERE ((((recents.state)::text = 'online'::text) AND ((now() - recents.online_date) <= '5 days'::interval)) AND (NOT (recents.id IN ( SELECT recommends.id
+          WHERE (((recents.state)::text = 'online'::text) AND ((now() - recents.online_date) <= '5 days'::interval) AND (NOT (recents.id IN ( SELECT recommends.id
                    FROM recommended_projects recommends))))
-          ORDER BY random()
+          ORDER BY (random())
          LIMIT 3
         ), expiring_projects AS (
          SELECT 'expiring'::text AS origin,
@@ -2390,12 +2391,12 @@ CREATE VIEW projects_for_home AS
             expiring.uploaded_image,
             expiring.video_embed_url
            FROM projects expiring
-          WHERE ((((expiring.state)::text = 'online'::text) AND (expiring.expires_at <= (now() + '14 days'::interval))) AND (NOT (expiring.id IN ( SELECT recommends.id
+          WHERE (((expiring.state)::text = 'online'::text) AND (expiring.expires_at <= (now() + '14 days'::interval)) AND (NOT (expiring.id IN ( SELECT recommends.id
                    FROM recommended_projects recommends
                 UNION
                  SELECT recents.id
                    FROM recents_projects recents))))
-          ORDER BY random()
+          ORDER BY (random())
          LIMIT 3
         )
  SELECT recommended_projects.origin,
@@ -5158,4 +5159,6 @@ INSERT INTO schema_migrations (version) VALUES ('20161202014138');
 INSERT INTO schema_migrations (version) VALUES ('20161204215507');
 
 INSERT INTO schema_migrations (version) VALUES ('20161207043142');
+
+INSERT INTO schema_migrations (version) VALUES ('20170208164835');
 

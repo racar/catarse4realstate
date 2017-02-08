@@ -52,4 +52,3 @@ class UserPolicy < ApplicationPolicy
     record == user || user.try(:admin?)
   end
 end
-

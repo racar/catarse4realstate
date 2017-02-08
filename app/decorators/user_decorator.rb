@@ -20,6 +20,14 @@ class UserDecorator < Draper::Decorator
     source.name.presence || I18n.t('user.no_name')
   end
 
+  def display_lastname
+    source.lastname.presence || I18n.t('user.no_lastname')
+  end
+
+  def display_fullname
+    display_name + " " + display_lastname
+  end
+
   def display_image
     source.uploaded_image.thumb_avatar.url || '/assets/catarse_bootstrap/user.jpg'
   end

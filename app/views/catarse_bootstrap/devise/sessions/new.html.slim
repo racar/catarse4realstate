@@ -49,7 +49,7 @@ section#login
                     | con
                     b Facebook
                 li.col.s6
-                  a.btn.waves-effect.google-btn href="#{user_omniauth_authorize_path(:google_oauth2)}"
+                  a.btn.waves-effect.google-btn href="#{user_omniauth_authorize_path(provider: :google_oauth2, locale: nil)}"
                     i.fa.fa-google-plus
                     b Ingresar
                     | con
