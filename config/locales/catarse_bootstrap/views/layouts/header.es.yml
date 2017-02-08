@@ -4,6 +4,7 @@ es:
       blog: Blog
       discover: Explorar
       hello: Que es Homeparte
+      home: Inicio
       faq: FAQ
       help: Contacto
       profile: Mis datos
@@ -19,4 +20,3 @@ es:
       logout: Cerrar Sesión
       my_credits: Saldo acreedor
       refund_link: Solicitud de reembolso
-

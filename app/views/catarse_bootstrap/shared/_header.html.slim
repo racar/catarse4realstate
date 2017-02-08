@@ -3,37 +3,37 @@ header#global
     nav
       .nav-wrapper
         h1.brand-logo
-          a href="https://www.homeparte.com"  HomeParte
+          a href="#{root_path}"  HomeParte
         a.button-collapse data-activates="mobile-nav" href="#"
           i.material-icons menu
 
         - if current_user
           .right.user-btn.hide-on-med-and-down
             a#user_btn.dropdown-button.user-access.shape-green data-activates="dropdown-user" href="#!"
-            .header-avatar
-              /img alt="Dario" src="https://www.crowdium.com.ar/img/users/profile.jpg"
-              = image_tag(current_user.display_image)
-            span = current_user.decorate.display_name
-            i.fa.fa-ellipsis-v.right
+              .header-avatar
+                / ver como poner algo por defecto
+                = image_tag(current_user.display_image)
+              span = current_user.decorate.display_name
+              i.fa.fa-ellipsis-v.right
+
             ul#dropdown-user.dropdown-content
               li
-                a.waves-effect.waves-light href="https://www.crowdium.com.ar/mi-cuenta"
+                a.waves-effect.waves-light href="#"
                   i.material-icons.left> person_pin
                   | Mi Cuenta
               li
-                a.waves-effect.waves-light href="https://www.crowdium.com.ar/mi-cuenta/editar-perfil"
+                a.waves-effect.waves-light href="#{user_path(current_user)}"
                   i.material-icons.left> mode_edit
-                  | Editar Perfil
+                  | Ver Perfil
               li
                 a.waves-effect.waves-light href="https://www.crowdium.com.ar/mi-cuenta/mensajes"
                   i.material-icons.left> question_answer
                   | Mensajes
               li.divider
               li
-                a.waves-effect.waves-light href="https://www.crowdium.com.ar/logout"
+                a.waves-effect.waves-light href="#{destroy_user_session_path}" data-method="delete"
                   i.material-icons.left> power_settings_new
-                  | Salir
-
+                  | #{t('layouts.user.logout')}
 
         - else
           .right.action-btn.hide-on-med-and-down
@@ -41,35 +41,29 @@ header#global
             = link_to t('layouts.header.signup'), new_user_registration_path, class: 'waves-effect shape-red waves-light btn orange darken-1', id: 'sign-in'
 
         ul.right.main-ul.hide-on-med-and-down
-          li.active
-            a.dropdown-button data-activates="dropdown-home" data-hover="true" href="https://www.crowdium.com.ar"
+          li
+            a href="#{explore_path}"
               i.material-icons> home
-              | Inicio
-            #dropdown-home.dropdown-content
-              ul
-                li
-                  a.waves-effect.waves-light href="#definition"  ¿Qué es Crowdium?
-                li
-                  a.waves-effect.waves-light href="#process"  ¿Cómo es el Proceso?
-                li
-                  a.waves-effect.waves-light href="#project-list"  Proyectos de Inversión
-                li
-                  a.waves-effect.waves-light href="#attributes"  Invertir con Crowdium
-                li
-                  a.waves-effect.waves-light href="#home-brokers"  Brokers Asociados
-              .clearfix
-
+              | #{t('layouts.header.home')}
+          li
+            a.dropdown-button data-activates="dropdown-home" data-hover="true" href="#{hello_path}"
+              i.material-icons> people
+              | #{t('layouts.header.hello')}
         ul#mobile-nav.side-nav
           li
-            a href="#{root_path}"
+            a href="#{explore_path}"
               i.material-icons> home
-              | Inicio
+              | #{t('layouts.header.home')}
+          li
+            a href="#{hello_path}"
+              i.material-icons> people
+              | #{t('layouts.header.hello')}
           li
             a href="#{faq_path}"
               i.material-icons> help
               | #{t('layouts.footer.links.faq_questions')}
           - if current_user
-            li
+            /li
               a.user-access.shape-green href="#"
               .header-avatar
                 = image_tag(current_user.display_image)
@@ -77,7 +71,7 @@ header#global
             li
               a.waves-effect.waves-light.sign-off href="#{destroy_user_session_path}"
                 i.material-icons.left> power_settings_new
-                | Salir
+                | #{t('layouts.user.logout')}
           - else
             li
               a.login href="#{new_user_session_path}" #{t('layouts.header.signin')}
