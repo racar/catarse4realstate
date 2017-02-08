@@ -1,0 +1,43 @@
+#direccion-de-email.col.s12.m12.l9.profile-content
+  .module
+    .module-header
+      h2
+        i.material-icons.left> email
+        | Dirección de Email
+    form#change_email accept-charset="UTF-8" action="#" method="POST"
+      .module-content
+        h3 Administre su dirección de correo electrónico
+        .small Mantenga siempre actualizado su email ya que utilizamos este medio para comunicar las novedades sobre sus inversiones y nuevos lanzamientos.
+        .row
+          .col.s12.errors.hidden
+        .row
+          .input.col.s12.m6.disabled.active-email
+            label for="email"  Email Actual
+            .active-email
+              input#email.disabled disabled="" type="text" value="homeparte@homeparte.com" /
+              i.fa.fa-check
+          .input.col.s12.m6
+            label for="new_email"  Nuevo Email
+            .new-email-field
+              input#new_email.validate name="new_email" required="required" type="email" /
+              i.fa.fa-warning.tooltipped data-delay="0" data-position="top" data-tooltip=("Pendiente de validación.")
+            span.email-notification.tooltipped data-delay="0" data-position="top" data-tooltip=("Volvé a escribir tu nuevo email en este campo y hacé clic en modificar. Te enviaremos un nuevo mensaje. Si el problema persiste revisa tu casilla de correo no deseado o spam.")  ¿No recibiste tu email de verificación?
+        .action-btn.row
+          .col.s12
+            button#btn-submit.waves-effect.waves-light.btn type="submit"  Modificar
+            .ajaxLoader
+              img alt="ajaxLoader" src="https://www.crowdium.com.ar/img/ajaxLoader.gif" /
+        .profile-message
+          i.material-icons.left info
+          p Al cambiar tu correo electrónico, recibirás un mensaje para validar tu nuevo email así como hiciste al registrarte por primera vez. Podrás ingresar con tu antiguo email hasta que valides el nuevo.
+  #email-confirmation.modal.message-confirmation
+    .modal-content
+      button.modal-close
+        i.material-icons.right close
+      h4
+        i.material-icons.left check_circle
+        | Email de Verificación Enviado
+      p Te hemos enviado un correo electrónico con instrucciones para que puedas validar tu nuevo email. Recordá que podrás ingresar a tu cuenta con tu antiguo email hasta que valides el nuevo.
+      p
+        | Muchas gracias,
+        | El Equipo de HomeParte.

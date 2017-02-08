@@ -1,0 +1,25 @@
+section#edit-profile
+  .container
+    .row
+      .col.s12
+        div
+          .row.profile-container
+            .col.s12.m12.l3.profile-nav.wow.fadeInUp data-wow-delay="0.2s" data-wow-duration="0.7s"
+              ul.profile_tabs
+                li.tab
+                  a href="#editar-perfil" class="active"
+                    i.material-icons.left> assignment_ind
+                    | Datos Personales
+                li.tab
+                  a href="#direccion-de-email"
+                    i.material-icons.left> email
+                    | Dirección de Email
+                li.tab
+                  a href="#seguridad"
+                    i.material-icons.left> lock
+                    | Seguridad
+
+
+            =render 'users/dashboard_basic_information'
+            =render 'users/dashboard_new_email'
+            =render 'users/dashboard_new_password'

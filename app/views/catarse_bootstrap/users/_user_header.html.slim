@@ -1,0 +1,55 @@
+section#account-header
+  .parallax-container
+    .parallax
+      = image_tag (current_user.cover_image.present? ? current_user.cover_image.try(:base).try(:url) : 'catarse_bootstrap/home/account_bg7.jpg')
+  .container
+    .row
+      .col.s12
+        .info-top
+          .user_card
+            .avatar
+              /img itemprop="image" src="https://www.crowdium.com.ar/img/users/profile.jpg" /
+              = image_tag (current_user.display_image) , itemprop: 'image'
+            .body
+              h1.title itemprop="name"  = current_user.display_name
+              .status
+                span.warning
+                  i.material-icons.left> warning
+                  | Documentación Pendiente
+              .buttons
+                a.btn.btn-profile href="#{edit_user_path(current_user, anchor: :about_me)}"
+                  i.material-icons.left mode_edit
+                  | Editar Perfil
+          #user-meta.meta
+            .item
+              p.value 0
+              .metric Inversiones
+            .item
+              p.value 0
+              .metric Novedades
+            .item
+              p.value 0
+              .metric Mensajes
+            .clearfix
+            p.last_login Últ. Login: lunes, 30 enero 2017
+  .profile-subnav
+    .container
+      .row
+        .col-sm-12
+          ul
+            li
+              a href="#"
+                i.material-icons assignment
+                span Estado de Cuenta
+            li
+              a href="#"
+                i.material-icons assessment
+                span Inversiones Abiertas
+            li.disabled
+              a href="#"
+                i.material-icons public
+                span Novedades
+            li
+              a href="#"
+                i.material-icons question_answer
+                span Mensajes
