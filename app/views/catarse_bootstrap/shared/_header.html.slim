@@ -37,7 +37,7 @@ header#global
         - else
           .right.action-btn.hide-on-med-and-down
             = link_to t('layouts.header.signin'), new_user_session_path, class: 'waves-effect waves-stamplay btn-flat', id: 'log-in'
-            = link_to t('layouts.header.signup'), new_user_registration_path, class: 'waves-effect shape-red waves-light btn orange darken-1', id: 'sign-in'
+            = link_to t('layouts.header.signup'), new_user_registration_path, class: 'waves-effect waves-light btn orange darken-1', id: 'sign-in'
 
         ul.right.main-ul.hide-on-med-and-down
           li
@@ -75,4 +75,4 @@ header#global
             li
               a.login href="#{new_user_session_path}" #{t('layouts.header.signin')}
             li
-              a.sign-in.shape-red href="#{new_user_registration_path}" #{t('layouts.header.signup')}
+              a.sign-in href="#{new_user_registration_path}" #{t('layouts.header.signup')}
