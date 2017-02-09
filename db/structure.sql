@@ -516,7 +516,8 @@ CREATE TABLE users (
     cover_image text,
     permalink text,
     subscribed_to_project_posts boolean DEFAULT true,
-    lastname character varying(255)
+    lastname character varying(255),
+    account_type_id integer
 );
 
 
@@ -1233,6 +1234,37 @@ CREATE TABLE auth (
 
 
 SET search_path = public, pg_catalog;
+
+--
+-- Name: account_types; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE account_types (
+    id integer NOT NULL,
+    name character varying(255),
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone
+);
+
+
+--
+-- Name: account_types_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE account_types_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: account_types_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE account_types_id_seq OWNED BY account_types.id;
+
 
 --
 -- Name: authorizations; Type: TABLE; Schema: public; Owner: -
@@ -2784,6 +2816,13 @@ ALTER SEQUENCE users_id_seq OWNED BY users.id;
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
+ALTER TABLE ONLY account_types ALTER COLUMN id SET DEFAULT nextval('account_types_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
 ALTER TABLE ONLY authorizations ALTER COLUMN id SET DEFAULT nextval('authorizations_id_seq'::regclass);
 
 
@@ -3067,6 +3106,14 @@ ALTER TABLE ONLY auth
 
 
 SET search_path = public, pg_catalog;
+
+--
+-- Name: account_types_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY account_types
+    ADD CONSTRAINT account_types_pkey PRIMARY KEY (id);
+
 
 --
 -- Name: authorizations_pkey; Type: CONSTRAINT; Schema: public; Owner: -
@@ -3868,6 +3915,13 @@ CREATE INDEX index_updates_on_project_id ON project_posts USING btree (project_i
 
 
 --
+-- Name: index_users_on_account_type_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_users_on_account_type_id ON users USING btree (account_type_id);
+
+
+--
 -- Name: index_users_on_authentication_token; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -4380,6 +4434,14 @@ ALTER TABLE ONLY user_links
 
 ALTER TABLE ONLY user_notifications
     ADD CONSTRAINT fk_user_notifications_user_id FOREIGN KEY (user_id) REFERENCES users(id);
+
+
+--
+-- Name: fk_users_account_type_id; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY users
+    ADD CONSTRAINT fk_users_account_type_id FOREIGN KEY (account_type_id) REFERENCES account_types(id);
 
 
 --
@@ -5161,4 +5223,8 @@ INSERT INTO schema_migrations (version) VALUES ('20161204215507');
 INSERT INTO schema_migrations (version) VALUES ('20161207043142');
 
 INSERT INTO schema_migrations (version) VALUES ('20170208164835');
+
+INSERT INTO schema_migrations (version) VALUES ('20170209211848');
+
+INSERT INTO schema_migrations (version) VALUES ('20170209211907');
 

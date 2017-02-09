@@ -143,6 +143,24 @@ CatarseSettings.all.each do |conf|
   puts "  #{a['name']}: #{a['value']}"
 end
 
+puts
+puts '============================================='
+puts ' Account Type'
+puts '---------------------------------------------'
+
+puts "Adding Account Types - Inversionista."
+
+  AccountType.find_or_create_by!(name: "Inversionista") do |at|
+    at.name = "Inversionista"
+  end
+
+puts "Adding Funder user - Promotor Inmobiliario."
+
+  AccountType.find_or_create_by!(name: "Promotor Inmobiliario") do |at|
+    at.name = "Promotor Inmobiliario"
+  end
+
+
 Rails.cache.clear
 
 puts '---------------------------------------------'

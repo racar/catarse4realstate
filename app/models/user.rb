@@ -39,6 +39,7 @@ class User < ActiveRecord::Base
 
 
   belongs_to :country
+  belongs_to :account_type
   has_one :user_total
   has_one :bank_account, dependent: :destroy
   has_many :feeds, class_name: 'UserFeed'
