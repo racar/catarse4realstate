@@ -239,11 +239,16 @@ es:
               invalid: "Esta dirección de correo electrónico no es válido"
               blank: "El correo electrónico no puede estar vacío"
             password:
-              too_short: "La contraseña que usted eligió es demasiado corto"
-              confirmation: "La contraseña y la confirmación de contraseña cumplido no son iguales"
+              too_short: "La contraseña que usted eligió es demasiado corta"
+              too_long: "La contraseña que usted eligió es demasiado larga"
+              confirmation: "La contraseña y la confirmación de contraseña no son iguales"
               blank: "La contraseña no puede estar en blanco"
+            password_confirmation:
+              confirmation: "Debe ser identica a la contraseña ingresada anteriormente"
+              blank: "La contraseña no puede estar en blancsssssssso"
             phone_number:
-              blank: "Ingrese un teléfono válido"
+              invalid: "Este número de telefono no es válido"
+              blank: "El número de teléfono no puede estar vacío"
             current_password:
               invalid: "Contraseña actual no es válido"
             reset_password_token:
