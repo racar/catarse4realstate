@@ -1,8 +1,7 @@
 - content_for :title, t('.titles.site')
 = render 'devise/shared/header'
 
-= content_for :js
-  = javascript_include_tag "app/user/register.js"
+= content_for :js  
 
 section#signup
   .wrapper
@@ -46,7 +45,7 @@ section#signup
                     /input#password.tooltipped data-delay="50" data-position="top" data-tooltip=("Debe tener entre 8 y 16 caracteres), al menos un d&iacute;gito (n&uacute;mero) y no puede tener espacios ni caracteres raros." name="password" required="required" type="password" value="" /
                     = form.input :password, as: :password, label: t('.form.labels.password'), input_html: { class: 'tooltipped', "data-tooltip" => 'Debe tener entre 8 y 16 caracteres.' }, required: true
                     span.input-message
-                    a.pwd-reveal href="#!"  Ver Contraseña
+                    a.pwd-reveal#view-or-hide href="#"  Ver Contraseña
                 .row
                   .input.pwd-validate.col.s12
                     /label for="password_confirmation"  Confirmar Contraseña
