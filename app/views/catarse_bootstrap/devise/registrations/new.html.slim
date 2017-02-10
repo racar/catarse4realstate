@@ -33,7 +33,7 @@ section#signup
                 .row
                   .input.col.s12
                     /= form.input :lastname, as: :string, label: t('.form.labels.lastname'), input_html: { class: 'validate tooltipped', "data-tooltip" => 'Ingrese su apellido como figura en su cedula' }, required: true
-                    = form.association :account_type, as: :select, label: t('.form.labels.account_type_id'), required: true, input_html: { class: 'validate tooltipped browser-default', "data-tooltip" => 'Seleccione que tipo de perfil se ajusta a sus necesidades '} 
+                    = form.association :account_type, as: :select, label: t('.form.labels.account_type_id'), required: true, input_html: { class: 'validate tooltipped browser-default', "data-tooltip" => 'Seleccione que tipo de perfil se ajusta a sus necesidades '}
                     /= form.association :country, as: :select, label_html:{class: 'field-label fontweight-semibold'}, wrapper_html: {class: 'w-col w-col-6 w-sub-col'}, input_html: {class: 'w-select positive', required: true}, required: true, label: 'País'
                 .row
                   .input.col.s12
@@ -60,12 +60,12 @@ section#signup
                 .row
                   .col.s12
                     p.form-checks
-                      input#terms.filled-in name="terms" type="checkbox" /
+                      = form.input_field :terms, as: :boolean, boolean_style: :inline, class: 'filled-in'
+                      /input#terms.filled-in name="terms" type="checkbox"
                       label for="terms"
                         | Acepto los
                         a href="#" target="_blank"  Términos y Condiciones
-                        | y las
-                        a href="#" target="_blank"  Políticas de Privacidad
+
                 .row.action-btn
                   .col.s12
                     button#register-btn.waves-effect.submit-btn.waves-light.btn.orange.darken-2 type="submit"  Crear Cuenta

@@ -248,9 +248,8 @@ es:
               confirmation: "Debe ser identica a la contraseña ingresada anteriormente"
               blank: "La contraseña no puede estar en blancsssssssso"
             phone_number:
-              invalid: "El número de teléfono no es válido"
-              blank: "El número de teléfono no puede estar vacío"
               not_a_number: "El número de teléfono no es válido"
+              blank: "El número de teléfono no puede estar vacío"              
             account_type_id:
               invalid: "Debe seleccionar una opción en Tipo de Cuenta"
               blank: "Debe seleccionar una opción en Tipo de Cuenta"
@@ -262,6 +261,8 @@ es:
               blank: "El nombre no puede estar en blanco"
             lastname:
               blank: "El apellido no puede estar en blanco"
+            terms:
+              accepted: "Necesita aceptar los Terminos y Condiciones para continuar"
             about_html:
               blank: "Acerca de usted no puede estar en blanco"
             uploaded_image:
