@@ -1,7 +1,7 @@
 - content_for :title, t('.titles.site')
 = render 'devise/shared/header'
 
-= content_for :js  
+= content_for :js
 
 section#signup
   .wrapper
@@ -30,6 +30,18 @@ section#signup
                     /label for="lastname"  Apellido
                     /input#last_name.validate.tooltipped data-delay="50" data-position="top" data-tooltip=("Ingres&aacute; SOLO tu apellido completo como figura en tu documento.") name="last_name" required="required" type="text" /
                     = form.input :lastname, as: :string, label: t('.form.labels.lastname'), input_html: { class: 'validate tooltipped', "data-tooltip" => 'Ingrese su apellido como figura en su cedula' }, required: true
+
+
+                .row
+                  .input.col.s12
+                    /label for="gato"  Apelgaaalido
+                    /input#last_name.validate.tooltipped data-delay="50" data-position="top" data-tooltip=("Ingres&aacute; SOLO tu apellido completo como figura en tu documento.") name="last_name" required="required" type="text" /
+                    /= form.input :lastname, as: :string, label: t('.form.labels.lastname'), input_html: { class: 'validate tooltipped', "data-tooltip" => 'Ingrese su apellido como figura en su cedula' }, required: true
+                    = form.association :account_type, as: :select, label: t('.form.labels.account_type_id'), required: true, input_html: { class: 'validate browser-default'} 
+                    /= form.association :country, as: :select, label_html:{class: 'field-label fontweight-semibold'}, wrapper_html: {class: 'w-col w-col-6 w-sub-col'}, input_html: {class: 'w-select positive', required: true}, required: true, label: 'País'
+
+
+
                 .row
                   .input.col.s12
                     /label for="email"  Email

@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
     :twitter_link, :display_bank_account, :display_bank_account_owner, to: :decorator
 
   # FIXME: Please bitch...
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :lastname, :permalink,
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :lastname, :account_type_id, :permalink,
     :image_url, :uploaded_image, :newsletter, :address_street, :address_number,
     :address_complement, :address_neighbourhood, :address_city, :address_state, :address_zip_code, :phone_number,
     :cpf, :state_inscription, :locale, :twitter, :facebook_link, :other_link, :moip_login, :deactivated_at, :reactivate_token,
@@ -35,7 +35,8 @@ class User < ActiveRecord::Base
 
   validates :name, presence: true
   validates :lastname, presence: true
-  validates :phone_number, :numericality => {:message => "Ingrese un número de teléfono correcto." }
+  validates :phone_number, presence: true, numericality: true
+  validates :account_type_id, presence: true
 
 
   belongs_to :country

@@ -108,6 +108,7 @@ es:
         bio: 'Mini Bio'
         name: "Nombre"
         lastname: "Apellido"
+        account_type: "Tipo de Cuenta"
         newsletter: 'Quiero recibir noticias de Homeparte'
         password: 'Contraseña'
         password_confirmation: "Confirmación de la contraseña"
@@ -197,7 +198,7 @@ es:
               blank: "CPF / CNPJ el titular de usuario no puede estar en blanco"
               not_same: "CPF/CNPJ de registro y datos bancarios llenos no son iguales."
             account_type:
-              blank: "Tipo de cuenta no puede estar en blanco"
+              blank: "Debe seleccionar algún item."
         project:
           attributes:
             city:
@@ -247,8 +248,12 @@ es:
               confirmation: "Debe ser identica a la contraseña ingresada anteriormente"
               blank: "La contraseña no puede estar en blancsssssssso"
             phone_number:
-              invalid: "Este número de telefono no es válido"
+              invalid: "El número de teléfono no es válido"
               blank: "El número de teléfono no puede estar vacío"
+              not_a_number: "El número de teléfono no es válido"
+            account_type_id:
+              invalid: "Debe seleccionar una opción en Tipo de Cuenta"
+              blank: "Debe seleccionar una opción en Tipo de Cuenta"
             current_password:
               invalid: "Contraseña actual no es válido"
             reset_password_token:

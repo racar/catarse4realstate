@@ -15,6 +15,7 @@ es:
             lastname: 'Apellido'
             email: 'Email'
             phone_number: 'Teléfono'
+            account_type_id: 'Tipo de Cuenta'
             password: 'Contraseña'
             password_confirmation: 'Confirmar Contraseña'
             newsletter: 'Deseo suscribirme al boletín HomeParte'
