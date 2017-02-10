@@ -1,37 +1,115 @@
 - content_for :title, t('.title')
 = render 'shared/header_big'
 
-.page-header.negative.u-marginbottom-40
-  .w-container
-    h1.fontsize-largest.u-text-center = t('.title')
+section#terms-banner
+  em
+  .parallax-container
+    .parallax      
+      = image_tag 'catarse_bootstrap/terminosycondiciones.jpg', alt: 'Términos y Condiciones'
+  .container
+    .row
+      .terms-content
+        h2 = t('.title')
+        span
 
-.section-one-column  
-  .w-container
-    .headline = t('.content.title')
-    p.fontsize-base.u-marginbottom-60 = t('.content.description').html_safe
+section#legal_wrapper
+  .container
+    .row
+      .col.s12
+        .legal-container.card
+          .row
+            .col.m12
+              h3 = t('.content.title')
+              p.fontsize-base.u-marginbottom-60 = t('.content.description').html_safe
 
-    .headline = t('.content.rules')
-    p.fontsize-base.u-marginbottom-60 = t('.content.rules_description').html_safe
+              h3 = t('.content.rules')
+              p.fontsize-base.u-marginbottom-60 = t('.content.rules_description').html_safe
 
-    .headline = t('.contribution.title')
-    p.fontsize-base.u-marginbottom-60 = t('.contribution.description').html_safe
+              h3 = t('.contribution.title')
+              p.fontsize-base.u-marginbottom-60 = t('.contribution.description').html_safe
 
-    .headline = t('.copyright.title')
-    p.fontsize-base.u-marginbottom-60 = t('.copyright.description').html_safe
+              h3 = t('.copyright.title')
+              p.fontsize-base.u-marginbottom-60 = t('.copyright.description').html_safe
 
-    .headline = t('.intellectual.title')
-    p.fontsize-base.u-marginbottom-60 = t('.intellectual.description').html_safe
+              h3 = t('.intellectual.title')
+              p.fontsize-base.u-marginbottom-60 = t('.intellectual.description').html_safe
 
-    .headline = t('.material.title')
-    p.fontsize-base.u-marginbottom-60 = t('.material.description').html_safe
+              h3 = t('.material.title')
+              p.fontsize-base.u-marginbottom-60 = t('.material.description').html_safe
 
-    .headline = t('.disclaimer_warranty.title')
-    p.fontsize-base.u-marginbottom-60 = t('.disclaimer_warranty.description').html_safe
+              h3 = t('.disclaimer_warranty.title')
+              p.fontsize-base.u-marginbottom-60 = t('.disclaimer_warranty.description').html_safe
 
-    .headline = t('.general_guidelines.title')
-    p.fontsize-base.u-marginbottom-60 = t('.general_guidelines.description').html_safe
+              h3 = t('.general_guidelines.title')
+              p.fontsize-base.u-marginbottom-60 = t('.general_guidelines.description').html_safe
+
+              h3 = t('.values.title')
+              p.fontsize-base.u-marginbottom-60 = t('.values.description').html_safe
+
+              h3 = t('.mode.title')
+              p.fontsize-base.u-marginbottom-60 = t('.mode.description').html_safe
+
+              h3 = t('.exclusion_warranty.title')
+              p.fontsize-base.u-marginbottom-60 = t('.exclusion_warranty.description').html_safe
+
+              h3 = t('.limitation_liability.title')
+              p.fontsize-base.u-marginbottom-60 = t('.limitation_liability.description').html_safe
+
+              h3 = t('.intelectual_property.title')
+              p.fontsize-base.u-marginbottom-60 = t('.intelectual_property.description').html_safe
+
+              h3 = t('.force.title')
+              p.fontsize-base.u-marginbottom-60 = t('.force.description').html_safe
+
+              h3 = t('.notice.title')
+              p.fontsize-base.u-marginbottom-60 = t('.notice.description').html_safe
+
+              h3 = t('.miscellaneous.title')
+              p.fontsize-base.u-marginbottom-60 = t('.miscellaneous.description').html_safe
+
+              h3 = t('.politics.title')
+              br
+              h3 = t('.politics.general_consideration.title')
+              p.fontsize-base.u-marginbottom-60 = t('.politics.general_consideration.description').html_safe
+
+              h3 = t('.politics.mandatory.title')
+              p.fontsize-base.u-marginbottom-60 = t('.politics.mandatory.description').html_safe
+
+              h3 = t('.politics.definitions.title')
+              p.fontsize-base.u-marginbottom-60 = t('.politics.definitions.description').html_safe
+
+              h3 = t('.politics.values_personal_data.title')
+              p.fontsize-base.u-marginbottom-60 = t('.politics.values_personal_data.description').html_safe
+
+              h4 = t('.politics.values_personal_data.collection.title')
+              p.fontsize-base.u-marginbottom-60 = t('.politics.values_personal_data.collection.description').html_safe
+
+              h4 = t('.politics.values_personal_data.use.title')
+              p.fontsize-base.u-marginbottom-60 = t('.politics.values_personal_data.use.description').html_safe
+
+              h4 = t('.politics.values_personal_data.quality.title')
+              p.fontsize-base.u-marginbottom-60 = t('.politics.values_personal_data.quality.description').html_safe
+
+              h4 = t('.politics.values_personal_data.protection.title')
+              p.fontsize-base.u-marginbottom-60 = t('.politics.values_personal_data.protection.description').html_safe
+
+              h3 = t('.politics.finality.title')
+              p.fontsize-base.u-marginbottom-60 = t('.politics.finality.description').html_safe
+
+              h3 = t('.politics.rights.title')
+              p.fontsize-base.u-marginbottom-60 = t('.politics.rights.description').html_safe
+
+              h3 = t('.politics.homework.title')
+              p.fontsize-base.u-marginbottom-60 = t('.politics.homework.description').html_safe
+
+              h3 = t('.temporary_association.title')
+              p.fontsize-base.u-marginbottom-60 = t('.temporary_association.description').html_safe
+
+              h3 = t('.considerations.title')
+              p.fontsize-base.u-marginbottom-60 = t('.considerations.description').html_safe
+
+              h3 = t('.clauses.title')
+              p.fontsize-base.u-marginbottom-60 = t('.clauses.description').html_safe
+
 
 = render 'shared/footer_big'
-
-
-
