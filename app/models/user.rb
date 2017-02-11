@@ -38,9 +38,7 @@ class User < ActiveRecord::Base
   validates :phone_number, presence: true, numericality: true
   validates :account_type_id, presence: true
 
-  #validates :terms, acceptance: true, :message => "Ingrese un nassssssúmero de teléfono correcto."
-  #validates :terms, :acceptance => {:message 'must be abided'}
-  validates :terms, acceptance: { accept: true }
+  validates :terms, :acceptance => true
 
 
   belongs_to :country

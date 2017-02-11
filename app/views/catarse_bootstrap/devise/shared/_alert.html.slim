@@ -7,4 +7,4 @@
     i.material-icons.left
     p = t('failure_title')
     - resource.errors.messages.each do |message|
-      .fontsize-smaller = message[1].to_sentence.html_safe
+      .fontsize-smaller = message[1][0]
