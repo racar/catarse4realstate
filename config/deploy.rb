@@ -19,7 +19,7 @@ set :passenger_restart_command, 'touch'
 set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets public/system public/uploads}
 set :passenger_restart_options, -> { "#{deploy_to}/current/tmp/restart.txt" }
 
-set :linked_files, %w{config/database.yml}
+set :linked_files, %w{config/database.yml config/secrets.yml}
 set :assets_roles, [:web, :app]
 
 

@@ -235,7 +235,7 @@ es:
         user:
           attributes:
             email:
-              not_found: "El correo electrónico no se ha registrado, compruebe la dirección o se registra a sí mismo"
+              not_found: "No podemos encontrar a un usuario con ese correo electrónico"
               taken: "El email ya está registrado, inicie sesión"
               invalid: "Esta dirección de correo electrónico no es válido"
               blank: "El correo electrónico no puede estar vacío"
@@ -249,7 +249,7 @@ es:
               blank: "La contraseña no puede estar en blancsssssssso"
             phone_number:
               not_a_number: "El número de teléfono no es válido"
-              blank: "El número de teléfono no puede estar vacío"              
+              blank: "El número de teléfono no puede estar vacío"
             account_type_id:
               invalid: "Debe seleccionar una opción en Tipo de Cuenta"
               blank: "Debe seleccionar una opción en Tipo de Cuenta"

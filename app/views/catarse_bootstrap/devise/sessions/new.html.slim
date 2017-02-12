@@ -27,7 +27,7 @@ section#login
                     /label for="password"  Contrase&ntilde;a
                     = form.input :password, as: :password, label: t('.form.inputs.password'), input_html: { class: 'w-input text-field' }, required: true
                     /input#password name="password" required="required" type="password" value="" /
-                    a.forgot-pwd href="https://www.crowdium.com.ar/recuperar-contrase&ntilde;a"  ¿Perdiste tu contraseña?
+                    a.forgot-pwd href="#{new_password_path(resource_name)}"  ¿Perdiste tu contraseña?
                 .row
                   .col.s12
                     p.form-checks

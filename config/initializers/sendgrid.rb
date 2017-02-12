@@ -4,9 +4,11 @@ begin
       address: 'smtp.sendgrid.net',
       port: '587',
       authentication: :plain,
-      user_name: "drawdream1144",
-      password: "drawdream1144151",
-      domain: 'homeparte.ngrok.com'
+      user_name: CatarseSettings.get_without_cache(:sendgrid_user_name),
+      password: CatarseSettings.get_without_cache(:sendgrid_password),
+      domain: CatarseSettings.get_without_cache(:sendgrid_domain),
+      :enable_starttls_auto => true
+
     }
     ActionMailer::Base.delivery_method = :smtp
   # end

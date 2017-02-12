@@ -94,7 +94,11 @@ end
   instagram_url: 'http://instagram.com/',
   blog_url: "http://blog.catarse.me",
   github_url: 'http://github.com/catarse',
-  contato_url: 'http://suporte.catarse.me/'
+  contato_url: 'http://suporte.catarse.me/',
+  sendgrid_user_name: 'homeparte',
+  sendgrid_password: 'e"szJ70XZA',
+  sendgrid_domain: 'homeparte.com'
+
 }.each do |name, value|
    conf = CatarseSettings.find_or_initialize_by(name: name)
    conf.update_attributes({

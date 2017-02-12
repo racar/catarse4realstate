@@ -1,19 +1,32 @@
 - content_for :title, t('.titles.site')
+= render 'devise/shared/header'
 
-.w-container
-  .u-marginbottom-10
-    = render 'devise/shared/header'
-  .w-row
-    .w-col.w-col-3
-    .w-col.w-col-6.box-login
-      .fontweight-semibold.u-text-center.fontsize-large.u-marginbottom-10 Redefinir senha
-      .fontsize-small.u-text-center.u-marginbottom-30
-        span.fontcolor-secondary=> t '.no_account_html'
-        = link_to t('.links.register'), new_user_registration_url, class: 'alt-link fontweight-semibold'
-      .login-fb
-      .w-form.form-login
-        = simple_form_for resource, as: resource_name, url: password_url(resource_name), html: {novalidate: true} do |form|
+section#pwd-recover
+  .wrapper
+    .table
+      .container
+        .container.login-container
           = render 'devise/shared/alert'
-          label.field-label.fontsize-smaller.fontcolor-secondary for="name"= t('.form.labels.email')
-          = form.input :email, as: :email, input_html: { class: 'w-input text-field' }, label: '', required: false
-          = form.button :submit, t('.form.inputs.submit'), class:'btn btn-medium'
+          .card
+            h2.card-title
+              i.material-icons lock_outline
+              | Recuperá tu contraseña
+            p Por favor, ingresá el email asociado a tu cuenta y te enviaremos un acceso para que puedas recuperar tu contraseña.
+            .row
+              /form.col.s12 accept-charset="UTF-8" action="https://www.crowdium.com.ar/recuperar-contrase%C3%B1a" method="POST"
+
+              = simple_form_for resource, as: resource_name, url: password_url(resource_name), html: {novalidate: true} do |form|
+                .row
+                  .input.col.s12
+                    /label for="email"  Email
+                    /input#email.validate name="email" required="required" type="email" /
+                    label.field-label.fontsize-smaller.fontcolor-secondary for="name"= t('.form.labels.email')
+                    = form.input :email, as: :email, placeholder: 'email', input_html: { class: 'validate' }, label: '', required: true
+                .row.action-btn
+                  .col.s12
+                    button.waves-effect.submit-btn.waves-light.btn.orange.darken-2 type="submit"  #{t('.form.inputs.submit')}
+                    /= form.button :submit, t('.form.inputs.submit'), class: "waves-effect submit-btn waves-light btn"
+          p.terms
+            a href="#{terms_of_use_path}" target="_blank"  Términos y Condiciones
+            | \
+            a href="#" target="_blank"  Políticas de Privacidad

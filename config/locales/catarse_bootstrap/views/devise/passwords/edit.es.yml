@@ -1,5 +1,5 @@
 es:
-  deivse:
+  devise:
     passwords:
       edit:
         titles:
@@ -12,5 +12,4 @@ es:
             password: 'Nueva contraseña'
             password_confirmation: 'Vuelva a escribir la contraseña'
           inputs:
-            submit: 'Guardar y entrar'
-
+            submit: 'Guardar'
