@@ -27,6 +27,6 @@ class PasswordsController < Devise::PasswordsController
   end
 
   def after_sending_reset_password_instructions_path_for(resource)
-    new_password_path(resource_name)
+    reset_confirmation_password_path    
   end
 end
