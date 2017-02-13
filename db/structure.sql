@@ -2725,6 +2725,42 @@ ALTER SEQUENCE updates_id_seq OWNED BY project_posts.id;
 
 
 --
+-- Name: user_informations; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE user_informations (
+    id integer NOT NULL,
+    user_id integer,
+    document_type character varying(255),
+    document_number character varying(255),
+    expedition_date timestamp without time zone,
+    expedition_place timestamp without time zone,
+    sex character varying(255),
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone
+);
+
+
+--
+-- Name: user_informations_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE user_informations_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: user_informations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE user_informations_id_seq OWNED BY user_informations.id;
+
+
+--
 -- Name: user_links; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -3062,6 +3098,13 @@ ALTER TABLE ONLY states ALTER COLUMN id SET DEFAULT nextval('states_id_seq'::reg
 --
 
 ALTER TABLE ONLY unsubscribes ALTER COLUMN id SET DEFAULT nextval('unsubscribes_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY user_informations ALTER COLUMN id SET DEFAULT nextval('user_informations_id_seq'::regclass);
 
 
 --
@@ -3433,6 +3476,14 @@ ALTER TABLE ONLY unsubscribes
 
 ALTER TABLE ONLY project_posts
     ADD CONSTRAINT updates_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: user_informations_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY user_informations
+    ADD CONSTRAINT user_informations_pkey PRIMARY KEY (id);
 
 
 --
@@ -3912,6 +3963,20 @@ CREATE INDEX index_unsubscribes_on_user_id ON unsubscribes USING btree (user_id)
 --
 
 CREATE INDEX index_updates_on_project_id ON project_posts USING btree (project_id);
+
+
+--
+-- Name: index_user_informations_on_document_number; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX index_user_informations_on_document_number ON user_informations USING btree (document_number);
+
+
+--
+-- Name: index_user_informations_on_user_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_user_informations_on_user_id ON user_informations USING btree (user_id);
 
 
 --
@@ -4421,6 +4486,14 @@ ALTER TABLE ONLY redactor_assets
 
 
 --
+-- Name: fk_user_informations_user_id; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY user_informations
+    ADD CONSTRAINT fk_user_informations_user_id FOREIGN KEY (user_id) REFERENCES users(id);
+
+
+--
 -- Name: fk_user_links_user_id; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -4528,7 +4601,7 @@ ALTER TABLE ONLY project_posts
 -- PostgreSQL database dump complete
 --
 
-SET search_path TO public, pg_catalog;
+SET search_path TO "$user", public, "1";
 
 INSERT INTO schema_migrations (version) VALUES ('20121226120921');
 
@@ -5227,4 +5300,6 @@ INSERT INTO schema_migrations (version) VALUES ('20170208164835');
 INSERT INTO schema_migrations (version) VALUES ('20170209211848');
 
 INSERT INTO schema_migrations (version) VALUES ('20170209211907');
+
+INSERT INTO schema_migrations (version) VALUES ('20170213225842');
 
