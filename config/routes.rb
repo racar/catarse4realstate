@@ -19,7 +19,7 @@ Catarse::Application.routes.draw do
     post '/sign_up', {to: 'devise/registrations#create', as: :sign_up}
   end
 
-  
+
   get "/reset_confirmation_password" => 'high_voltage/pages#show', id: 'reset_confirmation_password'
   get '/thank_you' => "static#thank_you"
   get '/contact_email' => "static#send_contact_email"
@@ -87,6 +87,11 @@ Catarse::Application.routes.draw do
       get :settings
       get :billing
       get :reactivate
+      get :personal
+      post :create_personal
+      put :update_personal
+      #post :create_personal
+      #patch :update_personal
     end
 
     resources :unsubscribes, only: [:create]

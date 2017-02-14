@@ -1,0 +1,32 @@
+#editar-perfil.col.s12.m12.l9.profile-content.wow.fadeInUp data-wow-delay="0.4s" data-wow-duration="0.7s"
+  .module
+    .module-header
+      h2
+        i.material-icons.left> assignment_ind
+        | Datos Personales
+      .btn-actions
+        a href="#"
+          i.material-icons.left> keyboard_arrow_left
+          | Volver Atrás
+    .module-content
+      .edit-message
+        p Recordá que esta información debe corresponder con la copia de tu documento y constancia de CUIT/CUIL que debés enviarnos para que podamos validar tu perfil.
+
+      /form.edit-profile-form accept-charset="UTF-8" action="https://www.crowdium.com.ar/mi-cuenta/modificar-datos-personales" method="POST"
+      /= simple_form_for @user, html: { id: 'user_form', class: 'w-form' } do |form|
+      = simple_form_for resource.user_information, url: @url, class: 'edit-profile-form', method: @method  do |form|
+        .edit-profile-data
+          .row
+            .input.col.s12.m6
+              /label for="document_number"  Nombre del Titular
+              /input#name.validate maxlength="150" name="name" required="required" size="150" type="text" value="Dario" /
+              = form.input :document_number, as: :string, label: 'Documento', input_html: { class: 'validate tooltipped', "data-tooltip" => 'Ingrese su nº de documento como figura en su cedula'},  required: true
+            .input.col.s12.m6
+              /label for="document_number"  Nombre del Titular
+              /input#name.validate maxlength="150" name="name" required="required" size="150" type="text" value="Dario" /
+              = form.input :sex, as: :string, label: 'Sexo', input_html: { class: 'validate tooltipped', "data-tooltip" => 'Ingrese su sexo como figura en su cedula'},  required: true
+
+
+          .action-btn.row
+            .col.s12
+              button#btn-submit.waves-effect.waves-light.btn type="submit"  Modificar
