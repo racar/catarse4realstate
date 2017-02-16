@@ -40,8 +40,11 @@ class UsersController < ApplicationController
       @title = "#{@user.display_name}"
       @unsubscribes = @user.project_unsubscribes
       @credit_cards = @user.credit_cards
-      @country_of_birth = ISO3166::Country[@user.user_information.country_of_birth].translations[I18n.locale.to_s]
-      @country = ISO3166::Country[@user.user_information.country].translations[I18n.locale.to_s]
+      if @user.user_information.present?
+        @country_of_birth = ISO3166::Country[@user.user_information.country_of_birth].translations[I18n.locale.to_s]
+        @country = ISO3166::Country[@user.user_information.country].translations[I18n.locale.to_s]
+      end
+
       build_bank_account
     }
   end
@@ -80,17 +83,22 @@ class UsersController < ApplicationController
     authorize resource
     @personal_information = @user.user_information
     @work_information = @user.work_information
-    
+    @financial_information = @user.financial_information
+
     if @personal_information.nil?
       # creamos la relacion por unica vez
       # si comento la linea de abajo al acceder a personal se borra el registro que ya existe del usuario (user_information)
       resource.build_user_information
     end
+
     if @work_information.nil?
-      # creamos la relacion por unica vez
-      # si comento la linea de abajo al acceder a personal se borra el registro que ya existe del usuario (user_information)
       resource.build_work_information
     end
+
+    if @financial_information.nil?
+      resource.build_financial_information
+    end
+
       # y actualizamos
   end
 
@@ -112,7 +120,7 @@ class UsersController < ApplicationController
     authorize resource
     respond_to do |format|
       #if resource.user_information.update(user_information_params)
-      if resource.update(user_work_information_params)
+      if resource.update(user_work_financial_information_params)
         format.html { redirect_to user_path(current_user), notice: 'OK.' }
       else
         format.html { render :edit }
@@ -190,7 +198,7 @@ class UsersController < ApplicationController
     params.require(:user).permit(:id, :email, :phone_number, user_information_attributes: [:id, :user_id, :document_type, :document_number, :expedition_date, :expedition_place, :gender, :country, :city, :address, :country_of_birth, :city_of_birth ])
   end
 
-  def user_work_information_params
-    params.require(:user).permit(:id, work_information_attributes: [:id, :user_id, :company, :profession, :origin_resource, :address_work, :phone_number_work, :city_work ])
+  def user_work_financial_information_params
+    params.require(:user).permit(:id, work_information_attributes: [:id, :user_id, :company, :profession, :origin_resource, :address_work, :phone_number_work, :city_work ], financial_information_attributes: [:id, :user_id, :salary, :investment])
   end
 end

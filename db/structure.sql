@@ -1871,6 +1871,39 @@ ALTER SEQUENCE dbhero_dataclips_id_seq OWNED BY dbhero_dataclips.id;
 
 
 --
+-- Name: financial_informations; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE financial_informations (
+    id integer NOT NULL,
+    user_id integer,
+    salary character varying(255),
+    investment character varying(255),
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone
+);
+
+
+--
+-- Name: financial_informations_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE financial_informations_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: financial_informations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE financial_informations_id_seq OWNED BY financial_informations.id;
+
+
+--
 -- Name: financial_reports; Type: VIEW; Schema: public; Owner: -
 --
 
@@ -3027,6 +3060,13 @@ ALTER TABLE ONLY dbhero_dataclips ALTER COLUMN id SET DEFAULT nextval('dbhero_da
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
+ALTER TABLE ONLY financial_informations ALTER COLUMN id SET DEFAULT nextval('financial_informations_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
 ALTER TABLE ONLY near_mes ALTER COLUMN id SET DEFAULT nextval('near_mes_id_seq'::regclass);
 
 
@@ -3365,6 +3405,14 @@ ALTER TABLE ONLY credit_cards
 
 ALTER TABLE ONLY dbhero_dataclips
     ADD CONSTRAINT dbhero_dataclips_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: financial_informations_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY financial_informations
+    ADD CONSTRAINT financial_informations_pkey PRIMARY KEY (id);
 
 
 --
@@ -3932,6 +3980,13 @@ CREATE INDEX index_dbhero_dataclips_on_user ON dbhero_dataclips USING btree ("us
 
 
 --
+-- Name: index_financial_informations_on_user_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_financial_informations_on_user_id ON financial_informations USING btree (user_id);
+
+
+--
 -- Name: index_payment_notifications_on_contribution_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -4443,6 +4498,14 @@ ALTER TABLE ONLY contributions
 
 ALTER TABLE ONLY credit_cards
     ADD CONSTRAINT fk_credit_cards_user_id FOREIGN KEY (user_id) REFERENCES users(id);
+
+
+--
+-- Name: fk_financial_informations_user_id; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY financial_informations
+    ADD CONSTRAINT fk_financial_informations_user_id FOREIGN KEY (user_id) REFERENCES users(id);
 
 
 --
@@ -5378,4 +5441,6 @@ INSERT INTO schema_migrations (version) VALUES ('20170213225842');
 INSERT INTO schema_migrations (version) VALUES ('20170216184234');
 
 INSERT INTO schema_migrations (version) VALUES ('20170216192651');
+
+INSERT INTO schema_migrations (version) VALUES ('20170216210218');
 

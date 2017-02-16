@@ -27,22 +27,23 @@
           span Tipo de Cuenta: #{@user.account_type.name}
           p
             b Tipo de Documento:
-            |  #{@user.user_information.document_type}
+            |  #{@user.user_information.present? ? @user.user_information.document_type : '---'}
           p
             b Número de Documento:
-            |  #{@user.user_information.document_number}
+            |  #{@user.user_information.present? ? @user.user_information.document_number : '---'}
           p
             b Género:
-            |  #{@user.user_information.gender}
+            |  #{@user.user_information.present? ? @user.user_information.gender : '---'}
           p
             b Teléfono:
             |  #{@user.phone_number}
           p
             b País de Nacimiento:
-            |  #{@country_of_birth}
+
+            |  #{@country_of_birth.present? ? @country_of_birth : '---'}
           p
             b Ciudad de Nacimiento:
-            |  #{@user.user_information.city_of_birth}
+            |  #{@user.user_information.present? ? @user.user_information.city_of_birth : '---'}
 
         .clearfix
       .profile-message
@@ -65,13 +66,13 @@
               i.material-icons warning
             p
               b> Dirección:
-              |  #{@user.user_information.address}
+              |  #{@user.user_information.present? ? @user.user_information.address : '---'}
             p
               b> País de residencia:
-              |  #{@country}
+              |  #{@country.present? ? @country : '---'}
             p
               b> Ciudad de Residencia:
-              |  #{@user.user_information.city}
+              |  #{@user.user_information.present? ? @user.user_information.city : '---'}
           .col.s12.m6.status
             p
               b Estado:
@@ -89,31 +90,40 @@
         a href="#{personal_user_path}#work-information"  Modificar Datos Laborales
     .module-content
       h3 Mantenga actualizada su situación laboral
-      .small En esta sección podrás modificar tus datos laborales y el monto estimado que pensás invertir con HomeParte.
+      .small En esta sección podrá modificar sus datos laborales y el monto estimado que piensa invertir en HomeParte.
       .income-content
         .row.income-info.active
           .col.s12.m6.info
             span.status-icon.pending
               i.material-icons hourglass_empty
             p
-              b> Tipo de Actividad:
-              | Desocupado
+              b> Empresa donde trabaja:
+              |  #{@user.work_information.present? ? @user.work_information.company : '---'}
             p
-              b> Tipo de Empleo:
-              | Desempleado
+              b> Profesión:
+              |  #{@user.work_information.present? ? @user.work_information.profession : '---'}
             p
-              b> Ingresos Mensuales Netos:
-              | $20.000
+              b> Origen de los Recursos:
+              |  #{@user.work_information.present? ? @user.work_information.origin_resource : '---'}
+            p
+              b> Dirección Trabajo:
+              |  #{@user.work_information.present? ? @user.work_information.address_work : '---'}
+            p
+              b> Teléfono Trabajo:
+              |  #{@user.work_information.present? ? @user.work_information.phone_number_work : '---'}
+            p
+              b> Ciudad Trabajo:
+              |  #{@user.work_information.present? ? @user.work_information.city_work : '---'}
           .col.s12.m6.status
-            p
-              b> Fecha de Alta:
-              | 30/01/2017
             p
               b Estado:
               | Revisando documentación
             p
+              b> Ingresos Netos:
+              | #{@user.financial_information.present? ? @user.financial_information.salary : '---'}
+            p
               b> Monto Estimado a Invertir:
-              | $250.000
+              | #{@user.financial_information.present? ? @user.financial_information.investment : '---'}
       .profile-message
         i.material-icons.left info
         p Esta información podrá ser editada hasta que nos hayas enviado toda la documentación requerida y seas habilitado como INVERSOR ACTIVO. Un vez verificada la información, para poder modificarla deberás enviarnos la documentación que respalde el nuevo cambio.

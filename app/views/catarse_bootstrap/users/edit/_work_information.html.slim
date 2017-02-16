@@ -30,6 +30,13 @@
                 = c.input :phone_number_work, as: :tel, label: 'Teléfono', input_html: { class: 'validate tooltipped', "data-tooltip" => 'Ingrese el número de teléfono de su trabajo para contactarlo.' }, required: true
               .input.col.s12.m6
                 = c.input :city_work, label: 'Ciudad', input_html: { class: 'validate tooltipped', "data-tooltip" => 'Ingrese la ciudad donde trabaja'},  required: true
+          = form.simple_fields_for :financial_information do |f|
+            .row
+              .input.col.s12.m6
+                = f.input :salary, label: 'Ingresos mensuales netos', input_html: { class: 'validate tooltipped', "data-tooltip" => 'Ingrese un estimado de los ingresos mensuales que percibe'},  required: true
+              .input.col.s12.m6
+                = f.input :investment, label: 'Monto Estimado a invertir', input_html: { class: 'validate tooltipped', "data-tooltip" => 'Ingrese cuanto considera invertir'},  required: true
+
           .action-btn.row
             .col.s12
               button#btn-submit.waves-effect.waves-light.btn type="submit"  Modificar
