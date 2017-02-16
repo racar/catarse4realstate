@@ -1,4 +1,4 @@
-#editar-perfil.col.s12.m12.l9.profile-content.wow.fadeInUp data-wow-delay="0.4s" data-wow-duration="0.7s"
+#basic-information.col.s12.m12.l9.profile-content.wow.fadeInUp data-wow-delay="0.4s" data-wow-duration="0.7s"
   .module
     .module-header
       h2
@@ -12,21 +12,32 @@
       .edit-message
         p Recordá que esta información debe corresponder con la copia de tu documento y constancia de CUIT/CUIL que debés enviarnos para que podamos validar tu perfil.
 
-      /form.edit-profile-form accept-charset="UTF-8" action="https://www.crowdium.com.ar/mi-cuenta/modificar-datos-personales" method="POST"
-      /= simple_form_for @user, html: { id: 'user_form', class: 'w-form' } do |form|
-      = simple_form_for resource.user_information, url: @url, class: 'edit-profile-form', method: @method  do |form|
+
+      = simple_form_for @user, url: update_personal_user_path, class: 'edit-profile-form', method: :put  do |form|
         .edit-profile-data
-          .row
-            .input.col.s12.m6
-              /label for="document_number"  Nombre del Titular
-              /input#name.validate maxlength="150" name="name" required="required" size="150" type="text" value="Dario" /
-              = form.input :document_number, as: :string, label: 'Documento', input_html: { class: 'validate tooltipped', "data-tooltip" => 'Ingrese su nº de documento como figura en su cedula'},  required: true
-            .input.col.s12.m6
-              /label for="document_number"  Nombre del Titular
-              /input#name.validate maxlength="150" name="name" required="required" size="150" type="text" value="Dario" /
-              = form.input :sex, as: :string, label: 'Sexo', input_html: { class: 'validate tooltipped', "data-tooltip" => 'Ingrese su sexo como figura en su cedula'},  required: true
 
+            = form.simple_fields_for :user_information do |c|
+              .row
+                .input.col.s12.m6
+                  = c.input :document_type, label: 'Tipo de Documento', input_html: { class: 'validate tooltipped browser-default', "data-tooltip" => 'Seleccione el tipo de documento que posee'},  required: true
+                .input.col.s12.m6
+                  = c.input :document_number, label: 'Documento', input_html: { class: 'validate tooltipped', "data-tooltip" => 'Ingrese su nº de documento como figura en su cedula'},  required: true
+              .row
+                .input.col.s12.m6
+                  = c.input :expedition_date, as: :date, start_year: Time.now.year - 90, end_year: Time.now.year, order: [:day, :month, :year], label: 'Fecha de Expedición', input_html: { class: 'validate tooltipped', "data-tooltip" => 'Ingrese la fecha de expedición de su cedula'}, required: true, html5: true
+                .input.col.s12.m6
+                  = c.input :expedition_place, label: 'Lugar de Expedición', input_html: { class: 'validate tooltipped', "data-tooltip" => 'Ingrese el lugar de expedición de su cedula'},  required: true
+              .row
+                .input.col.s12.m6
+                  = c.input :gender, label: 'Género', input_html: { class: 'validate tooltipped browser-default', "data-tooltip" => 'Ingrese el género como figura en su cedula'},  required: true
+                .input.col.s12.m6
+                  = c.input :country_of_birth, priority: [ "Colombia" ], label: 'País de Nacimiento', input_html: { class: 'validate tooltipped browser-default', "data-tooltip" => 'Ingrese el país de nacimiento'},  required: true
+              .row
+                .input.col.s12.m6
+                  = c.input :city_of_birth, label: 'Ciudad de Nacimiento', input_html: { class: 'validate tooltipped browser-default', "data-tooltip" => 'Ingrese la ciudad de nacimiento'},  required: true
+                .input.col.s12.m6
+                  = form.input :phone_number, as: :tel, label: t('.form.labels.phone_number'), input_html: { class: 'validate tooltipped', "data-tooltip" => 'Ingrese un número de teléfono para contactarlo.' }, required: true
 
-          .action-btn.row
-            .col.s12
-              button#btn-submit.waves-effect.waves-light.btn type="submit"  Modificar
+            .action-btn.row
+              .col.s12
+                button#btn-submit.waves-effect.waves-light.btn type="submit"  Modificar

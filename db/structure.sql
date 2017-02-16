@@ -2734,8 +2734,13 @@ CREATE TABLE user_informations (
     document_type character varying(255),
     document_number character varying(255),
     expedition_date timestamp without time zone,
-    expedition_place timestamp without time zone,
-    sex character varying(255),
+    expedition_place character varying(255),
+    gender character varying(255),
+    country character varying(255),
+    city character varying(255),
+    address character varying(255),
+    country_of_birth character varying(255),
+    city_of_birth character varying(255),
     created_at timestamp without time zone,
     updated_at timestamp without time zone
 );

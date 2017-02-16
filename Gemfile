@@ -108,6 +108,12 @@ gem 'compass-rails'
 gem 'uglifier'
 gem 'sprockets'
 
+#enumerize
+gem 'enumerize'
+
+#paises
+gem 'country_select'
+
 group :production do
   # Gem used to handle image uploading
   gem 'fog', '>= 1.3.1'

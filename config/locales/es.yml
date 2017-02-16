@@ -15,4 +15,14 @@ es:
     keywords: crowdfunding, financiamento colectivo, proyecto, inversión
     meta_title: "%{title} · %{company_name}"
     title: HomeParte
-
+  enumerize:
+    defaults:
+      gender:
+        male: 'Hombre'
+        female: 'Mujer'
+        other: 'Sin especificar'
+      document_type:
+        nit: 'NIT'
+        cc: 'CC'
+        foreigner_card: 'Cedula Extranjería'
+        passport: 'Pasaporte'

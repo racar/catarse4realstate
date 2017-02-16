@@ -1,0 +1,31 @@
+#direction.col.s12.m12.l9.profile-content.wow.fadeInUp data-wow-delay="0.4s" data-wow-duration="0.7s"
+  .module
+    .module-header
+      h2
+        i.material-icons.left> assignment_ind
+        | Domicilio
+      .btn-actions
+        a href="#"
+          i.material-icons.left> keyboard_arrow_left
+          | Volver Atrás
+    .module-content
+      .edit-message
+        p Recordá que esta información debe corresponder con el domicilio del servicio que nos envíes para que podamos validarlo correctamente.
+
+
+      = simple_form_for @user, url: update_personal_user_path, class: 'edit-profile-form', method: :put  do |form|
+        .edit-profile-data
+
+            = form.simple_fields_for :user_information do |c|
+              .row
+                .input.col.s12.m6
+                  = c.input :country, label: 'País', priority: [ "Colombia" ], input_html: { class: 'validate tooltipped browser-default', "data-tooltip" => 'Ingrese el país de residencia'},  required: true
+                .input.col.s12.m6
+                  = c.input :city, label: 'Ciudad', input_html: { class: 'validate tooltipped browser-default', "data-tooltip" => 'Ingrese la ciudad de residencia'},  required: true
+              .row
+                .input.col.s12.m12
+                  = c.input :address, label: 'Dirección', input_html: { class: 'validate tooltipped browser-default', "data-tooltip" => 'Ingrese su dirección actual'},  required: true
+
+            .action-btn.row
+              .col.s12
+                button#btn-submit.waves-effect.waves-light.btn type="submit"  Modificar

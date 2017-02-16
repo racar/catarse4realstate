@@ -8,11 +8,11 @@ section#edit-profile
               ul.profile_tabs
                 - if current_page?(action: 'show')
                   li.tab
-                    a href="#editar-perfil" class="active"
+                    a href="#basic-information" class="active"
                       i.material-icons.left> assignment_ind
                       | Datos Personales
                   li.tab
-                    a href="#direccion-de-email"
+                    a href="#email-address-information"
                       i.material-icons.left> email
                       | Dirección de Email
                   li.tab
@@ -21,17 +21,31 @@ section#edit-profile
                       | Seguridad
                 - if current_page?(action: 'personal')
                   li.tab
-                    a href="#" class="active"
+                    a href="#basic-information" class="active"
                       i.material-icons.left> assignment_ind
-                      | GATO
+                      | Datos Personales
+                  li.tab
+                    a href="#direction"
+                      i.material-icons.left> assignment_ind
+                      | Domicilio
+                  li.tab
+                    a href="#email-address-information"
+                      i.material-icons.left> email
+                      | Dirección de Email
+
+
 
             - if current_page?(action: 'show')
               =render 'users/dashboard_basic_information'
-              =render 'users/dashboard_new_email'
+              =render 'users/edit/email_address_information'
               =render 'users/dashboard_new_password'
             - if current_page?(action: 'personal')
               =render 'users/edit/personal_information'
-              
+              =render 'users/edit/address_information'
+              =render 'users/edit/email_address_information'
+
+
+
 
 - if current_page?(action: 'personal')
   #account-loader

@@ -76,42 +76,21 @@ class UsersController < ApplicationController
   def personal
     authorize resource
     @personal_information = @user.user_information
-    #@personal_information?
     if @personal_information.nil?
-      #creamos la relacion por unica vez
-
+      # creamos la relacion por unica vez
+      # si comento la linea de abajo al acceder a personal se borra el registro que ya existe del usuario (user_information)
       resource.build_user_information
-      @url = create_personal_user_path
-      @method = 'post'
-    else
-      #actualizamos
-      @url = update_personal_user_path
-      @method = 'put'
     end
+      # y actualizamos
 
-  end
-
-  def create_personal
-    @user_information = UserInformation.new(user_information_params)
-    #authorize @user_information
-    @user_information.user_id = resource.id
-    respond_to do |format|
-      if @user_information.save
-        format.html { redirect_to edit_user_path(@user), notice: 'Loan seller was successfully updated.' }
-      else
-        format.html { render :edit }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
-    end
   end
 
 
   def update_personal
-
     authorize resource
-
     respond_to do |format|
-      if resource.user_information.update(user_information_params)
+      #if resource.user_information.update(user_information_params)
+      if resource.update(user_information_params)
         format.html { redirect_to edit_user_path(@user), notice: 'Loan seller was successfully updated.' }
       else
         format.html { render :edit }
@@ -138,12 +117,6 @@ class UsersController < ApplicationController
 
   def category_followers_params_given?
     permitted_params[:category_followers_attributes].present?
-  end
-
-  def user_information_params_given?
-    asdasdasdasdasd
-    permitted_params[:document_number].present?
-
   end
 
   def password_params_given?
@@ -190,8 +163,8 @@ class UsersController < ApplicationController
   def permitted_params
     params.require(:user).permit(policy(resource).permitted_attributes)
   end
-
+  # despues ver si lo ponemos en policies ( user )
   def user_information_params
-    params.require(:user_information).permit(policy(resource).permitted_attributes_for_personal)
+    params.require(:user).permit(:id, :email, :phone_number, user_information_attributes: [:id, :user_id, :document_type, :document_number, :expedition_date, :expedition_place, :gender, :country, :city, :address, :country_of_birth, :city_of_birth ])
   end
 end

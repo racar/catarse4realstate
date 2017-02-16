@@ -60,9 +60,10 @@ class UserPolicy < ApplicationPolicy
     u_attrs.flatten
   end
 
-  def permitted_attributes_for_personal
-    [:id,:user_id,:document_number, :sex]
-  end
+  #def permitted_attributes_for_personal
+    #[:id,:user_id,:document_number, :sex]
+  #  [:id, :lastname, user_information_attributes: [:id, :user_id, :document_number, :gender] ]
+  #end
 
   protected
   def done_by_owner_or_admin?
