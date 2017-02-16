@@ -32,12 +32,15 @@ class UsersController < ApplicationController
   end
 
   def show
+
     authorize resource
+
     show!{
       fb_admins_add(@user.facebook_id) if @user.facebook_id
       @title = "#{@user.display_name}"
       @unsubscribes = @user.project_unsubscribes
       @credit_cards = @user.credit_cards
+      @country_of_birth = ISO3166::Country[@user.user_information.country_of_birth].translations[I18n.locale.to_s]
       build_bank_account
     }
   end
@@ -62,7 +65,6 @@ class UsersController < ApplicationController
   end
 
   def update
-    saddddddddddddddddddddddasdawqeqwe
     authorize resource
 
     if update_user
@@ -91,7 +93,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       #if resource.user_information.update(user_information_params)
       if resource.update(user_information_params)
-        format.html { redirect_to edit_user_path(@user), notice: 'Loan seller was successfully updated.' }
+        format.html { redirect_to user_path(current_user), notice: 'Loan seller was successfully updated.' }
       else
         format.html { render :edit }
         format.json { render json: @user.errors, status: :unprocessable_entity }

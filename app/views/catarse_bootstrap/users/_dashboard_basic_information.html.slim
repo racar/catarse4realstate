@@ -14,7 +14,6 @@
           i.material-icons warning
         .profile-pic
           .avatar
-            /img#profile-pic src="https://www.crowdium.com.ar/img/users/profile.jpg" /
             = image_tag (current_user.display_image) , id: 'profile-pic'
           .avatar-info
             p
@@ -24,27 +23,27 @@
             #status
           .clearfix
         .profile-info
-          h4 Dario Fernandez
-          span Tipo: Persona Física | Canal: Web
+          h4 = @user.display_fullname
+          span Tipo de Cuenta: #{@user.account_type.name}
           p
-            b CUIT / CUIL:
-            | 20-33761159-2
-            i.material-icons.warning warning
+            b Tipo de Documento:
+            |  #{@user.user_information.document_type}
           p
-            b DNI:
-            | 33761159
+            b Número de Documento:
+            |  #{@user.user_information.document_number}
           p
             b Género:
-            | Masculino
+            |  #{@user.user_information.gender}
           p
-            b Fecha de Nacimiento:
-            | 05/08/1988
+            b Teléfono:
+            |  #{@user.phone_number}
           p
-            b Nacionalidad:
-            | Argentina
+            b País de Nacimiento:
+            |  #{@country_of_birth}
           p
-            b.tooltipped data-delay="0" data-position="top" data-tooltip=("Persona Expuesta Políticamente") style=("border-bottom:1px dotted #333;cursor:help;")  PEP:
-            | No
+            b Ciudad de Nacimiento:
+            |  #{@user.user_information.city_of_birth}
+          
         .clearfix
       .profile-message
         i.material-icons.left info
