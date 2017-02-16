@@ -16136,7 +16136,7 @@ section {
     .col {
       visibility: hidden;
       padding: 30px 10px 5px 10px;
-      width: 25% !important;
+      width: 12.5% !important;
       a {
         display: block;
         img {
@@ -16147,7 +16147,7 @@ section {
           -moz-transition: all 0.2s ease;
           -o-transition: all 0.2s ease;
           -ms-transition: all 0.2s ease;
-          transition: all 0.2s ease;          
+          transition: all 0.2s ease;
         }
         &:hover img {
           -webkit-filter: grayscale(0%);
