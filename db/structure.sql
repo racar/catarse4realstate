@@ -2733,7 +2733,7 @@ CREATE TABLE user_informations (
     user_id integer,
     document_type character varying(255),
     document_number character varying(255),
-    expedition_date timestamp without time zone,
+    expedition_date date,
     expedition_place character varying(255),
     gender character varying(255),
     country character varying(255),
@@ -4606,7 +4606,7 @@ ALTER TABLE ONLY project_posts
 -- PostgreSQL database dump complete
 --
 
-SET search_path TO public, pg_catalog;
+SET search_path TO "$user", public, "1";
 
 INSERT INTO schema_migrations (version) VALUES ('20121226120921');
 
@@ -5307,4 +5307,6 @@ INSERT INTO schema_migrations (version) VALUES ('20170209211848');
 INSERT INTO schema_migrations (version) VALUES ('20170209211907');
 
 INSERT INTO schema_migrations (version) VALUES ('20170213225842');
+
+INSERT INTO schema_migrations (version) VALUES ('20170216184234');
 
