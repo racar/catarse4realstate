@@ -43,7 +43,7 @@
           p
             b Ciudad de Nacimiento:
             |  #{@user.user_information.city_of_birth}
-          
+
         .clearfix
       .profile-message
         i.material-icons.left info
@@ -54,10 +54,10 @@
         i.material-icons.left> home
         | Domicilio
       .btn-actions
-        a href="#"  Modificar Domicilio
+        a href="#{personal_user_path}#direction"  Modificar Domicilio
     .module-content
       h3 Mantené actualizado tu domicilio
-      .small En esta sección podrás modificar los datos personales de tu cuenta así como agregar/modificar la foto de tu perfil.
+      .small En esta sección podrás modificar los datos correspondientes a tu domicilio actual.
       .address-content
         .row.address-info.active
           .col.s12.m6.info
@@ -65,98 +65,30 @@
               i.material-icons warning
             p
               b> Dirección:
-              | Corrientes, 376
+              |  #{@user.user_information.address}
             p
-              b> Piso:
-              | 1
+              b> País de residencia:
+              |  #{@country}
             p
-              b> Depto:
-              | 11
-            p
-              b> Código Postal:
-              | 5500
-            p
-              b> Provincia:
-              | Mendoza
-            p
-              b> Localidad:
-              | Capital
+              b> Ciudad de Residencia:
+              |  #{@user.user_information.city}
           .col.s12.m6.status
             p
-              b> Fecha de Alta:
-              | 30/01/2017
-            p
               b Estado:
-              | Documentación pendiente
+              |  Documentación pendiente
       .profile-message
         i.material-icons.left info
         p Esta información podrá ser modificada hasta que nos hayas enviado toda la documentación requerida y seas habilitado como INVERSOR ACTIVO. Una vez validada podrás agregar un domicilio que deberá ser revalidado con su correspondiente documentación.
-  .module
-    .module-header
-      h2
-        i.material-icons.left> phone
-        | Teléfonos de Contacto
-      .btn-actions
-        a href="#"  Modificar Teléfonos
-    .module-content
-      h3 Mantené actualizado tus teléfonos de contacto
-      .small Es importante que mantengas tu información de contacto lo más actualizada posible de manera a brindarte una mejor asistencia.
-      .contact-info
-        span.status-icon.active
-          i.material-icons check_circle
-        .row
-          .col.s12.m4
-            h4 Teléfono Particular
-            p (261) 6972233
-          .col.s12.m4
-            h4 Teléfono Celular
-            p (261) 6972233
-          .col.s12.m4
-            h4 Teléfono Laboral
-            p S/D
-  .module
-    .module-header
-      h2
-        i.material-icons.left> people
-        | Estado Civil
-      .btn-actions
-        a href="#"  Modificar Estado Civil
-    .module-content
-      h3 Mantené actualizado tu estado civil
-      .small Si seleccionás "Casado" o "Unión Convivencial" deberás completar el DNI y Nombre Completo de tu Cónyugue.
-      .civil-content
-        .row.civil-info.active
-          .col.s12.m6.info
-            span.status-icon.warning
-              i.material-icons warning
-            p
-              b> Estado Civil:
-              | Soltero
-            p.disabled
-              b> Nombre del Cónyugue:
-              | S/D
-            p.disabled
-              b> DNI del Cónyugue:
-              | S/D
-          .col.s12.m6.status
-            p
-              b> Fecha de Alta:
-              | 30/01/2017
-            p
-              b Estado:
-              | Documentación pendiente
-      .profile-message
-        i.material-icons.left info
-        p Esta información será validada con la copia de tu documento. Una vez validada, todo cambio en tu estado civil quedará registrado en tu historial.
+
   .module
     .module-header
       h2
         i.material-icons.left> work
         | Datos Laborales
       .btn-actions
-        a href="#"  Modificar Datos Laborales
+        a href="#{personal_user_path}#work-information"  Modificar Datos Laborales
     .module-content
-      h3 Mantené actualizada tu situación laboral
+      h3 Mantenga actualizada su situación laboral
       .small En esta sección podrás modificar tus datos laborales y el monto estimado que pensás invertir con HomeParte.
       .income-content
         .row.income-info.active

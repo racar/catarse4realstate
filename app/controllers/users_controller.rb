@@ -41,6 +41,7 @@ class UsersController < ApplicationController
       @unsubscribes = @user.project_unsubscribes
       @credit_cards = @user.credit_cards
       @country_of_birth = ISO3166::Country[@user.user_information.country_of_birth].translations[I18n.locale.to_s]
+      @country = ISO3166::Country[@user.user_information.country].translations[I18n.locale.to_s]
       build_bank_account
     }
   end
@@ -78,13 +79,19 @@ class UsersController < ApplicationController
   def personal
     authorize resource
     @personal_information = @user.user_information
+    @work_information = @user.work_information
+    
     if @personal_information.nil?
       # creamos la relacion por unica vez
       # si comento la linea de abajo al acceder a personal se borra el registro que ya existe del usuario (user_information)
       resource.build_user_information
     end
+    if @work_information.nil?
+      # creamos la relacion por unica vez
+      # si comento la linea de abajo al acceder a personal se borra el registro que ya existe del usuario (user_information)
+      resource.build_work_information
+    end
       # y actualizamos
-
   end
 
 
@@ -93,7 +100,20 @@ class UsersController < ApplicationController
     respond_to do |format|
       #if resource.user_information.update(user_information_params)
       if resource.update(user_information_params)
-        format.html { redirect_to user_path(current_user), notice: 'Loan seller was successfully updated.' }
+        format.html { redirect_to user_path(current_user), notice: 'OK.' }
+      else
+        format.html { render :edit }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def update_work
+    authorize resource
+    respond_to do |format|
+      #if resource.user_information.update(user_information_params)
+      if resource.update(user_work_information_params)
+        format.html { redirect_to user_path(current_user), notice: 'OK.' }
       else
         format.html { render :edit }
         format.json { render json: @user.errors, status: :unprocessable_entity }
@@ -168,5 +188,9 @@ class UsersController < ApplicationController
   # despues ver si lo ponemos en policies ( user )
   def user_information_params
     params.require(:user).permit(:id, :email, :phone_number, user_information_attributes: [:id, :user_id, :document_type, :document_number, :expedition_date, :expedition_place, :gender, :country, :city, :address, :country_of_birth, :city_of_birth ])
+  end
+
+  def user_work_information_params
+    params.require(:user).permit(:id, work_information_attributes: [:id, :user_id, :company, :profession, :origin_resource, :address_work, :phone_number_work, :city_work ])
   end
 end

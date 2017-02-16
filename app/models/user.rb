@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
     :address_complement, :address_neighbourhood, :address_city, :address_state, :address_zip_code, :phone_number,
     :cpf, :state_inscription, :locale, :twitter, :facebook_link, :other_link, :moip_login, :deactivated_at, :reactivate_token,
     :bank_account_attributes, :country_id, :zero_credits, :links_attributes, :about_html, :cover_image, :category_followers_attributes, :category_follower_ids,
-    :subscribed_to_project_posts, :user_information_attributes
+    :subscribed_to_project_posts, :user_information_attributes, :work_information_attributes
 
 
   mount_uploader :uploaded_image, UserUploader
@@ -46,6 +46,7 @@ class User < ActiveRecord::Base
   belongs_to :account_type
   has_one :user_total
   has_one :user_information, dependent: :destroy
+  has_one :work_information, dependent: :destroy
   has_one :bank_account, dependent: :destroy
   has_many :feeds, class_name: 'UserFeed'
   has_many :credit_cards
@@ -75,6 +76,7 @@ class User < ActiveRecord::Base
   accepts_nested_attributes_for :bank_account, allow_destroy: true, reject_if: -> (attr) { attr[:bank_id].blank? }
   accepts_nested_attributes_for :category_followers, allow_destroy: true
   accepts_nested_attributes_for :user_information
+  accepts_nested_attributes_for :work_information
 
   scope :with_permalink, -> { where.not(permalink: nil) }
   scope :active, ->{ where(deactivated_at: nil) }

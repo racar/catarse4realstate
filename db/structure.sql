@@ -2854,6 +2854,43 @@ ALTER SEQUENCE users_id_seq OWNED BY users.id;
 
 
 --
+-- Name: work_informations; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE work_informations (
+    id integer NOT NULL,
+    user_id integer,
+    company character varying(255),
+    profession character varying(255),
+    origin_resource character varying(255),
+    address_work character varying(255),
+    phone_number_work character varying(255),
+    city_work character varying(255),
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone
+);
+
+
+--
+-- Name: work_informations_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE work_informations_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: work_informations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE work_informations_id_seq OWNED BY work_informations.id;
+
+
+--
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3131,6 +3168,13 @@ ALTER TABLE ONLY user_notifications ALTER COLUMN id SET DEFAULT nextval('user_no
 --
 
 ALTER TABLE ONLY users ALTER COLUMN id SET DEFAULT nextval('users_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY work_informations ALTER COLUMN id SET DEFAULT nextval('work_informations_id_seq'::regclass);
 
 
 SET search_path = api_updates, pg_catalog;
@@ -3513,6 +3557,14 @@ ALTER TABLE ONLY user_notifications
 
 ALTER TABLE ONLY users
     ADD CONSTRAINT users_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: work_informations_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY work_informations
+    ADD CONSTRAINT work_informations_pkey PRIMARY KEY (id);
 
 
 --
@@ -4027,6 +4079,13 @@ CREATE UNIQUE INDEX index_users_on_reset_password_token ON users USING btree (re
 
 
 --
+-- Name: index_work_informations_on_user_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_work_informations_on_user_id ON work_informations USING btree (user_id);
+
+
+--
 -- Name: payments_full_text_index_ix; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -4536,6 +4595,14 @@ ALTER TABLE ONLY users
 
 ALTER TABLE ONLY users
     ADD CONSTRAINT fk_users_country_id FOREIGN KEY (country_id) REFERENCES countries(id);
+
+
+--
+-- Name: fk_work_informations_user_id; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY work_informations
+    ADD CONSTRAINT fk_work_informations_user_id FOREIGN KEY (user_id) REFERENCES users(id);
 
 
 --
@@ -5309,4 +5376,6 @@ INSERT INTO schema_migrations (version) VALUES ('20170209211907');
 INSERT INTO schema_migrations (version) VALUES ('20170213225842');
 
 INSERT INTO schema_migrations (version) VALUES ('20170216184234');
+
+INSERT INTO schema_migrations (version) VALUES ('20170216192651');
 

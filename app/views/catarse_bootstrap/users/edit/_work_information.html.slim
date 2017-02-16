@@ -1,0 +1,35 @@
+#work-information.col.s12.m12.l9.profile-content.wow.fadeInUp data-wow-delay="0.4s" data-wow-duration="0.7s"
+  .module
+    .module-header
+      h2
+        i.material-icons.left> assignment_ind
+        | Datos Laborales
+      .btn-actions
+        a href="#"
+          i.material-icons.left> keyboard_arrow_left
+          | Volver Atrás
+    .module-content
+      .edit-message
+        p En esta sección podrás modificar tus datos laborales y el monto estimado que pensás invertir con HomeParte.
+
+      = simple_form_for @user, url: update_work_user_path, class: 'edit-profile-form', method: :put  do |form|
+        .edit-profile-data
+          = form.simple_fields_for :work_information do |c|
+            .row
+              .input.col.s12.m6
+                = c.input :company, label: 'Empresa donde trabaja', input_html: { class: 'validate tooltipped', "data-tooltip" => 'Ingrese la empresa donde trabaja'},  required: true
+              .input.col.s12.m6
+                = c.input :profession, label: 'Profesión', input_html: { class: 'validate tooltipped', "data-tooltip" => 'Ingrese su profesión'},  required: true
+            .row
+              .input.col.s12.m6
+                = c.input :origin_resource, label: 'Origen de los recursos', input_html: { class: 'validate tooltipped', "data-tooltip" => 'Ingrese el origen de sus recursos'},  required: true
+              .input.col.s12.m6
+                = c.input :address_work, label: 'Dirección del trabajo', input_html: { class: 'validate tooltipped', "data-tooltip" => 'Ingrese la dirección de su trabajo'},  required: true
+            .row
+              .input.col.s12.m6
+                = c.input :phone_number_work, as: :tel, label: 'Teléfono', input_html: { class: 'validate tooltipped', "data-tooltip" => 'Ingrese el número de teléfono de su trabajo para contactarlo.' }, required: true
+              .input.col.s12.m6
+                = c.input :city_work, label: 'Ciudad', input_html: { class: 'validate tooltipped', "data-tooltip" => 'Ingrese la ciudad donde trabaja'},  required: true
+          .action-btn.row
+            .col.s12
+              button#btn-submit.waves-effect.waves-light.btn type="submit"  Modificar

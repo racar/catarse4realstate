@@ -1,0 +1,27 @@
+- content_for :title, "#{resource.name} · #{CatarseSettings[:company_name]}"
+- content_for :meta_tags do
+  meta property="og:title" content=resource.name
+  meta property="og:url" content=user_url(resource, locale: I18n.locale)
+  meta property="og:type" content='cause'
+  meta[property="og:image" content=resource.uploaded_image.thumb_facebook.url]
+  meta property="og:site_name" content=CatarseSettings[:company_name]
+  - fb_admins.each do |admin|
+    meta property="fb:admins" content="#{admin}"
+
+- content_for :js do
+  = javascript_include_tag 'redactor'
+  = javascript_include_tag "homeparte.js"
+  = javascript_include_tag "app/user/account.js"
+  = javascript_include_tag "app/user/jquery.spincrement.js"
+  = javascript_include_tag "app/user/spin.min.js"
+
+
+- content_for :stylesheets do
+  = stylesheet_link_tag 'redactor'
+
+= render 'shared/header_big', overlayer: true
+
+= render 'users/user_header'
+
+= render 'users/dashboard_tab'
+= render 'shared/footer_big'

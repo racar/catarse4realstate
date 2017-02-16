@@ -23,11 +23,11 @@ class UserPolicy < ApplicationPolicy
     done_by_owner_or_admin?
   end
 
-  def create_personal?
+  def update_personal?
     done_by_owner_or_admin?
   end
 
-  def update_personal?
+  def update_work?
     done_by_owner_or_admin?
   end
 

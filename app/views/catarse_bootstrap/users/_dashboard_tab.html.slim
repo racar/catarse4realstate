@@ -8,7 +8,7 @@ section#edit-profile
               ul.profile_tabs
                 - if current_page?(action: 'show')
                   li.tab
-                    a href="#basic-information" class="active"
+                    a href="#basic-information"
                       i.material-icons.left> assignment_ind
                       | Datos Personales
                   li.tab
@@ -21,17 +21,21 @@ section#edit-profile
                       | Seguridad
                 - if current_page?(action: 'personal')
                   li.tab
-                    a href="#basic-information" class="active"
+                    a href="#basic-information" 
                       i.material-icons.left> assignment_ind
                       | Datos Personales
                   li.tab
                     a href="#direction"
-                      i.material-icons.left> assignment_ind
+                      i.material-icons.left> home
                       | Domicilio
                   li.tab
                     a href="#email-address-information"
                       i.material-icons.left> email
                       | Dirección de Email
+                  li.tab
+                    a href="#work-information"
+                      i.material-icons.left> work
+                      | Datos Laborales
 
 
 
@@ -43,6 +47,7 @@ section#edit-profile
               =render 'users/edit/personal_information'
               =render 'users/edit/address_information'
               =render 'users/edit/email_address_information'
+              =render 'users/edit/work_information'
 
 
 
