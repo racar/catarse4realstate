@@ -97,7 +97,11 @@ end
   contato_url: 'http://suporte.catarse.me/',
   sendgrid_user_name: 'homeparte',
   sendgrid_password: 'e"szJ70XZA',
-  sendgrid_domain: 'homeparte.com'
+  sendgrid_domain: 'homeparte.com',
+  aws_host: 's3-us-west-1.amazonaws.com',
+  aws_access_key: 'AKIAJIIRNNTQ4HLLHLVQ',
+  aws_secret_key: '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',
+  aws_bucket: 'docs-homeparte-com-important-doc'
 
 }.each do |name, value|
    conf = CatarseSettings.find_or_initialize_by(name: name)

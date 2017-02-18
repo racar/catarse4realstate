@@ -2,6 +2,7 @@ CarrierWave.configure do |config|
   if CatarseSettings.get_without_cache(:aws_access_key)
     config.fog_credentials = {
       provider: 'AWS',
+      region: 'us-west-1',
       host: CatarseSettings.get_without_cache(:aws_host),
       endpoint: "https://#{CatarseSettings.get_without_cache(:aws_host)}",
       aws_access_key_id: CatarseSettings.get_without_cache(:aws_access_key),

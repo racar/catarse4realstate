@@ -84,6 +84,9 @@ class UsersController < ApplicationController
     @personal_information = @user.user_information
     @work_information = @user.work_information
     @financial_information = @user.financial_information
+    #@user_document = @user.user_documents
+    @user_document = @user.user_document
+
 
     if @personal_information.nil?
       # creamos la relacion por unica vez
@@ -98,6 +101,12 @@ class UsersController < ApplicationController
     if @financial_information.nil?
       resource.build_financial_information
     end
+
+    if @user_document.nil?
+      #resource.user_documents.build
+      resource.build.user_document
+    end
+
 
       # y actualizamos
   end
@@ -199,6 +208,11 @@ class UsersController < ApplicationController
   end
 
   def user_work_financial_information_params
-    params.require(:user).permit(:id, work_information_attributes: [:id, :user_id, :company, :profession, :origin_resource, :address_work, :phone_number_work, :city_work ], financial_information_attributes: [:id, :user_id, :salary, :investment])
+    #params.require(:user).permit(:id, work_information_attributes: [:id, :user_id, :company, :profession, :origin_resource, :address_work, :phone_number_work, :city_work ], financial_information_attributes: [:id, :user_id, :salary, :investment], user_documents_attributes: [:id, :document])
+    params.require(:user).permit(:id, work_information_attributes: [:id, :user_id, :company, :profession, :origin_resource, :address_work, :phone_number_work, :city_work ], financial_information_attributes: [:id, :user_id, :salary, :investment], user_document_attributes: [:id, :document, :salary_certificate, :chamber_commerce, :rut])
+  end
+
+  def user_document_params
+    params.require(:user).permit(:id, :document_data => [])
   end
 end

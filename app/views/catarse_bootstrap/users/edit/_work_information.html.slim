@@ -37,6 +37,12 @@
               .input.col.s12.m6
                 = f.input :investment, label: 'Monto Estimado a invertir', input_html: { class: 'validate tooltipped', "data-tooltip" => 'Ingrese cuanto considera invertir'},  required: true
 
+          = form.simple_fields_for :user_document do |doc|
+            .row
+              .input.col.s12.m6
+                = doc.input :salary_certificate, as: :file, label: 'Certificado de Ingresos', input_html: { class: 'validate tooltipped', "data-tooltip" => 'Adjunte el certificado de ingresos'},  required: true
+
+
           .action-btn.row
             .col.s12
               button#btn-submit.waves-effect.waves-light.btn type="submit"  Modificar

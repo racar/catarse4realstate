@@ -49,21 +49,17 @@ class UserPolicy < ApplicationPolicy
     u_attrs << record.attribute_names.map(&:to_sym)
     u_attrs << { links_attributes: [:id, :_destroy, :link] }
     u_attrs << { category_followers_attributes: [:id, :user_id, :category_id] }
-    #u_attrs << { user_informations_attributes: [:sex, :document_number] }
+
     u_attrs.flatten!
 
     unless user.try(:admin?)
       u_attrs.delete(:zero_credits)
       u_attrs.delete(:permalink)
     end
-    jsakdddddddddddddqldjqwdod
+
     u_attrs.flatten
   end
 
-  #def permitted_attributes_for_personal
-    #[:id,:user_id,:document_number, :sex]
-  #  [:id, :lastname, user_information_attributes: [:id, :user_id, :document_number, :gender] ]
-  #end
 
   protected
   def done_by_owner_or_admin?

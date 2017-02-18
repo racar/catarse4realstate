@@ -28,6 +28,7 @@
           p
             b Tipo de Documento:
             |  #{@user.user_information.present? ? @user.user_information.document_type : '---'}
+            /|  #{@user.user_documents.document.url}
           p
             b Número de Documento:
             |  #{@user.user_information.present? ? @user.user_information.document_number : '---'}

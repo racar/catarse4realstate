@@ -2758,6 +2758,41 @@ ALTER SEQUENCE updates_id_seq OWNED BY project_posts.id;
 
 
 --
+-- Name: user_documents; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE user_documents (
+    id integer NOT NULL,
+    user_id integer,
+    document character varying(255),
+    salary_certificate character varying(255),
+    chamber_commerce character varying(255),
+    rut character varying(255),
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone
+);
+
+
+--
+-- Name: user_documents_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE user_documents_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: user_documents_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE user_documents_id_seq OWNED BY user_documents.id;
+
+
+--
 -- Name: user_informations; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -3186,6 +3221,13 @@ ALTER TABLE ONLY unsubscribes ALTER COLUMN id SET DEFAULT nextval('unsubscribes_
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
+ALTER TABLE ONLY user_documents ALTER COLUMN id SET DEFAULT nextval('user_documents_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
 ALTER TABLE ONLY user_informations ALTER COLUMN id SET DEFAULT nextval('user_informations_id_seq'::regclass);
 
 
@@ -3573,6 +3615,14 @@ ALTER TABLE ONLY unsubscribes
 
 ALTER TABLE ONLY project_posts
     ADD CONSTRAINT updates_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: user_documents_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY user_documents
+    ADD CONSTRAINT user_documents_pkey PRIMARY KEY (id);
 
 
 --
@@ -4075,6 +4125,13 @@ CREATE INDEX index_unsubscribes_on_user_id ON unsubscribes USING btree (user_id)
 --
 
 CREATE INDEX index_updates_on_project_id ON project_posts USING btree (project_id);
+
+
+--
+-- Name: index_user_documents_on_user_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_user_documents_on_user_id ON user_documents USING btree (user_id);
 
 
 --
@@ -4610,6 +4667,14 @@ ALTER TABLE ONLY projects
 
 ALTER TABLE ONLY redactor_assets
     ADD CONSTRAINT fk_redactor_assets_user_id FOREIGN KEY (user_id) REFERENCES users(id);
+
+
+--
+-- Name: fk_user_documents_user_id; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY user_documents
+    ADD CONSTRAINT fk_user_documents_user_id FOREIGN KEY (user_id) REFERENCES users(id);
 
 
 --
@@ -5443,4 +5508,6 @@ INSERT INTO schema_migrations (version) VALUES ('20170216184234');
 INSERT INTO schema_migrations (version) VALUES ('20170216192651');
 
 INSERT INTO schema_migrations (version) VALUES ('20170216210218');
+
+INSERT INTO schema_migrations (version) VALUES ('20170216221106');
 
