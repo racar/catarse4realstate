@@ -60,6 +60,7 @@ class UserPolicy < ApplicationPolicy
     u_attrs.flatten
   end
 
+  
 
   protected
   def done_by_owner_or_admin?

@@ -41,8 +41,16 @@ class UsersController < ApplicationController
       @unsubscribes = @user.project_unsubscribes
       @credit_cards = @user.credit_cards
       if @user.user_information.present?
-        @country_of_birth = ISO3166::Country[@user.user_information.country_of_birth].translations[I18n.locale.to_s]
-        @country = ISO3166::Country[@user.user_information.country].translations[I18n.locale.to_s]
+        @country_of_birth = ISO3166::Country[@user.user_information.country_of_birth]
+        @country = ISO3166::Country[@user.user_information.country]
+        if !@country_of_birth.nil?
+          @country_of_birth.translations[I18n.locale.to_s]
+        end
+        if !@country.nil?
+          @country.translations[I18n.locale.to_s]
+        end
+
+        #@country = ISO3166::Country[@user.user_information.country].translations[I18n.locale.to_s]
       end
 
       build_bank_account
@@ -103,8 +111,7 @@ class UsersController < ApplicationController
     end
 
     if @user_document.nil?
-      #resource.user_documents.build
-      resource.build.user_document
+      resource.build_user_document
     end
 
 
@@ -204,12 +211,12 @@ class UsersController < ApplicationController
   end
   # despues ver si lo ponemos en policies ( user )
   def user_information_params
-    params.require(:user).permit(:id, :email, :phone_number, user_information_attributes: [:id, :user_id, :document_type, :document_number, :expedition_date, :expedition_place, :gender, :country, :city, :address, :country_of_birth, :city_of_birth ])
+    params.require(:user).permit(:id, :email, :phone_number, user_information_attributes: [:id, :user_id, :document_type, :document_number, :expedition_date, :expedition_place, :gender, :country, :city, :address, :country_of_birth, :city_of_birth ], user_document_attributes: [:id, :document, :chamber_commerce])
   end
 
   def user_work_financial_information_params
     #params.require(:user).permit(:id, work_information_attributes: [:id, :user_id, :company, :profession, :origin_resource, :address_work, :phone_number_work, :city_work ], financial_information_attributes: [:id, :user_id, :salary, :investment], user_documents_attributes: [:id, :document])
-    params.require(:user).permit(:id, work_information_attributes: [:id, :user_id, :company, :profession, :origin_resource, :address_work, :phone_number_work, :city_work ], financial_information_attributes: [:id, :user_id, :salary, :investment], user_document_attributes: [:id, :document, :salary_certificate, :chamber_commerce, :rut])
+    params.require(:user).permit(:id, work_information_attributes: [:id, :user_id, :company, :profession, :origin_resource, :address_work, :phone_number_work, :city_work ], financial_information_attributes: [:id, :user_id, :salary, :investment], user_document_attributes: [:id, :salary_certificate, :rut])
   end
 
   def user_document_params

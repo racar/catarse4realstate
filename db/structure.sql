@@ -517,7 +517,8 @@ CREATE TABLE users (
     permalink text,
     subscribed_to_project_posts boolean DEFAULT true,
     lastname character varying(255),
-    account_type_id integer
+    account_type_id integer,
+    role integer
 );
 
 
@@ -5510,4 +5511,6 @@ INSERT INTO schema_migrations (version) VALUES ('20170216192651');
 INSERT INTO schema_migrations (version) VALUES ('20170216210218');
 
 INSERT INTO schema_migrations (version) VALUES ('20170216221106');
+
+INSERT INTO schema_migrations (version) VALUES ('20170218143024');
 

@@ -37,6 +37,13 @@
                   = c.input :city_of_birth, label: 'Ciudad de Nacimiento', input_html: { class: 'validate tooltipped browser-default', "data-tooltip" => 'Ingrese la ciudad de nacimiento'},  required: true
                 .input.col.s12.m6
                   = form.input :phone_number, as: :tel, label: t('.form.labels.phone_number'), input_html: { class: 'validate tooltipped', "data-tooltip" => 'Ingrese un número de teléfono para contactarlo.' }, required: true
+            = form.simple_fields_for :user_document do |doc|
+              .row
+                .input.col.s12.m6
+                  - if @user.investor?
+                    = doc.input :document, as: :file, label: 'Cédula', input_html: { class: 'validate tooltipped', "data-tooltip" => 'Adjunte la cédula'},  required: true
+                  - elsif @user.estate_agent?
+                    = doc.input :chamber_commerce, as: :file, label: 'Cámara de Comercio', input_html: { class: 'validate tooltipped', "data-tooltip" => 'Adjunte Cámara de Comercio'},  required: true
 
             .action-btn.row
               .col.s12

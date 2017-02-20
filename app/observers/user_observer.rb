@@ -13,5 +13,6 @@ class UserObserver < ActiveRecord::Observer
     user.fix_twitter_user
     user.fix_facebook_link
     user.nullify_permalink
+    user.assign_role_to_user    
   end
 end

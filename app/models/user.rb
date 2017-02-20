@@ -1,6 +1,7 @@
 # coding: utf-8
 class User < ActiveRecord::Base
   include User::OmniauthHandler
+  extend Enumerize
   has_notifications
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
@@ -23,8 +24,9 @@ class User < ActiveRecord::Base
 
   mount_uploader :uploaded_image, UserUploader
   mount_uploader :cover_image, CoverUploader
-  #has_many :user_documents
 
+  #roles
+  enum role: [:investor, :estate_agent] # :investor = Inversionista, :estate_agent: Promotor Inmobiliario
 
   validates_presence_of :email
   validates_uniqueness_of :email, allow_blank: true, if: :email_changed?, message: I18n.t('activerecord.errors.models.user.attributes.email.taken')
@@ -73,6 +75,7 @@ class User < ActiveRecord::Base
   has_many :categories, through: :category_followers
   has_many :links, class_name: 'UserLink', inverse_of: :user
   has_and_belongs_to_many :recommended_projects, join_table: :recommendations, class_name: 'Project'
+
 
   accepts_nested_attributes_for :unsubscribes, allow_destroy: true rescue puts "No association found for name 'unsubscribes'. Has it been defined yet?"
   accepts_nested_attributes_for :links, allow_destroy: true, reject_if: ->(x) { x['link'].blank? }
@@ -302,6 +305,14 @@ class User < ActiveRecord::Base
   def fix_facebook_link
     if self.facebook_link.present?
       self.facebook_link = ('http://' + self.facebook_link) unless self.facebook_link[/^https?:\/\//]
+    end
+  end
+
+  def assign_role_to_user
+    if (self.account_type.name == 'Inversionista')
+      self.role = User.roles[:investor]; # 0
+    elsif (self.account_type.name == 'Promotor Inmobiliario')
+      self.role = User.roles[:estate_agent]; # 1
     end
   end
 
