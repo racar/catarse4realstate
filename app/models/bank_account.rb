@@ -1,6 +1,7 @@
 class BankAccount < ActiveRecord::Base
   include CatarsePagarme::BankAccountConcern
   extend Enumerize
+  extend ActiveModel::Naming
 
   belongs_to :user
   belongs_to :bank

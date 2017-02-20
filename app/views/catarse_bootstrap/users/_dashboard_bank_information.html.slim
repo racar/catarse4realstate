@@ -1,0 +1,23 @@
+#bank-information.col.s12.m12.l9.profile-content.wow.fadeInUp data-wow-delay="0.4s" data-wow-duration="0.7s"
+  .module
+    .module-header
+      h2
+        i.material-icons.left> fingerprint
+        | Datos Bancarios
+      .btn-actions
+        a href="#{personal_user_path}#bank-information"  Modificar Datos
+    .module-content
+      h3 Administrá tus datos bancarios
+      .small En esta sección podrás modificar los datos bancarios de tu cuenta.
+      .bank-content
+        .row.address-info.active
+          .col.s12.m6.info
+            p
+              b> Banco:
+              |  #{@user.bank_account.present? ? @user.bank_account.bank.name : '---'}
+            p
+              b> Número de Cuenta:
+              |  #{@user.bank_account.present? ? @user.bank_account.account_digit : '---'}
+            p
+              b> Tipo de Cuenta:
+              |  #{@user.bank_account.present? ? @user.bank_account.account_type_bank.text : '---'}
