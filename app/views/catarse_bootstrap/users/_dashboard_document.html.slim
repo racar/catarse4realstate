@@ -1,0 +1,37 @@
+#documents.col.s12.m12.l9.profile-content.wow.fadeInUp data-wow-delay="0.4s" data-wow-duration="0.7s"
+  .module
+    .module-header
+      h2
+        i.material-icons.left> description
+        | Documentos
+    .module-content
+      h3 Listado de tus documentos adjuntados
+      .small En esta sección estarán guardados los documentos que nos vayas enviando para habilitarte como inversor.
+      .doc-list
+        .row
+          - if @user.investor?
+            - if @user.user_document.document?
+              .col.s12.m6
+                ul
+                  li
+                    i.material-icons.left description
+                    a href="#{@user.user_document.document.url}" target="_blank"  Cédula
+            - if @user.user_document.salary_certificate?
+              .col.s12.m6
+                ul
+                  li
+                    i.material-icons.left description
+                    a href="#{@user.user_document.salary_certificate.url}" target="_blank"  Certificado de Ingresos
+          - if @user.estate_agent?
+            - if @user.user_document.chamber_commerce?
+              .col.s12.m6
+                ul
+                  li
+                    i.material-icons.left description
+                    a href="#{@user.user_document.chamber_commerce.url}" target="_blank"  Cámara de Comercio
+            - if @user.user_document.rut?
+              .col.s12.m6
+                ul
+                  li
+                    i.material-icons.left description
+                    a href="#{@user.user_document.rut.url}" target="_blank"  RUT

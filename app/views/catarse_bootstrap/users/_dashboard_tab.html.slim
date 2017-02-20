@@ -23,6 +23,10 @@ section#edit-profile
                     a href="#bank-information"
                       i.material-icons.left> fingerprint
                       | Datos Bancarios
+                  li.tab
+                    a href="#documents"
+                      i.material-icons.left> description
+                      | Documentos
                 - if current_page?(action: 'personal')
                   li.tab
                     a href="#basic-information"
@@ -52,6 +56,7 @@ section#edit-profile
               =render 'users/edit/email_address_information'
               =render 'users/dashboard_new_password'
               =render 'users/dashboard_bank_information'
+              =render 'users/dashboard_document'
             - if current_page?(action: 'personal')
               =render 'users/edit/personal_information'
               =render 'users/edit/address_information'
