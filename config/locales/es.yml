@@ -14,7 +14,7 @@ es:
     description:  HomeParte. El futuro de la inversión inmobiliaria. plataforma de crowdfunding que permite a pequeños ahorradores invertir en grandes proyectos inmobiliarios
     keywords: crowdfunding, financiamento colectivo, proyecto, inversión
     meta_title: "%{title} · %{company_name}"
-    title: HomeParte  
+    title: HomeParte
   enumerize:
     defaults:
       gender:
@@ -29,3 +29,6 @@ es:
       role:
         investor: 'Inversionista'
         estate_agent: 'Promotor Inmobiliario'
+      account_type_bank:
+        savings_account: 'Cuenta Ahorro'
+        checking_account: 'Cuenta Corriente'

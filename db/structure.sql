@@ -2,8 +2,8 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 9.5.5
--- Dumped by pg_dump version 9.5.5
+-- Dumped from database version 9.5.6
+-- Dumped by pg_dump version 9.5.6
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -1315,7 +1315,8 @@ CREATE TABLE bank_accounts (
     updated_at timestamp without time zone,
     account_digit text NOT NULL,
     agency_digit text,
-    bank_id integer NOT NULL
+    bank_id integer NOT NULL,
+    account_type_bank character varying(255)
 );
 
 
@@ -5513,4 +5514,6 @@ INSERT INTO schema_migrations (version) VALUES ('20170216210218');
 INSERT INTO schema_migrations (version) VALUES ('20170216221106');
 
 INSERT INTO schema_migrations (version) VALUES ('20170218143024');
+
+INSERT INTO schema_migrations (version) VALUES ('20170220164309');
 

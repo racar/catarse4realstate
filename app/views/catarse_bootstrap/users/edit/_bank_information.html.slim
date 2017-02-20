@@ -1,0 +1,31 @@
+#bank-information.col.s12.m12.l9.profile-content.wow.fadeInUp data-wow-delay="0.4s" data-wow-duration="0.7s"
+  .module
+    .module-header
+      h2
+        i.material-icons.left> assignment_ind
+        | Cuenta Bancaria
+      .btn-actions
+        a href="#"
+          i.material-icons.left> keyboard_arrow_left
+          | Volver Atrás
+    .module-content
+      .edit-message
+        p Ingrese sus Datos Bancarios.
+
+      = simple_form_for @user, url: update_bank_user_path, class: 'edit-profile-form', method: :put  do |form|
+        .edit-profile-data
+
+            = form.simple_fields_for :bank_account do |c|
+              .row
+                .input.col.s12.m6
+                  = c.input :bank_id, as: :select, label: 'Entidad', collection: Bank.to_collection, input_html: { class: 'validate tooltipped browser-default', "data-tooltip" => 'Seleccione el banco'},  required: true
+                .input.col.s12.m6
+                  = c.input :account_digit, label: 'Nº de Cuenta', input_html: { class: 'validate tooltipped', "data-tooltip" => 'Ingrese el número de cuenta'},  required: true
+              .row
+                .input.col.s12.m6
+                  = c.input :account_type_bank, label: 'Tipo', input_html: { class: 'validate tooltipped browser-default', "data-tooltip" => 'Seleccione el tipo de cuenta'},  required: true
+
+
+            .action-btn.row
+              .col.s12
+                button#btn-submit.waves-effect.waves-light.btn type="submit"  Modificar

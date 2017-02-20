@@ -21,7 +21,7 @@ section#edit-profile
                       | Seguridad
                 - if current_page?(action: 'personal')
                   li.tab
-                    a href="#basic-information" 
+                    a href="#basic-information"
                       i.material-icons.left> assignment_ind
                       | Datos Personales
                   li.tab
@@ -36,6 +36,10 @@ section#edit-profile
                     a href="#work-information"
                       i.material-icons.left> work
                       | Datos Laborales
+                  li.tab
+                    a href="#bank-information"
+                      i.material-icons.left> work
+                      | Datos Bancarios
 
 
 
@@ -48,6 +52,7 @@ section#edit-profile
               =render 'users/edit/address_information'
               =render 'users/edit/email_address_information'
               =render 'users/edit/work_information'
+              =render 'users/edit/bank_information'
 
 
 

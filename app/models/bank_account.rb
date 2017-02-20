@@ -1,14 +1,17 @@
 class BankAccount < ActiveRecord::Base
   include CatarsePagarme::BankAccountConcern
+  extend Enumerize
 
   belongs_to :user
   belongs_to :bank
 
-  validates :bank_id, :agency, :account,
-    :owner_name, :owner_document, :account_digit, presence: true
+  enumerize :account_type_bank, in: [:savings_account, :checking_account], i18n_scope: "account_type_bank"
+
+  #validates :bank_id, :agency, :account, :owner_name, :owner_document, :account_digit, presence: true
+  validates :bank_id, :account_digit, :account_type_bank, presence: true
 
   attr_accessor :input_bank_number
-  validate :input_bank_number_validation
+  #validate :input_bank_number_validation
 
   # before validate bank account we inject the founded
   # bank account via input_bank_number

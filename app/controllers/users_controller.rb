@@ -50,7 +50,6 @@ class UsersController < ApplicationController
           @country.translations[I18n.locale.to_s]
         end
 
-        #@country = ISO3166::Country[@user.user_information.country].translations[I18n.locale.to_s]
       end
 
       build_bank_account
@@ -92,9 +91,8 @@ class UsersController < ApplicationController
     @personal_information = @user.user_information
     @work_information = @user.work_information
     @financial_information = @user.financial_information
-    #@user_document = @user.user_documents
     @user_document = @user.user_document
-
+    @user_bank = @user.bank_account
 
     if @personal_information.nil?
       # creamos la relacion por unica vez
@@ -112,6 +110,10 @@ class UsersController < ApplicationController
 
     if @user_document.nil?
       resource.build_user_document
+    end
+
+    if @user_bank.nil?
+      build_bank_account
     end
 
 
@@ -137,6 +139,19 @@ class UsersController < ApplicationController
     respond_to do |format|
       #if resource.user_information.update(user_information_params)
       if resource.update(user_work_financial_information_params)
+        format.html { redirect_to user_path(current_user), notice: 'OK.' }
+      else
+        format.html { render :edit }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def update_bank
+    authorize resource
+    respond_to do |format|
+      #if resource.user_information.update(user_information_params)
+      if resource.update(user_bank_params)
         format.html { redirect_to user_path(current_user), notice: 'OK.' }
       else
         format.html { render :edit }
@@ -217,6 +232,10 @@ class UsersController < ApplicationController
   def user_work_financial_information_params
     #params.require(:user).permit(:id, work_information_attributes: [:id, :user_id, :company, :profession, :origin_resource, :address_work, :phone_number_work, :city_work ], financial_information_attributes: [:id, :user_id, :salary, :investment], user_documents_attributes: [:id, :document])
     params.require(:user).permit(:id, work_information_attributes: [:id, :user_id, :company, :profession, :origin_resource, :address_work, :phone_number_work, :city_work ], financial_information_attributes: [:id, :user_id, :salary, :investment], user_document_attributes: [:id, :salary_certificate, :rut])
+  end
+
+  def user_bank_params
+    params.require(:user).permit(:id, bank_account_attributes: [:id, :user_id, :bank_id, :account_digit, :account_type_bank])
   end
 
   def user_document_params

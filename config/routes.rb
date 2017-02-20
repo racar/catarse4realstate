@@ -91,6 +91,7 @@ Catarse::Application.routes.draw do
       #post :create_personal
       put :update_personal
       put :update_work
+      put :update_bank
       #post :create_personal
       #patch :update_personal
     end
