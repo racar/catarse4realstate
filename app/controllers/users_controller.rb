@@ -76,13 +76,16 @@ class UsersController < ApplicationController
   end
 
   def update
+    assssssssssssssssssssssssssadqwdqdsadx
     authorize resource
 
     if update_user
       flash[:notice] = t('users.current_user_fields.updated')
       redirect_to edit_user_path(@user, anchor: params[:anchor])
     else
+
       render :edit
+
     end
   end
 
@@ -126,10 +129,13 @@ class UsersController < ApplicationController
     respond_to do |format|
       #if resource.user_information.update(user_information_params)
       if resource.update(user_information_params)
-        format.html { redirect_to user_path(current_user), notice: 'OK.' }
+        format.html { redirect_to user_path(current_user), notice: 'Se ha modificado los datos personales correctamente.' }
       else
-        format.html { render :edit }
+
+        format.html { render :personal }
+
         format.json { render json: @user.errors, status: :unprocessable_entity }
+
       end
     end
   end
@@ -139,9 +145,9 @@ class UsersController < ApplicationController
     respond_to do |format|
       #if resource.user_information.update(user_information_params)
       if resource.update(user_work_financial_information_params)
-        format.html { redirect_to user_path(current_user), notice: 'OK.' }
+        format.html { redirect_to user_path(current_user), notice: 'Se ha modificado los datos laborales correctamente.' }
       else
-        format.html { render :edit }
+        format.html { render :personal }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
@@ -152,9 +158,9 @@ class UsersController < ApplicationController
     respond_to do |format|
       #if resource.user_information.update(user_information_params)
       if resource.update(user_bank_params)
-        format.html { redirect_to user_path(current_user), notice: 'OK.' }
+        format.html { redirect_to user_path(current_user), notice: 'Se ha modificado los datos bancarios correctamente.' }
       else
-        format.html { render :edit }
+        format.html { render :personal }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end

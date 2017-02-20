@@ -12,7 +12,7 @@
       .edit-message
         p Ingrese sus Datos Bancarios.
 
-      = simple_form_for @user, url: update_bank_user_path, class: 'edit-profile-form', method: :put  do |form|
+      = simple_form_for @user, url: update_bank_user_path, class: 'edit-profile-form', method: :patch  do |form|
         .edit-profile-data
 
             = form.simple_fields_for :bank_account do |c|

@@ -6,7 +6,7 @@ section#edit-profile
           .row.profile-container
             .col.s12.m12.l3.profile-nav.wow.fadeInUp data-wow-delay="0.2s" data-wow-duration="0.7s"
               ul.profile_tabs
-                - if current_page?(action: 'show')
+                - if current_page?(action: 'show') || current_page?(action: 'edit')
                   li.tab
                     a href="#basic-information"
                       i.material-icons.left> assignment_ind
@@ -51,7 +51,7 @@ section#edit-profile
 
 
 
-            - if current_page?(action: 'show')
+            - if current_page?(action: 'show') || current_page?(action: 'edit')
               =render 'users/dashboard_basic_information'
               =render 'users/edit/email_address_information'
               =render 'users/dashboard_new_password'

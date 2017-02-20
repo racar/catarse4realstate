@@ -89,9 +89,9 @@ Catarse::Application.routes.draw do
       get :reactivate
       get :personal
       #post :create_personal
-      put :update_personal
-      put :update_work
-      put :update_bank
+      patch :update_personal
+      patch :update_work
+      patch :update_bank
       #post :create_personal
       #patch :update_personal
     end

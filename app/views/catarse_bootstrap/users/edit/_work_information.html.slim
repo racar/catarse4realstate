@@ -12,7 +12,7 @@
       .edit-message
         p En esta sección podrás modificar tus datos laborales y el monto estimado que pensás invertir con HomeParte.
 
-      = simple_form_for @user, url: update_work_user_path, class: 'edit-profile-form', method: :put  do |form|
+      = simple_form_for @user, url: update_work_user_path, class: 'edit-profile-form', method: :patch  do |form|
         .edit-profile-data
           = form.simple_fields_for :work_information do |c|
             .row

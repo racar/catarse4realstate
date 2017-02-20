@@ -41,7 +41,7 @@ class User < ActiveRecord::Base
   validates :lastname, presence: true
   validates :phone_number, presence: true, numericality: true
   validates :account_type_id, presence: true
-
+  
   validates :terms, :acceptance => true
 
 

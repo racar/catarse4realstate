@@ -10,10 +10,10 @@
           | Volver Atrás
     .module-content
       .edit-message
-        p Recordá que esta información debe corresponder con la copia de tu documento y constancia de CUIT/CUIL que debés enviarnos para que podamos validar tu perfil.
+        p Recordá que esta información debe corresponder con la copia de tu cédula que debés enviarnos para que podamos validar tu perfil.
 
 
-      = simple_form_for @user, url: update_personal_user_path, class: 'edit-profile-form', method: :put  do |form|
+      = simple_form_for @user, url: update_personal_user_path, class: 'edit-profile-form', method: :patch  do |form|
         .edit-profile-data
 
             = form.simple_fields_for :user_information do |c|

@@ -34,7 +34,7 @@
             |  #{@user.user_information.present? ? @user.user_information.document_number : '---'}
           p
             b Género:
-            |  #{@user.user_information.present? ? @user.user_information.gender.text : '---'}
+            |  #{@user.user_information.gender.present? ? @user.user_information.gender.text : '---'}
           p
             b Teléfono:
             |  #{@user.phone_number}

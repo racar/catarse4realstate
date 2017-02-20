@@ -42,8 +42,8 @@ class DocumentUploader < CarrierWave::Uploader::Base
   # def extension_whitelist
   #   %w(jpg jpeg gif png)
   # end
-  def extension_white_list
-      %w(pdf)
+  def extension_whitelist
+      %w(pdf jpg jpeg png)
   end
 
   # Override the filename of the uploaded files:

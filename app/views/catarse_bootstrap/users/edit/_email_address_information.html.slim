@@ -13,7 +13,7 @@
         p Mantenga siempre actualizado su email ya que utilizamos este medio para comunicar las novedades sobre sus inversiones y nuevos lanzamientos.
 
 
-      = simple_form_for @user, url: update_personal_user_path, class: 'edit-profile-form', method: :put  do |form|
+      = simple_form_for @user, url: update_personal_user_path, class: 'edit-profile-form', method: :patch  do |form|
         .edit-profile-data
             .row
               .input.col.s12.m6

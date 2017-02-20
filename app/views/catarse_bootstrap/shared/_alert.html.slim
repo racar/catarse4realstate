@@ -1,0 +1,12 @@
+- if flash[:notice].present?
+  .flash_message style=("display: block;")
+    span = notice
+    span.fa.fa-times-circle.close
+
+- elsif !resource.nil?
+  - if resource.errors.present?
+
+    .flash_error style=("display: block;")
+      - resource.errors.messages.each do |message|
+        span = message[1][0]
+        span.fa.fa-times-circle.close

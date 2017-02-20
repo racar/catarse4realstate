@@ -13,7 +13,7 @@
         p Recordá que esta información debe corresponder con el domicilio del servicio que nos envíes para que podamos validarlo correctamente.
 
 
-      = simple_form_for @user, url: update_personal_user_path, class: 'edit-profile-form', method: :put  do |form|
+      = simple_form_for @user, url: update_personal_user_path, class: 'edit-profile-form', method: :patch  do |form|
         .edit-profile-data
 
             = form.simple_fields_for :user_information do |c|
