@@ -1307,14 +1307,14 @@ ALTER SEQUENCE authorizations_id_seq OWNED BY authorizations.id;
 CREATE TABLE bank_accounts (
     id integer NOT NULL,
     user_id integer,
-    account text NOT NULL,
-    agency text NOT NULL,
-    owner_name text NOT NULL,
-    owner_document text NOT NULL,
+    account character varying(255),
+    agency character varying(255),
+    owner_name character varying(255),
+    owner_document character varying(255),
     created_at timestamp without time zone DEFAULT now(),
     updated_at timestamp without time zone,
-    account_digit text NOT NULL,
-    agency_digit text,
+    account_digit character varying(255) NOT NULL,
+    agency_digit character varying(255),
     bank_id integer NOT NULL,
     account_type_bank character varying(255)
 );
@@ -5516,4 +5516,6 @@ INSERT INTO schema_migrations (version) VALUES ('20170216221106');
 INSERT INTO schema_migrations (version) VALUES ('20170218143024');
 
 INSERT INTO schema_migrations (version) VALUES ('20170220164309');
+
+INSERT INTO schema_migrations (version) VALUES ('20170220182334');
 
