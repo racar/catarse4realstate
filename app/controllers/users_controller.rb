@@ -52,7 +52,7 @@ class UsersController < ApplicationController
 
       end
 
-      build_bank_account
+      #build_bank_account
     }
   end
 

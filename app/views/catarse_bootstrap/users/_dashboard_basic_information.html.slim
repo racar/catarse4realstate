@@ -27,14 +27,14 @@
           span Tipo de Cuenta: #{@user.account_type.name}
           p
             b Tipo de Documento:
+            /check document_type equals gender
             |  #{@user.user_information.present? ? @user.user_information.document_type : '---'}
-            /|  #{@user.user_documents.document.url}
           p
             b Número de Documento:
             |  #{@user.user_information.present? ? @user.user_information.document_number : '---'}
           p
             b Género:
-            |  #{@user.user_information.gender.present? ? @user.user_information.gender.text : '---'}
+            |  #{@user.user_information.present? ? @user.check_gender : '---'}
           p
             b Teléfono:
             |  #{@user.phone_number}

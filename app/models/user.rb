@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
   # :validatable
   devise :database_authenticatable, :registerable,
-    :recoverable, :rememberable, :trackable, :omniauthable, :omniauth_providers => [:facebook, :google_oauth2]
+    :recoverable, :rememberable, :trackable, :confirmable, :omniauthable, :omniauth_providers => [:facebook, :google_oauth2]
 
   delegate  :display_name, :display_lastname, :display_fullname, :display_image, :short_name, :display_image_html,
     :medium_name, :display_credits, :display_total_of_contributions, :contributions_text,
@@ -41,7 +41,7 @@ class User < ActiveRecord::Base
   validates :lastname, presence: true
   validates :phone_number, presence: true, numericality: true
   validates :account_type_id, presence: true
-  
+
   validates :terms, :acceptance => true
 
 
@@ -334,6 +334,14 @@ class User < ActiveRecord::Base
     self.reset_password_sent_at = Time.now.utc
     self.save(validate: false)
     raw
+  end
+
+  def check_gender
+    if self.user_information.gender.nil?
+      '---'
+    else
+      self.user_information.gender.text
+    end
   end
 
 

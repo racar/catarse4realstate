@@ -518,7 +518,11 @@ CREATE TABLE users (
     subscribed_to_project_posts boolean DEFAULT true,
     lastname character varying(255),
     account_type_id integer,
-    role integer
+    role integer,
+    confirmation_token character varying(255),
+    confirmed_at timestamp without time zone,
+    confirmation_sent_at timestamp without time zone,
+    unconfirmed_email character varying(255)
 );
 
 
@@ -4165,6 +4169,13 @@ CREATE UNIQUE INDEX index_users_on_authentication_token ON users USING btree (au
 
 
 --
+-- Name: index_users_on_confirmation_token; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX index_users_on_confirmation_token ON users USING btree (confirmation_token);
+
+
+--
 -- Name: index_users_on_email; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -5518,4 +5529,8 @@ INSERT INTO schema_migrations (version) VALUES ('20170218143024');
 INSERT INTO schema_migrations (version) VALUES ('20170220164309');
 
 INSERT INTO schema_migrations (version) VALUES ('20170220182334');
+
+INSERT INTO schema_migrations (version) VALUES ('20170221141931');
+
+INSERT INTO schema_migrations (version) VALUES ('20170221155840');
 
