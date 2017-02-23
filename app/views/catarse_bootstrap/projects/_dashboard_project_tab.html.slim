@@ -1,0 +1,14 @@
+section#edit-profile
+  .container
+    .row
+      .col.s12
+        div
+          .row.profile-container
+            .col.s12.m12.l3.profile-nav.wow.fadeInUp data-wow-delay="0.2s" data-wow-duration="0.7s"
+              ul.profile_tabs
+                li.tab
+                  a href="#new-project"
+                    i.material-icons.left> grade
+                    | Nuevo Proyecto
+
+            =render 'projects/dashboard_new_project'

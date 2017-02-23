@@ -1,4 +1,43 @@
-#project-header.page-header.u-text-center[data-stats=@project.to_analytics_json]
+section.proyect-header
+  em
+  .parallax-container
+    .parallax
+      img alt=("Altos de A&ntilde;elo") src="https://www.crowdium.com.ar/img/proyectos/anelo/32457.jpg" /
+  .container
+    .row.header_inner
+      .avatar
+        img alt=("Altos de A&ntilde;elo") src="https://www.crowdium.com.ar/img/proyectos/anelo/logo.jpg" /
+      .body
+        h1.title Altos de A&ntilde;elo
+        .subtitle
+          span
+            i.fa.fa-map-marker
+            | Vaca Muerta, Neuqu&eacute;n
+          span
+            i.fa.fa-building
+            | Edificio de Departamentos
+          span
+            i.fa.fa-calendar
+            | 2
+          span
+            i.fa.fa-bar-chart
+            | 25-35%
+        .portfolio-nav
+          a.prev.disabled
+            i.material-icons keyboard_arrow_left
+          a.all href="https://www.crowdium.com.ar/proyectos-de-inversion"
+            i.material-icons apps
+          a.next.disabled
+            i.material-icons keyboard_arrow_right
+
+
+
+
+
+
+
+
+/#project-header.page-header.u-text-center[data-stats=@project.to_analytics_json]
   .w-container
     h1.fontsize-larger.fontweight-semibold.project-name[itemprop="name"] = @project.name
     h2.fontsize-base.lineheight-looser[itemprop="author"]

@@ -1,6 +1,6 @@
 es:
   projects:
-    new:
+    dashboard_new_project:
       page-title: "Comience su proyecto"
 
       faq:

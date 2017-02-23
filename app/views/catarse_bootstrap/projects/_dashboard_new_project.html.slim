@@ -1,0 +1,28 @@
+#new-project.col.s12.m12.l9.profile-content.wow.fadeInUp data-wow-delay="0.4s" data-wow-duration="0.7s"
+  .module
+    .module-header
+      h2
+        i.material-icons.left> grade
+        | #{t('.form.blocks.first.title')}
+    .module-content
+      .edit-message
+        p #{t('.form.blocks.first.description')}
+
+      = simple_form_for @project, class: 'edit-profile-form'  do |form|
+        .edit-profile-data
+
+          .row
+            .input.col.s12.m12
+              = form.input :name, as: :string, label: 'Nombre del proyecto inmobiliario', input_html: { class: 'validate tooltipped', "data-tooltip" => 'Déle un nombre que la gente recuerde fácilmente. No superar los 50 caracteres.'},  required: true, hint:false
+          .row
+            .input.col.s12.m12
+              = form.input :category_id, as: :select, label: 'Categoría', collection: Category.order(:name_es), input_html: { class: 'validate tooltipped browser-default', "data-tooltip" => 'Elija el más adecuado para su proyecto inmobiliario.'}, prompt: t('simple_form.prompts.project.category'), required: true, hint:false
+          .row
+            .input.col.s12.m12
+              = form.input :permalink, as: :string, label: 'Enlace su proyecto inmobiliario', input_html: { class: 'validate tooltipped', "data-tooltip" => 'Elige algo sencillo, directo y para que las personas identifiquen fácil tu proyecto. Trate de no usar Caracteres especiales'},  required: true, hint:false, placeholder: 'www.homeparte.com/XX'
+          .row
+            .input.col.s12.m12
+              = form.input :traffic_sources, as: :select, label: '¿Dónde conociste a HomeParte?', collection: t('simple_form.collections.project.traffic_sources').values, input_html: { class: 'validate tooltipped browser-default', "data-tooltip" => 'Seleccione donde conoció a HomeParte.'}, prompt: t('simple_form.prompts.project.select'), required: true, hint:false
+        .action-btn.row
+          .col.s12
+            button#btn-submit.waves-effect.waves-light.btn type="submit" Guardar

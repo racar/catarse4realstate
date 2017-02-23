@@ -17,7 +17,7 @@ class ProjectsController < ApplicationController
       format.html do
         return render_index_for_xhr_request if request.xhr?
       end
-      format.atom do 
+      format.atom do
         return render layout: false, locals: {projects: projects}
       end
       format.rss { redirect_to projects_path(format: :atom), :status => :moved_permanently }
@@ -36,7 +36,7 @@ class ProjectsController < ApplicationController
     authorize @project
 
     @project.proyeccion = '[[1, 5], [2, 3], [3, 5], [4, 8], [6, 4], [7, 2], [8, 1], [9, 3], [10, 5], [11, 8], [12, 4], [13, 2]]'
-
+    
     if @project.save
       redirect_to edit_project_path(@project, anchor: 'home')
     else

@@ -117,6 +117,7 @@ class Project < ActiveRecord::Base
   validates_acceptance_of :accepted_terms, on: :create
   ##validation for all states
   validates_presence_of :name, :user, :category, :permalink
+
   validates_length_of :headline, maximum: HEADLINE_MAXLENGTH
   validates_numericality_of :online_days, less_than_or_equal_to: 180, greater_than: 60,
     if: ->(p){ p.online_days.present? && ( p.online_days_was.nil? || p.online_days_was <= 60 ) }
