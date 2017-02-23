@@ -65,7 +65,7 @@ Catarse::Application.configure do
 
   # Precompile additional assets.
   # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
-  config.assets.precompile += %w( catarse.css redactor.css redactor.js )
+  config.assets.precompile += %w( homeparte.css redactor.css redactor.js )
   #config.assets.precompile += %w( *.js )
 
   # Ignore bad email addresses and do not raise email delivery errors.
