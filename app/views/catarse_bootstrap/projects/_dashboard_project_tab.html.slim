@@ -26,7 +26,7 @@ section#edit-profile
                       a href="#posts"
                         i.material-icons.left> grade
                         | #{t('.posts_tab')}
-                    /span.badge= @project.posts.count
+                    span.badge= @project.posts.count
                   - if (!@project.published? && !@project.approved?) || (current_user && current_user.admin?)
                     li.tab
                       a href="#basics"
@@ -82,3 +82,7 @@ section#edit-profile
               - if @project.published?
                 = render 'dashboard_reports'
                 = render 'dashboard_posts'
+              - if (!@project.published? && !@project.approved?) || (current_user && current_user.admin?)
+                / VER BASIC FALTA MODIFICACION DE TODO DISEÑO Y MAPS
+                = render 'dashboard_basics'
+                
