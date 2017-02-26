@@ -2,8 +2,6 @@ es:
   projects:
     edit:
       posts: "Escribe una novedad"
-      card: 'Diseño del proyecto'
-      card_subtitle: 'Usted sabe que cardzinho proyecto que aparece en la casa y la búsqueda? Pues bien, es hermoso porque dicen que la primera impresión es la que es;)'
       basics: 'Complete la siguiente información'
       basics_subtitle: 'Los datos reportados esta sección no se pueden modificar una vez que el proyecto se ha publicado. Rellene con cuidado y revisar antes de iniciar el proyecto.'
       reports: 'Informes de Apoyo'
@@ -173,6 +171,12 @@ es:
       submit: Salvar
       budget_label: "Presupuesto del proyecto"
     dashboard_card:
+      card: 'Diseño del proyecto'
+      card_subtitle: 'La imagen será lo primero que se verá en su proyecto'
+      headline: "Eslogan"
+      headline_hint: "Frase de la tarjeta de proyecto para llamar a sus partidarios. Debe tener no más de 100 caracteres."
+      uploaded_image: "Diseño del proyecto"
+      uploaded_image_hint: "Esta imagen se utilizará como miniatura de su proyecto (PNG, JPG tamaño 600 x 340)"
       submit: Salvar
       card_label: "Diseño de tarjeta"
     dashboard_video:

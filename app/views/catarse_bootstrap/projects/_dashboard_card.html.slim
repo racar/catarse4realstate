@@ -1,4 +1,31 @@
-= simple_form_for @project, html: { class: 'project-form w-form' } do |form|
+#card.col.s12.m12.l9.profile-content.wow.fadeInUp data-wow-delay="0.4s" data-wow-duration="0.7s"
+  .module
+    .module-header
+      h2
+        i.material-icons.left> fingerprint
+        | #{t('.card')}
+      .btn-actions
+        a href="#"
+          i.material-icons.left> keyboard_arrow_left
+          | Volver Atrás
+    .module-content
+      .edit-message
+        p #{t('.card_subtitle')}
+
+      = simple_form_for @project, class: 'dashboard-card-form' do |form|
+        .edit-dashboard-card-data
+          .row
+            .input.col.s12.m6
+              = form.input :uploaded_image, as: :file, label: t('.uploaded_image'), input_html: { class: 'validate tooltipped', "data-tooltip" => t('.uploaded_image_hint')},  required: true
+            .input.col.s12.m6
+              = form.input :headline, label: t('.headline'), input_html: { class: 'validate tooltipped', "data-tooltip" => t('.headline_hint')},  required: true, hint: false
+          
+          .action-btn.row
+            .col.s12
+              button#btn-submit.waves-effect.waves-light.btn type="submit"  #{t('.submit')}
+
+///////////////////////////////////////////////////////////////////////////////////
+/= simple_form_for @project, html: { class: 'project-form w-form' } do |form|
   .w-section.section
     .w-container
       .w-row
