@@ -84,5 +84,5 @@ section#edit-profile
                 = render 'dashboard_posts'
               - if (!@project.published? && !@project.approved?) || (current_user && current_user.admin?)
                 / VER BASIC FALTA MODIFICACION DE TODO DISEÑO Y MAPS
-                = render 'dashboard_basics'
-                
+                /= render 'dashboard_basics'
+                = render 'dashboard_goal'

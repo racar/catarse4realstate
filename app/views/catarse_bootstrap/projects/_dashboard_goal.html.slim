@@ -1,4 +1,36 @@
-= simple_form_for @project, html: { class: 'project-form w-form' } do |form|
+#goal.col.s12.m12.l9.profile-content.wow.fadeInUp data-wow-delay="0.4s" data-wow-duration="0.7s"
+  .module
+    .module-header
+      h2
+        i.material-icons.left> fingerprint
+        | #{t('.goal')}
+      .btn-actions
+        a href="#"
+          i.material-icons.left> keyboard_arrow_left
+          | Volver Atrás
+    .module-content
+      .edit-message
+        p #{t('.goal_subtitle')}
+
+      = simple_form_for @project, class: 'dashboard-goal-form' do |form|
+        .edit-dashboard-goal-data
+
+
+          .row
+            .input.col.s12.m12
+              = form.input :goal, as: :integer, label: 'Valor del Proyecto', preppend_input_text: '$', input_html: { class: 'validate tooltipped', "data-tooltip" => 'Ingrese valor del Proyecto '},  required: true
+          .row
+            .input.col.s12.m6
+              = form.input :online_days, as: :integer, label: 'Valor del Proyecto', append_input_text: 'Dias', input_html: { class: 'validate tooltipped', "data-tooltip" => 'Ingrese plazo del Proyecto'},  required: true
+
+
+          .action-btn.row
+            .col.s12
+              button#btn-submit.waves-effect.waves-light.btn type="submit"  #{t('.submit')}
+
+
+////////////////////////////////////////////////////////////////
+/= simple_form_for @project, html: { class: 'project-form w-form' } do |form|
   .w-section.section
     .w-container
       .w-row

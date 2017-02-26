@@ -10,8 +10,6 @@ es:
       video_subtitle: 'Un buen video que hace la diferencia y puede ser en gran parte responsable del éxito de su proyecto.'
       basics: 'Complete la siguiente información'
       basics_subtitle: 'Los datos reportados esta sección no se pueden modificar una vez que el proyecto se ha publicado. Rellene con cuidado y revisar antes de iniciar el proyecto.'
-      goal: 'Objetivo y plazo'
-      goal_subtitle: 'Llenar esta sección con atención, ya que no se puede cambiar una vez el proyecto sea publicado.'
       reports: 'Informes de Apoyo'
       user_settings: 'Registro y bancarias de datos'
       user_settings_subtitle: 'Con el siguiente formulario completado su proyecto estará listo para el aire. Después de completar el relleno, haga clic en Guardar. Revisión. Si todo está bien, sólo tiene que pulsar el botón Publicar y comenzar su campaña!'
@@ -124,7 +122,7 @@ es:
       posts_tab: Noticia
       edit_project: Editar Proyecto
       send: Enviar
-      publish: Publicar    
+      publish: Publicar
       preview_tab: Vista previa
       account_tab: Cuenta
       basics_tab: Básico
@@ -152,6 +150,8 @@ es:
       email_label: "Email"
       email_hint: "Correo electrónico para que nosotros podamos comunicarnos con usted."
     dashboard_goal:
+      goal: 'Objetivo y plazo'
+      goal_subtitle: 'Llenar esta sección con atención, ya que no se puede cambiar una vez el proyecto sea publicado.'
       submit: "Salvar"
     dashboard_description:
       submit: "Salvar"
