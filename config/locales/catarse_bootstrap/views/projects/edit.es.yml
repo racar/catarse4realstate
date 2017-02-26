@@ -17,8 +17,6 @@ es:
       reward: "Creación y edición de sus FIDIS aquí"
       reward_subtitle: "Puede crear distintos tipos de Fidis (Derechos Fiduciarios de Inversión Inmobiliaria Internacional) si su proyecto lo requiere. Póngase en contacto con info@homepate.com"
       user_about_subtitle: "Los partidarios quieren aprender más acerca de los directores del proyecto. Links que ayudan a contar su historia son siempre bienvenidos."
-      description: 'Cuenta la historia de tu proyecto!'
-      description_subtitle: 'Apasiona a los potenciales inversionistas con su proyecto, plasme esos argumentos que buscan para invertir en su proyecto inmobiliario'
     reward_fields:
       edit: "Editar Fidis"
       reward: "Fidi"
@@ -154,6 +152,9 @@ es:
       goal_subtitle: 'Llenar esta sección con atención, ya que no se puede cambiar una vez el proyecto sea publicado.'
       submit: "Salvar"
     dashboard_description:
+      description: 'Cuenta la historia de tu proyecto!'
+      description_subtitle: 'Apasiona a los potenciales inversionistas con su proyecto, plasme esos argumentos que buscan para invertir en su proyecto inmobiliario'
+      about_html: "Habla con pasión y claridad sobre lo que se hará. Posibles respuestas sobre cómo se utilizará el dinero que está detrás del proyecto. Recuerda que la transparencia atrae a más Inversionistas. Los inversores tendrán la ultima voz en invertir o no en su proyecto."
       submit: "Salvar"
     dashboard_reward:
       submit: "Salvar"

@@ -1,4 +1,30 @@
-= simple_form_for @project, html: { class: 'project-form w-form' } do |form|
+#description.col.s12.m12.l9.profile-content.wow.fadeInUp data-wow-delay="0.4s" data-wow-duration="0.7s"
+  .module
+    .module-header
+      h2
+        i.material-icons.left> fingerprint
+        | #{t('.description')}
+      .btn-actions
+        a href="#"
+          i.material-icons.left> keyboard_arrow_left
+          | Volver Atrás
+    .module-content
+      .edit-message
+        p #{t('.description_subtitle')}
+
+      = simple_form_for @project, class: 'dashboard-description-form' do |form|
+        .edit-dashboard-description-data
+          .row
+            .input.col.s12.m12
+              = form.input :about_html, as: :text, label: t('.about_html'), input_html: { class: 'validate tooltipped redactor positive ', "data-tooltip" => 'Ingrese valor del Proyecto '},  required: true, hint: false
+
+          .action-btn.row
+            .col.s12
+              button#btn-submit.waves-effect.waves-light.btn type="submit"  #{t('.submit')}
+
+
+///////////////////////////////////////////
+/= simple_form_for @project, html: { class: 'project-form w-form' } do |form|
   .w-section.section
     .w-container
       .w-row
@@ -8,7 +34,7 @@
               =  hidden_field_tag 'project_id', @project.id
               =  hidden_field_tag 'anchor', 'description'
 
-              = form.input :about_html, as: :text, 
+              = form.input :about_html, as: :text,
                 wrapper: :two_columns,
                 wrapper_class: 'w-row u-marginbottom-30 card card-terciary',
                 input_html: { class: 'redactor positive', required: true },
