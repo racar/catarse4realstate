@@ -2,8 +2,6 @@ es:
   projects:
     edit:
       posts: "Escribe una novedad"
-      budget: "Presupuesto"
-      budget_subtitle: "¿Cómo se utilizará su dinero? Cuanto más transparencia, mejor. Mostrar pasos y procesos que estarán involucrados en el uso de estos recursos. Una lista de las principales partidas del presupuesto o incluso un gráfico circular va muy bien aquí."
       card: 'Diseño del proyecto'
       card_subtitle: 'Usted sabe que cardzinho proyecto que aparece en la casa y la búsqueda? Pues bien, es hermoso porque dicen que la primera impresión es la que es;)'
       basics: 'Complete la siguiente información'
@@ -168,6 +166,10 @@ es:
       warning: "Todas las noticias publicadas se envía directamente a sus seguidores a través de correo electrónico. Opina y el poste antes de publicar."
       old_posts: "Viejas noticias"
     dashboard_budget:
+      budget: "Presupuesto"
+      budget_subtitle: "¿Cómo se utilizará su dinero? Cuanto más transparencia, mejor. Mostrar pasos y procesos que estarán involucrados en el uso de estos recursos. Una lista de las principales partidas del presupuesto o incluso un gráfico circular va muy bien aquí."
+      periodo_tenencia: "Período Tenencia"
+      tir_proyectada: "Tir proyectada"
       submit: Salvar
       budget_label: "Presupuesto del proyecto"
     dashboard_card:

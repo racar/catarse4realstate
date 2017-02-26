@@ -1,10 +1,40 @@
-=javascript_include_tag '//www.google.com/jsapi', 'chartkick'
-- data = [[1, 1], [2, 3], [3, 5], [4, 8], [6, 4], [7, 2], [8, 1], [9, 3], [10, 5], [11, 8], [12, 4], [13, 2]]
+#budget.col.s12.m12.l9.profile-content.wow.fadeInUp data-wow-delay="0.4s" data-wow-duration="0.7s"
+  .module
+    .module-header
+      h2
+        i.material-icons.left> fingerprint
+        | #{t('.budget')}
+      .btn-actions
+        a href="#"
+          i.material-icons.left> keyboard_arrow_left
+          | Volver Atrás
+    .module-content
+      .edit-message
+        p #{t('.budget_subtitle')}
+
+      = simple_form_for @project, class: 'dashboard-budget-form' do |form|
+        .edit-dashboard-budget-data
+          .row
+            .input.col.s12.m6
+              = form.input :periodo_tenencia, label: t('.periodo_tenencia'), input_html: { class: 'validate tooltipped', "data-tooltip" => 'Ingrese período de tenencia '},  required: true, hint: false
+            .input.col.s12.m6
+              = form.input :tir_proyectada, label: t('.tir_proyectada'), input_html: { class: 'validate tooltipped', "data-tooltip" => 'Ingrese Tir proyectada '},  required: true, hint: false
+          .row
+            .input.col.s12.m6
+              = form.input :budget, as: :text, label: t('.budget'), input_html: { class: 'validate tooltipped redactor positive ', "data-tooltip" => t('.budget_subtitle')},  required: true, hint: false
+
+          .action-btn.row
+            .col.s12
+              button#btn-submit.waves-effect.waves-light.btn type="submit"  #{t('.submit')}
 
 
 
 
-= simple_form_for @project, html: { class: 'project-form w-form' } do |form|
+////////////////////////////////////////////////////////////////////
+/=javascript_include_tag '//www.google.com/jsapi', 'chartkick'
+/- data = [[1, 1], [2, 3], [3, 5], [4, 8], [6, 4], [7, 2], [8, 1], [9, 3], [10, 5], [11, 8], [12, 4], [13, 2]]
+
+/= simple_form_for @project, html: { class: 'project-form w-form' } do |form|
 
   .w-section.section
     .w-container
