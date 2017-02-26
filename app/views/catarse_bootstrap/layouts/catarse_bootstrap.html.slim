@@ -1,7 +1,8 @@
 doctype 5
 html
   head
-    title= content_for(:title)
+    title = content_for(:title)
+
     = auto_discovery_link_tag :atom, projects_url(format: :atom)
     = auto_discovery_link_tag :rss, projects_url(format: :rss)
     /= stylesheet_link_tag 'catarse_bootstrap/fonts'
@@ -48,7 +49,7 @@ html
     = render 'layouts/new_zendesk'
     = render_facebook_sdk
     = render 'layouts/flash' if notice.present?
-    = yield
+    == yield
 
   - if content_for? :application_js
     = yield :application_js

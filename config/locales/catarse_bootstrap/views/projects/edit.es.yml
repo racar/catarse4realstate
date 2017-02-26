@@ -116,7 +116,7 @@ es:
       title: "%{name}, Su proyecto ha sido enviado para su análisis!"
       subtitle: "Vusted recibirá nuestra respuesta dentro de 4 días de trabajo en el correo electrónico:"
       next_steps: "A la espera de su respuesta, puede seguir editando su proyecto! También recomendamos que usted va a recoger la retroalimentación con la gente cercana y la planificación de cómo va su campaña."
-    dashboard_nav:
+    dashboard_project_tab:
       leave_link_html: "&nbsp; Salga de Panel de control"
       start_tab: Mi campaña
       reports_tab: Informes de Apoyo
@@ -124,8 +124,7 @@ es:
       posts_tab: Noticia
       edit_project: Editar Proyecto
       send: Enviar
-      publish: Publicar
-    dashboard_nav_links:
+      publish: Publicar    
       preview_tab: Vista previa
       account_tab: Cuenta
       basics_tab: Básico

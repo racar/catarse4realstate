@@ -6,9 +6,79 @@ section#edit-profile
           .row.profile-container
             .col.s12.m12.l3.profile-nav.wow.fadeInUp data-wow-delay="0.2s" data-wow-duration="0.7s"
               ul.profile_tabs
-                li.tab
-                  a href="#new-project"
-                    i.material-icons.left> grade
-                    | Nuevo Proyecto
+                - if current_page?(controller: 'projects', action: 'new')
+                  li.tab
+                    a href="#new-project"
+                      i.material-icons.left> grade
+                      | Nuevo Proyecto
 
-            =render 'projects/dashboard_new_project'
+                - elsif current_page?(controller: 'projects', action: 'edit')
+                  li.tab
+                    a href="#home"
+                      i.material-icons.left> grade
+                      | #{t('.start_tab')}
+                  /- if @project.published?
+                  li.tab
+                    a href="#reports"
+                      i.material-icons.left> grade
+                      | #{t('.reports_tab')}
+                  li.tab
+                    a href="#posts"
+                      i.material-icons.left> grade
+                      | #{t('.posts_tab')}
+                    /span.badge= @project.posts.count
+                  - if (!@project.published? && !@project.approved?) || (current_user && current_user.admin?)
+                    li.tab
+                      a href="#basics"
+                        i.material-icons.left> grade
+                        | #{t('.basics_tab')}
+                    li.tab
+                      a href="#goal"
+                        i.material-icons.left> grade
+                        | #{t('.goal_tab')}
+                  li.tab
+                    a href="#description"
+                      i.material-icons.left> grade
+                      | #{t('.description_tab')}
+                  li.tab
+                    a href="#video"
+                      i.material-icons.left> grade
+                      | #{t('.video_tab')}
+                  li.tab
+                    a href="#budget"
+                      i.material-icons.left> grade
+                      | #{t('.budget_tab')}
+                  li.tab
+                    a href="#card"
+                      i.material-icons.left> grade
+                      | #{t('.card_tab')}
+                  li.tab
+                    a href="#reward"
+                      i.material-icons.left> grade
+                      | #{t('.rewards_tab')}
+                  - if !@project.published? && @project.can_show_preview_link?
+                    li.tab
+                      a href="#preview"
+                        i.material-icons.left> grade
+                        | #{t('.preview_tab')}
+                  - if @project.draft?
+                    li.tab
+                      a href="#{send_to_analysis_project_path(@project)}"
+                        i.material-icons.left> grade
+                        | #{t('.send')}
+                  - if @project.approved?
+                    li.tab
+                      a href="#{publish_project_path(@project)}"
+                        i.material-icons.left> grade
+                        | #{t('.publish')}
+
+
+
+
+            - if current_page?(controller: 'projects', action: 'new')
+              =render 'projects/dashboard_new_project'
+            - if current_page?(controller: 'projects', action: 'edit')
+              = render 'projects/dashboard_home'
+              - if @project.published?
+                = render 'dashboard_reports'
+                = render 'dashboard_posts'

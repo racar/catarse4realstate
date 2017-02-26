@@ -10,7 +10,7 @@
           img.thumb-project-dashboard src="#{image_path('thumb-project.png')}" width="114"
         .fontcolor-negative.lineheight-tight.fontsize-small= @project.name
 
-      #info-links
+      /#info-links
         = link_to (edit ? '#home' : edit_project_path(@project, anchor: 'home')), id: 'dashboard_home_link', class: 'dashboard-nav-link-left ' , data: {target: '#dashboard_home', tab_group: 'edit'} do
           span.fa.fa-bar-chart.fa-lg.fa-fw
           = t('.start_tab')

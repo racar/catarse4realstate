@@ -1,15 +1,36 @@
+- content_for :title, t('.page-title')
+
 - content_for :js do
-  = javascript_include_tag 'redactor', '//www.google.com/jsapi', 'chartkick'
+  = javascript_include_tag 'redactor'
+  = javascript_include_tag "homeparte.js"
+  /= javascript_include_tag 'redactor', '//www.google.com/jsapi', 'chartkick'
+  = javascript_include_tag "app/user/account.js"
+  = javascript_include_tag "app/user/jquery.spincrement.js"
+  = javascript_include_tag "app/user/spin.min.js"
+
 - content_for :stylesheets do
   = stylesheet_link_tag 'redactor'
-= render 'shared/header'
-#dashboard-titles-root.w-section.dashboard-header.u-text-center data-stats="#{@project.try(:to_analytics_json)}"
+
+= render 'shared/header_big', overlayer: true
+
+= render 'projects/project_header'
+= render 'shared/alert'
+
+= render partial: 'projects/dashboard_project_tab'
+/= javascript_include_tag 'api/application'
+= render 'shared/footer_big'
+
+
+///////////////////////////////////////////////////////////////////////////////
+
+
+/#dashboard-titles-root.w-section.dashboard-header.u-text-center data-stats="#{@project.try(:to_analytics_json)}"
   .w-container
     .w-row
       .w-col.w-col-8.w-col-push-2.u-marginbottom-30
         #dashboard-page-title.fontweight-semibold.fontsize-larger.lineheight-looser
         #dashboard-page-subtitle.fontsize-base
-.project-dashboard-edit
+/.project-dashboard-edit
   = render partial: 'dashboard_nav', locals: {edit_page: true}
   section.min-height-70
     #current_anchor data-anchor="#{params[:anchor]}"
@@ -47,6 +68,3 @@
           = render 'dashboard_preview'
         #dashboard_user_settings.content.w-hidden data-page_title="#{t('.user_settings')}" data-page_subtitle="#{t('.user_settings_subtitle')}"
           = render 'dashboard_user_settings'
-
-= javascript_include_tag 'api/application' 
-= render 'shared/footer'
