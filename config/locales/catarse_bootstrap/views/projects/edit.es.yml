@@ -6,8 +6,6 @@ es:
       budget_subtitle: "¿Cómo se utilizará su dinero? Cuanto más transparencia, mejor. Mostrar pasos y procesos que estarán involucrados en el uso de estos recursos. Una lista de las principales partidas del presupuesto o incluso un gráfico circular va muy bien aquí."
       card: 'Diseño del proyecto'
       card_subtitle: 'Usted sabe que cardzinho proyecto que aparece en la casa y la búsqueda? Pues bien, es hermoso porque dicen que la primera impresión es la que es;)'
-      video: 'Vídeo'
-      video_subtitle: 'Un buen video que hace la diferencia y puede ser en gran parte responsable del éxito de su proyecto.'
       basics: 'Complete la siguiente información'
       basics_subtitle: 'Los datos reportados esta sección no se pueden modificar una vez que el proyecto se ha publicado. Rellene con cuidado y revisar antes de iniciar el proyecto.'
       reports: 'Informes de Apoyo'
@@ -176,6 +174,8 @@ es:
       submit: Salvar
       card_label: "Diseño de tarjeta"
     dashboard_video:
+      video: 'Vídeo'
+      video_subtitle: 'Un buen video que hace la diferencia y puede ser en gran parte responsable del éxito de su proyecto.'
       submit: Salvar
       card_label: "Vídeo"
       video_url: "Proyecto de vídeo"

@@ -1,4 +1,30 @@
-= simple_form_for @project, html: { class: 'project-form w-form' } do |form|
+#video.col.s12.m12.l9.profile-content.wow.fadeInUp data-wow-delay="0.4s" data-wow-duration="0.7s"
+  .module
+    .module-header
+      h2
+        i.material-icons.left> fingerprint
+        | #{t('.video')}
+      .btn-actions
+        a href="#"
+          i.material-icons.left> keyboard_arrow_left
+          | Volver Atrás
+    .module-content
+      .edit-message
+        p #{t('.video_subtitle')}
+        p #{t('.video_url_hint')}
+
+      = simple_form_for @project, class: 'dashboard-video-form' do |form|
+        .edit-dashboard-video-data
+          .row
+            .input.col.s12.m12
+              = form.input :video_url, as: :url, label: t('.video_url'), input_html: { class: 'validate tooltipped', "data-tooltip" => t('.video_url_subtitle')},  required: true, hint: false
+
+          .action-btn.row
+            .col.s12
+              button#btn-submit.waves-effect.waves-light.btn type="submit"  #{t('.submit')}
+
+////////////////////////////////////////////////////////////////////////
+/= simple_form_for @project, html: { class: 'project-form w-form' } do |form|
   .w-section.section
     .w-container
       .w-row
