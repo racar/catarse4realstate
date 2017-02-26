@@ -17,15 +17,15 @@ section#edit-profile
                     a href="#home"
                       i.material-icons.left> grade
                       | #{t('.start_tab')}
-                  /- if @project.published?
-                  li.tab
-                    a href="#reports"
-                      i.material-icons.left> grade
-                      | #{t('.reports_tab')}
-                  li.tab
-                    a href="#posts"
-                      i.material-icons.left> grade
-                      | #{t('.posts_tab')}
+                  - if @project.published?
+                    li.tab
+                      a href="#reports"
+                        i.material-icons.left> grade
+                        | #{t('.reports_tab')}
+                    li.tab
+                      a href="#posts"
+                        i.material-icons.left> grade
+                        | #{t('.posts_tab')}
                     /span.badge= @project.posts.count
                   - if (!@project.published? && !@project.approved?) || (current_user && current_user.admin?)
                     li.tab

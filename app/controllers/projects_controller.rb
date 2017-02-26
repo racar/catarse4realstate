@@ -69,7 +69,7 @@ class ProjectsController < ApplicationController
     should_validate = should_use_validate
 
     resource.attributes = permitted_params
-
+    # ERROR EN REDIS VERRR
     if resource.save(validate: should_validate)
       flash[:notice] = t('project.update.success')
     else
