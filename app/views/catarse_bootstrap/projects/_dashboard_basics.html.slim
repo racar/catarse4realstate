@@ -1,5 +1,138 @@
-= javascript_include_tag 'https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyBmtpykEj79ALb2D23rSCkivK3SiFmY3vM&callback=loadmap'.html_safe, :defer => "defer"
+#basics.col.s12.m12.l9.profile-content.wow.fadeInUp data-wow-delay="0.4s" data-wow-duration="0.7s"
+  .module
+    .module-header
+      h2
+        i.material-icons.left> fingerprint
+        | #{t('.basics')}
+      .btn-actions
+        a href="#"
+          i.material-icons.left> keyboard_arrow_left
+          | Volver Atrás
+    .module-content
+      .edit-message
+        p #{t('.basics_subtitle')}
+
+      = simple_form_for @project, class: 'dashboard-basics-form' do |form|
+        .edit-dashboard-basics-data
+          .row
+            .input.col.s12.m6
+              = form.input :name, label: t('.name'), input_html: { class: 'validate tooltipped', "data-tooltip" => t('.name_hint')},  required: true, hint: false
+            .input.col.s12.m6
+              /= form.input :permalink, as: :text, label: t('.permanlink'), input_html: { class: 'validate tooltipped', "data-tooltip" => t('.permalink_hint')},  required: true, hint: false
+              = form.input :permalink, label: t('.permanlink'), input_html: { class: 'validate tooltipped', "data-tooltip" => t('.permalink_hint')},  required: true, hint: false, preppend_text_wrapper_html: { class: 'w-col w-col-4 w-col-small-6 w-col-tiny-6 text-field prefix no-hover medium prefix-permalink' }, preppend_input_text: 'www.homeparte.com/', preppend_input_text_wrapper_html: { class: 'fontcolor-secondary u-text-center fontsize-smallest' }
+          .row
+            .input.col.s12.m6
+              = form.input :category_id, as: :select, label: 'Categoría', collection: Category.order(:name_es), input_html: { class: 'validate tooltipped browser-default', "data-tooltip" => 'Elija el más adecuado para su proyecto inmobiliario.'}, prompt: t('simple_form.prompts.project.category'), required: true, hint:false
+            .input.col.s12.m6
+              = form.input :city, label: t('.city'), url: auto_complete_cities_path, input_html: { class: 'validate tooltipped', "data-tooltip" => t('.city_hint')}, required: true, hint:false
+              /f.input :customer_name, as: :autocomplete, url: auto_complete_cities_path, input_html: { 'data-id-element' => '#order_customer_id' }
+              = form.hidden_field :latitud
+              = form.hidden_field :longitud
+          .row
+            #map-search style="position: relative; top: 0px; left: 10px; right: 10px;"
+              .input.col.s12.m4
+                input#search-txt type="text" value="" maxlength="100" style="float: left;"
+              .input.col.s12.m4
+                input id="search-btn" onclick="loadmap();" type="button" value="Encontrar direccion" style="float: left;"
+              .input.col.s12.m4
+                input id="detect-btn" type="button" value="Detectar Ubicación" style="float: left;"
+          .row
+            .input.col.s12.m12
+
+
+              /div id='map-canvas' style="position: relative; top: 0px; bottom: 65px; left: 10px; right: 10px; height: 400px; width: 800px"
+              #map-canvas style="height: 408px;z-index:22222;"
+          .row
+            .input.col.s12.m12
+
+              div id='map-output' style="position: relative; bottom: 0px; left: 10px; right: 10px;"
+          .action-btn.row
+            .col.s12
+              button#btn-submit.waves-effect.waves-light.btn type="submit"  #{t('.submit')}
+
+
 javascript:
+  /*
+   * Google Maps: Latitude-Longitude Finder Tool
+   * http://salman-w.blogspot.com/2009/03/latitude-longitude-finder-tool.html
+   */
+  function loadmap() {
+    // initialize map
+    var lat = 0;
+    var lng = 0;
+    if (document.getElementById("project_latitud").value && document.getElementById("project_longitud").value) {
+
+    var lat = parseFloat(document.getElementById("project_latitud").value)
+    var lng = parseFloat(document.getElementById("project_longitud").value)
+    }else{
+      var lat = 4.709369;
+      var lng = -74.071541;
+    }
+
+    var map = new google.maps.Map(document.getElementById("map-canvas"), {
+      center: new google.maps.LatLng(lat, lng),
+      zoom: 13,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+    // initialize marker
+    var marker = new google.maps.Marker({
+      position: map.getCenter(),
+      draggable: true,
+      map: map
+    });
+    // intercept map and marker movements
+    google.maps.event.addListener(map, "idle", function () {
+      marker.setPosition(map.getCenter());
+      document.getElementById("map-output").innerHTML = "Latitud:  " + map.getCenter().lat().toFixed(6) + "<br>Longitud: " + map.getCenter().lng().toFixed(6);
+      document.getElementById("project_latitud").value = map.getCenter().lat().toFixed(6);
+      document.getElementById("project_longitud").value = map.getCenter().lng().toFixed(6);
+    });
+    google.maps.event.addListener(marker, "dragend", function (mapEvent) {
+      map.panTo(mapEvent.latLng);
+    });
+    // initialize geocoder
+    var geocoder = new google.maps.Geocoder();
+    google.maps.event.addDomListener(document.getElementById("search-btn"), "click", function () {
+      geocoder.geocode({address: document.getElementById("search-txt").value}, function (results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+          var result = results[0];
+          document.getElementById("search-txt").value = result.formatted_address;
+          if (result.geometry.viewport) {
+            map.fitBounds(result.geometry.viewport);
+          } else {
+            map.setCenter(result.geometry.location);
+          }
+        } else if (status == google.maps.GeocoderStatus.ZERO_RESULTS) {
+          alert("Sorry, geocoder API failed to locate the address.");
+        } else {
+          alert("Sorry, geocoder API failed with an error.");
+        }
+      });
+    });
+    google.maps.event.addDomListener(document.getElementById("search-txt"), "keydown", function (domEvent) {
+      if (domEvent.which === 13 || domEvent.keyCode === 13) {
+        google.maps.event.trigger(document.getElementById("search-btn"), "click");
+      }
+    });
+    // initialize geolocation
+    if (navigator.geolocation) {
+      google.maps.event.addDomListener(document.getElementById("detect-btn"), "click", function () {
+        navigator.geolocation.getCurrentPosition(function (position) {
+          map.setCenter(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
+        }, function () {
+          alert("Sorry, geolocation API failed to detect your location.");
+        });
+      });
+      document.getElementById("detect-btn").disabled = false;
+    }
+  }
+= javascript_include_tag 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCZ9TWJDjcbMxnNvKO9iyXO9ZkjrU1MBb4&callback=loadmap', :defer => "async"
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/= javascript_include_tag 'https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyCZ9TWJDjcbMxnNvKO9iyXO9ZkjrU1MBb4&callback=loadmap'.html_safe, :defer => "defer"
+/javascript:
   /*
    * Google Maps: Latitude-Longitude Finder Tool
    * http://salman-w.blogspot.com/2009/03/latitude-longitude-finder-tool.html
@@ -77,7 +210,7 @@ javascript:
   }
 
 
-= simple_form_for @project, html: { class: 'project-form w-form' } do |form|
+/= simple_form_for @project, html: { class: 'project-form w-form' } do |form|
   .w-section.section
     .w-container
       .w-row
@@ -85,7 +218,7 @@ javascript:
           .w-form
               = @project.display_errors(:basics)
               - if (current_user && current_user.admin?)
-                = form.input :user_id, as: :string, 
+                = form.input :user_id, as: :string,
                   wrapper: :two_columns,
                   wrapper_class: 'w-row u-marginbottom-20 card card-terciary medium',
                   label_wrapper_html: { class: 'w-col w-col-5' },
@@ -93,7 +226,7 @@ javascript:
                   input_html: { class: 'positive medium', required: true },
                   validation_text: false
 
-              = form.input :name, as: :string, 
+              = form.input :name, as: :string,
                 wrapper: :two_columns,
                 wrapper_class: 'w-row u-marginbottom-30 card card-terciary medium',
                 label_wrapper_html: { class: 'w-col w-col-5 w-subcol' },
@@ -101,7 +234,7 @@ javascript:
                 input_html: { class: 'positive medium', required: true, maxlength: Project::NAME_MAXLENGTH },
                 validation_text: false
 
-              = form.input :permalink, as: :string, 
+              = form.input :permalink, as: :string,
                 wrapper: :two_columns_with_postfix,
                 wrapper_class: 'w-row u-marginbottom-30 card card-terciary medium',
                 label_wrapper_html: { class: 'w-col w-col-5 w-subcol' },
@@ -113,7 +246,7 @@ javascript:
                 preppend_input_text: 'www.homeparte.com/',
                 preppend_input_text_wrapper_html: { class: 'fontcolor-secondary u-text-center fontsize-smallest' }
 
-              = form.association :category, as: :select, 
+              = form.association :category, as: :select,
                 collection: Category.order(:name_pt),
                 prompt: t('simple_form.prompts.project.category'),
                 wrapper: :two_columns,

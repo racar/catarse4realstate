@@ -14,6 +14,7 @@
 //  Bower front-end dependencies
 // *********************************
 //= require jquery
+
 //= require underscore
 //= require backbone
 //= require jquery.fixedmask
@@ -38,6 +39,8 @@
 //  HOMEPARTE
 // *********************************
 //= require homeparte.js
+//= require jquery.turbolinks
+//= require turbolinks
 
 // *********************************
 //  Rails GEMs front-end dependencies

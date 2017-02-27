@@ -73,8 +73,6 @@ section#edit-profile
                         | #{t('.publish')}
 
 
-
-
             - if current_page?(controller: 'projects', action: 'new')
               =render 'projects/dashboard_new_project'
             - elsif current_page?(controller: 'projects', action: 'edit')
@@ -84,7 +82,7 @@ section#edit-profile
                 = render 'dashboard_posts'
               - if (!@project.published? && !@project.approved?) || (current_user && current_user.admin?)
                 / VER BASIC FALTA MODIFICACION DE TODO DISEÑO Y MAPS
-                /= render 'dashboard_basics'
+                = render 'dashboard_basics'
                 = render 'dashboard_goal'
               = render 'dashboard_description'
               = render 'dashboard_video'

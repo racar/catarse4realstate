@@ -113,6 +113,8 @@ gem 'enumerize'
 
 #paises
 gem 'country_select'
+gem 'turbolinks'
+gem 'jquery-turbolinks'
 
 group :production do
   # Gem used to handle image uploading

@@ -44,12 +44,11 @@ es:
       project:
         select: "Seleccione una opción"
         traffic_sources: "¿Cómo conociste a Catarse?"
-        name: "Déle un nombre que la gente recuerde fácilmente. No superar los 50 caracteres."
-        permalink: "Elige algo sencillo, directo y para que las personas identifiquen fácil tu proyecto. Trate de no usar Caracteres especiales."
+
+
         category: "Elija el más adecuado para su proyecto inmobiliario."
-        city: "El sitio está ubicado el proyecto?"
+        
         goal: "Revise su proyecto,  el precio de venta de este y no se olvide incluir la tasa del 13% que cobra HomeParte si su proyecto tiene éxito. Si tiene dudas póngase en contacto con HomeParte."
         online_days: "Usted puede elegir de 60 días a 6 meses como tiempo máximo para recaudar los fondos."
         video_url: "Enlace su video en Vimeo o Youtub."
         about_html: "Habla con pasión y claridad sobre lo que se hará. Posibles respuestas sobre cómo se utilizará el dinero que está detrás del proyecto. Recuerda que la transparencia atrae a más Inversionistas. Los inversores tendrán la ultima voz en invertir o no en su proyecto."
-        

@@ -2,8 +2,6 @@ es:
   projects:
     edit:
       posts: "Escribe una novedad"
-      basics: 'Complete la siguiente información'
-      basics_subtitle: 'Los datos reportados esta sección no se pueden modificar una vez que el proyecto se ha publicado. Rellene con cuidado y revisar antes de iniciar el proyecto.'
       reports: 'Informes de Apoyo'
       user_settings: 'Registro y bancarias de datos'
       user_settings_subtitle: 'Con el siguiente formulario completado su proyecto estará listo para el aire. Después de completar el relleno, haga clic en Guardar. Revisión. Si todo está bien, sólo tiene que pulsar el botón Publicar y comenzar su campaña!'
@@ -188,11 +186,17 @@ es:
       video_url_hint: "Cualquier proyecto puede ser enviado sin el vídeo. Pero es importante para que sea mas llamativos para los futuros inversores y su proyecto inmobiliario sea financiado exitosamente."
       video_url_subtitle: "Youtube o Vimeo enlace"
     dashboard_basics:
-      city: 'Lugar del proyecto'
+      basics: 'Complete la siguiente información'
+      basics_subtitle: 'Los datos reportados esta sección no se pueden modificar una vez que el proyecto se ha publicado. Rellene con cuidado y revisar antes de iniciar el proyecto.'
       online_date: 'La inscripción en el aire'
       user_id: 'ID de usuario'
       name: 'Nombre del proyecto'
       name_label: 'Entre más directo, mejor. No exceda de 50 caracteres'
+      name_hint: "Déle un nombre que la gente recuerde fácilmente. No superar los 50 caracteres."
+      permalink: "Enlace su proyecto inmobiliario"
+      permalink_hint: "Elige algo sencillo, directo y para que las personas identifiquen fácil tu proyecto. Trate de no usar Caracteres especiales."
+      city: 'Lugar del proyecto'
+      city_hint: "El sitio está ubicado el proyecto?"
       url: 'URL del proyecto'
       url_label: 'Es la dirección de su proyecto debe ser fácil de recordar. Evite subrayado, guión y símbolos'
       category: 'Categoría'
